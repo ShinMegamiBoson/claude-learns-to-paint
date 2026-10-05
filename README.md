@@ -61,3 +61,7 @@ In Claude Code, the skill loads from `.claude/skills/paint`. Ask Claude to paint
 - Built by Claude (Anthropic) in Claude Code.
 - Reference images, the segmentation, the signature designs and the title lettering reference were generated with OpenAI's gpt-image-2.5.
 - The music in the write-up's video was made with Suno.
+
+## License
+
+[MIT](LICENSE). The music in the write-up's video was made with Suno and isn't covered by this license.
