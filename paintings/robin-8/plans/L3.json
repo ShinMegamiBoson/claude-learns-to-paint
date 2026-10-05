@@ -1,0 +1,38 @@
+{
+ "brushes": [
+  {
+   "brush": "round",
+   "size": 0,
+   "pressure": 0.6
+  },
+  {
+   "brush": "round",
+   "size": 0,
+   "pressure": 0.5
+  }
+ ],
+ "px_per_mm": 12,
+ "budget": 30,
+ "min_gain": 20,
+ "threshold": 2,
+ "trace_tol": 6,
+ "mix_tol": 5,
+ "pause_s": 2,
+ "salience": "salience.png",
+ "target_blur_mm": 0.15,
+ "lines": [
+  {
+   "polarity": "light",
+   "contrast": 6,
+   "min_len_mm": 1.0
+  },
+  {
+   "polarity": "dark",
+   "contrast": 6,
+   "min_len_mm": 1.0
+  }
+ ],
+ "label": "L3",
+ "seed": 131,
+ "margin_mm": 6
+}

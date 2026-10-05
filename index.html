@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ink Watercolor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Schibsted+Grotesk:wght@400;500;600&family=Young+Serif&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@800&text=%E5%A2%A8%E8%B6%A3&display=block">
+<style>
+/* Layout: a drafting board fills the left with the taped sheet centred on it; a paintbox rail runs down the right, and drops below the board on phones. */
+:root {
+  --board: #c6cbce;
+  --board-light: #d6dadc;
+  --rail: #f5f6f5;
+  --raise: #ffffff;
+  --ink: #1c2226;
+  --ink-2: #545e66;
+  --ink-3: #858e95;
+  --rule: #dfe2e1;
+  --accent: #2b3a8f;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(43, 58, 143, 0.1);
+  --tape: #e2d8bf;
+  --tape-hi: rgba(255, 255, 255, 0.22);
+  --tape-shade: rgba(90, 70, 30, 0.2);
+  --sheet-shadow: rgba(18, 26, 32, 0.3);
+  --pan-well: #eceeed;
+  --pan-edge: rgba(28, 34, 38, 0.14);
+  --cursor-dark: rgba(20, 24, 28, 0.62);
+  --cursor-light: rgba(255, 255, 255, 0.85);
+  --wet: #2f63c9;
+  --damp: #9a7b1f;
+  --dry: #7c868d;
+  --notice-bg: #ffffff;
+  --hair: #96623a;
+  --felt: #34373a;
+  --felt-light: #3d4043;
+  --weight: #1d1a18;
+  --weight-hi: rgba(255, 255, 255, 0.14);
+
+  --display: "Young Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --ui: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fs-xs: 0.6875rem;
+  --fs-s: 0.78125rem;
+  --fs-m: 0.875rem;
+  --fs-l: 1.75rem;
+  --rail-w: 20rem;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --board: #15181b;
+    --board-light: #1d2124;
+    --rail: #1d2125;
+    --raise: #262b30;
+    --ink: #e5e8e7;
+    --ink-2: #a4adb3;
+    --ink-3: #737c83;
+    --rule: #2d3338;
+    --accent: #9eacff;
+    --accent-ink: #10142a;
+    --accent-soft: rgba(158, 172, 255, 0.14);
+    --tape: #cbbd95;
+    --tape-hi: rgba(255, 255, 255, 0.12);
+    --tape-shade: rgba(0, 0, 0, 0.35);
+    --sheet-shadow: rgba(0, 0, 0, 0.6);
+    --pan-well: #2b3035;
+    --pan-edge: rgba(255, 255, 255, 0.1);
+    --wet: #82a8ff;
+    --damp: #d6bb68;
+    --dry: #868f96;
+    --notice-bg: #262b30;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --board: #15181b;
+  --board-light: #1d2124;
+  --rail: #1d2125;
+  --raise: #262b30;
+  --ink: #e5e8e7;
+  --ink-2: #a4adb3;
+  --ink-3: #737c83;
+  --rule: #2d3338;
+  --accent: #9eacff;
+  --accent-ink: #10142a;
+  --accent-soft: rgba(158, 172, 255, 0.14);
+  --tape: #cbbd95;
+  --tape-hi: rgba(255, 255, 255, 0.12);
+  --tape-shade: rgba(0, 0, 0, 0.35);
+  --sheet-shadow: rgba(0, 0, 0, 0.6);
+  --pan-well: #2b3035;
+  --pan-edge: rgba(255, 255, 255, 0.1);
+  --wet: #82a8ff;
+  --damp: #d6bb68;
+  --dry: #868f96;
+  --notice-bg: #262b30;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--board);
+  color: var(--ink);
+  font: 400 var(--fs-m)/1.45 var(--ui);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.studio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--rail-w);
+  height: 100%;
+}
+
+/* ---------------------------------------------------------------- board */
+.board {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(120% 90% at 28% 18%, var(--board-light), var(--board) 70%);
+  overflow: hidden;
+}
+.sheet {
+  position: relative;
+  box-shadow: 0 1px 2px var(--sheet-shadow), 0 18px 40px -14px var(--sheet-shadow);
+  touch-action: none;
+}
+.sheet .paint {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: none;
+  touch-action: none;
+}
+.tape {
+  position: absolute;
+  pointer-events: none;
+  background-color: var(--tape);
+  background-image:
+    linear-gradient(180deg, var(--tape-hi), transparent 60%),
+    repeating-linear-gradient(90deg, var(--tape-hi) 0 1px, transparent 1px 4px);
+  box-shadow: 0 1px 2px var(--tape-shade);
+}
+.tape.top, .tape.bottom { height: var(--tw, 24px); left: calc(var(--tw, 24px) * -0.66); right: calc(var(--tw, 24px) * -0.66); }
+.tape.top { top: calc(var(--tw, 24px) * -0.54); clip-path: polygon(0.8% 0, 99.3% 0, 100% 22%, 99.4% 48%, 100% 74%, 99.2% 100%, 0.5% 100%, 0 70%, 0.7% 44%, 0 18%); }
+.tape.bottom { bottom: calc(var(--tw, 24px) * -0.54); clip-path: polygon(0.3% 0, 99.6% 0, 99.1% 30%, 100% 55%, 99.4% 80%, 99.9% 100%, 0.9% 100%, 0.2% 76%, 0.9% 52%, 0 24%); }
+.tape.left, .tape.right {
+  width: var(--tw, 24px); top: calc(var(--tw, 24px) * -0.42); bottom: calc(var(--tw, 24px) * -0.42);
+  background-image:
+    linear-gradient(90deg, var(--tape-hi), transparent 60%),
+    repeating-linear-gradient(0deg, var(--tape-hi) 0 1px, transparent 1px 4px);
+}
+.tape.left { left: calc(var(--tw, 24px) * -0.54); clip-path: polygon(0 0.6%, 30% 0, 55% 0.8%, 80% 0, 100% 0.5%, 100% 99.4%, 76% 100%, 50% 99.2%, 24% 100%, 0 99.6%); }
+.tape.right { right: calc(var(--tw, 24px) * -0.54); clip-path: polygon(0 0.3%, 22% 0.9%, 48% 0, 74% 0.7%, 100% 0.1%, 100% 99.7%, 70% 99.1%, 46% 100%, 20% 99.3%, 0 100%); }
+
+.weight {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  top: -9px;
+  height: 20px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--weight-hi), transparent 45%), var(--weight);
+  box-shadow: 0 3px 6px var(--sheet-shadow);
+}
+.weight.left { left: 6%; width: 30%; }
+.weight.right { right: 6%; width: 30%; }
+.studio.ink .board { background: radial-gradient(120% 90% at 28% 18%, var(--felt-light), var(--felt) 70%); }
+.studio.ink .tape { display: none; }
+.studio.ink .weight { display: block; }
+.studio.ink .sheet-label { color: var(--rail); opacity: 0.75; }
+
+.cursor {
+  position: absolute;
+  left: 0; top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px solid var(--cursor-dark);
+  box-shadow: 0 0 0 1px var(--cursor-light), inset 0 0 0 1px var(--cursor-light);
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.cursor.dashed { border-style: dashed; }
+.cursor::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 3px; height: 3px;
+  margin: -1.5px 0 0 -1.5px;
+  border-radius: 50%;
+  background: var(--cursor-dark);
+}
+
+.sheet-label {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  margin: 0;
+  font: 400 var(--fs-xs)/1 var(--mono);
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.notice {
+  position: absolute;
+  inset: auto 16px 16px;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  background: var(--notice-bg);
+  color: var(--ink);
+  box-shadow: 0 6px 20px -8px var(--sheet-shadow);
+}
+.notice strong { display: block; font-weight: 600; margin-bottom: 2px; }
+
+/* ---------------------------------------------------------------- rail */
+.rail {
+  min-width: 0;
+  min-height: 0;
+  background: var(--rail);
+  border-left: 1px solid var(--rule);
+  overflow-y: auto;
+  padding-inline: 18px;
+  padding-block: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.brand h1 {
+  margin: 0;
+  font: 400 var(--fs-l)/1 var(--display);
+  letter-spacing: -0.01em;
+}
+.brand .sub {
+  font-size: var(--fs-s);
+  color: var(--ink-2);
+}
+.status {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 500 var(--fs-xs)/1 var(--mono);
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.status i {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--dry);
+}
+.status[data-state="wet"] i { background: var(--wet); box-shadow: 0 0 0 3px color-mix(in srgb, var(--wet) 22%, transparent); }
+.status[data-state="damp"] i { background: var(--damp); }
+
+.section { display: flex; flex-direction: column; gap: 10px; }
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.section h2 {
+  margin: 0;
+  font: 600 var(--fs-xs)/1 var(--ui);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.chip {
+  border: 1px solid var(--rule);
+  background: var(--raise);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+
+/* pigment pans */
+.pans {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px 6px;
+}
+.pan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 5px 5px 6px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: transparent;
+  text-align: left;
+  min-width: 0;
+}
+.pan:hover { background: var(--pan-well); }
+.pan[aria-pressed="true"] { background: var(--raise); border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.pan-swatch {
+  display: block;
+  height: 34px;
+  border-radius: 4px;
+  background: var(--sw);
+  box-shadow: inset 0 0 0 1px var(--pan-edge), inset 0 2px 3px rgba(0, 0, 0, 0.12);
+}
+.pan-name {
+  font-size: var(--fs-xs);
+  line-height: 1.2;
+  font-weight: 500;
+  min-height: 2.4em;
+}
+.pan-code {
+  font: 400 0.625rem/1 var(--mono);
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+}
+.pan-parts {
+  position: absolute;
+  top: 1px; right: 1px;
+  min-width: 18px; height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 500 0.625rem/18px var(--mono);
+  text-align: center;
+}
+
+.well {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--radius);
+  background: var(--pan-well);
+}
+.well-swatch {
+  height: 40px;
+  border-radius: 50% 50% 46% 54% / 55% 48% 52% 45%;
+  background: var(--sw);
+  box-shadow: inset 0 0 0 1px var(--pan-edge);
+}
+.well-name { font-family: var(--display); font-size: var(--fs-m); line-height: 1.25; }
+.well-meta { font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.35; }
+
+/* tools */
+.tools {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  padding: 3px;
+  border-radius: calc(var(--radius) + 2px);
+  background: var(--pan-well);
+}
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 7px 2px 6px;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.tool svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tool[aria-checked="true"] { background: var(--raise); color: var(--ink); box-shadow: 0 1px 2px var(--pan-edge); }
+.tool:hover { color: var(--ink); }
+
+/* sliders */
+.field { display: flex; flex-direction: column; gap: 5px; }
+.field-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  font-size: var(--fs-s);
+}
+.field-top label { font-weight: 500; }
+.field-top output { font: 400 var(--fs-xs)/1 var(--mono); color: var(--ink-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+input[type="range"] {
+  width: 100%;
+  margin: 0;
+  height: 20px;
+  background: transparent;
+  accent-color: var(--accent);
+  -webkit-appearance: none;
+  appearance: none;
+}
+input[type="range"]::-webkit-slider-runnable-track { height: 3px; border-radius: 2px; background: var(--rule); }
+input[type="range"]::-moz-range-track { height: 3px; border-radius: 2px; background: var(--rule); }
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  margin-top: -5.5px;
+  border-radius: 50%;
+  background: var(--raise);
+  border: 1.5px solid var(--accent);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--raise);
+  border: 1.5px solid var(--accent);
+}
+.load {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--rule);
+  overflow: hidden;
+}
+.load span { display: block; height: 100%; width: 100%; background: var(--wet); transform-origin: left; }
+.check { display: flex; align-items: center; gap: 8px; font-size: var(--fs-s); color: var(--ink-2); }
+.on-brush { display: flex; align-items: center; gap: 8px; font-size: var(--fs-s); color: var(--ink-2); min-width: 0; }
+.on-brush b { font-weight: 500; color: var(--ink); }
+.on-brush-dot {
+  flex: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--dot, var(--hair));
+  box-shadow: inset 0 0 0 1px var(--pan-edge);
+}
+.brush-view {
+  --bv: 170px;
+  position: absolute;
+  left: calc(var(--bv) * -1);
+  top: calc(var(--bv) * -1);
+  width: calc(100% + var(--bv) * 2);
+  height: calc(100% + var(--bv) * 2);
+  pointer-events: none;
+}
+.check input { accent-color: var(--accent); margin: 0; }
+
+/* paper */
+.segmented {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3px;
+  padding: 3px;
+  border-radius: calc(var(--radius) + 2px);
+  background: var(--pan-well);
+}
+.segmented button {
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  padding: 6px 4px;
+  font-size: var(--fs-s);
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.segmented.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.segmented.five { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.segmented.six { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.segmented.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.segmented.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.segmented.seven { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.pencil-only { display: none; }
+#studio.pencil .pencil-only { display: block; }
+#studio.pencil .wet-only { display: none; }
+.segmented button[aria-checked="true"] { background: var(--raise); color: var(--ink); box-shadow: 0 1px 2px var(--pan-edge); }
+.paper-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+}
+.tilt {
+  position: relative;
+  width: 76px; height: 76px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 22px, var(--rule) 22px 23px, transparent 23px),
+    var(--pan-well);
+  box-shadow: inset 0 0 0 1px var(--rule);
+  touch-action: none;
+  cursor: grab;
+}
+.tilt::before, .tilt::after {
+  content: "";
+  position: absolute;
+  background: var(--rule);
+}
+.tilt::before { left: 50%; top: 8px; bottom: 8px; width: 1px; }
+.tilt::after { top: 50%; left: 8px; right: 8px; height: 1px; }
+.tilt-knob {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 16px; height: 16px;
+  margin: -8px 0 0 -8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 1px 3px var(--sheet-shadow);
+  z-index: 1;
+}
+.paper-controls { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.tilt-read { font-size: var(--fs-s); }
+.tilt-read b { font-weight: 500; }
+.tilt-read span { display: block; font-size: var(--fs-xs); color: var(--ink-3); }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: var(--raise);
+  padding: 7px 10px;
+  font-size: var(--fs-s);
+  font-weight: 500;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+.btn:hover { border-color: var(--ink-3); }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.btn[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+.actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 6px;
+}
+.actions .btn { padding-inline: 6px; gap: 5px; white-space: nowrap; }
+.keys {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+  line-height: 1.6;
+}
+kbd {
+  font: 500 0.625rem/1 var(--mono);
+  padding: 2px 4px;
+  border-radius: 3px;
+  border: 1px solid var(--rule);
+  background: var(--raise);
+  color: var(--ink-2);
+}
+
+@media (max-width: 760px) {
+  .studio {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 56%) minmax(0, 44%);
+  }
+  .rail { border-left: 0; border-top: 1px solid var(--rule); padding-inline: 16px; padding-block: 14px 20px; gap: 16px; }
+  .keys { display: none; }
+  .sheet-label { bottom: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="studio" id="studio">
+  <main class="board" id="board">
+    <div class="sheet" id="sheet">
+      <canvas id="canvas" class="paint" aria-label="Watercolor paper. Drag to paint."></canvas>
+      <div class="tape top"></div>
+      <div class="tape bottom"></div>
+      <div class="tape left"></div>
+      <div class="tape right"></div>
+      <div class="weight left"></div>
+      <div class="weight right"></div>
+      <div class="cursor" id="cursor"></div>
+      <canvas class="brush-view" id="brushView" aria-hidden="true"></canvas>
+    </div>
+    <p class="sheet-label" id="sheetLabel">Cold press · 300 gsm · 12 × 9 in</p>
+    <div class="notice" id="notice" hidden></div>
+  </main>
+
+  <aside class="rail" aria-label="Paintbox">
+    <header class="brand">
+      <h1>Ink</h1>
+      <span class="sub" id="mediumSub">watercolor</span>
+      <div class="status" id="status" data-state="dry" role="status"><i></i><span id="statusText">Dry</span></div>
+    </header>
+
+    <div class="segmented four" role="radiogroup" aria-label="Medium" id="mediumSeg">
+      <button type="button" role="radio" data-medium="watercolor" aria-checked="true" title="Pigments on sized rag paper">Watercolor</button>
+      <button type="button" role="radio" data-medium="ink" aria-checked="false" title="Sumi ink and colours on xuan rice paper">Sumi ink</button>
+      <button type="button" role="radio" data-medium="pencil" aria-checked="false" title="Graphite, charcoal and coloured pencils on drawing paper">Pencil</button>
+      <button type="button" role="radio" data-medium="gouache" aria-checked="false" title="Opaque body colour on illustration board or canvas: light over dark, colour over colour">Gouache</button>
+    </div>
+
+    <section class="section" aria-labelledby="h-pig">
+      <div class="section-head">
+        <h2 id="h-pig">Pigments</h2>
+        <button class="chip" id="mixToggle" type="button" aria-pressed="false" title="When on, each pan you tap adds one part to the mix (or hold Shift)">Mix</button>
+      </div>
+      <div class="pans" id="pans"></div>
+      <div class="well">
+        <div class="well-swatch" id="wellSwatch"></div>
+        <div>
+          <div class="well-name" id="wellName">French Ultramarine</div>
+          <div class="well-meta" id="wellMeta">PB29 · transparent · granulating</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="h-tool">
+      <h2 id="h-tool">Tool</h2>
+      <div class="tools" role="radiogroup" aria-labelledby="h-tool" id="tools">
+        <button class="tool" type="button" role="radio" data-tool="brush" aria-checked="true" title="Brush (B)">
+          <svg viewBox="0 0 20 20"><path d="M14.5 2.5 8 11"/><path d="M8 11c-1.8-.3-3.4.6-3.9 2.3-.4 1.5-.9 2.7-2.6 3.7 2.8.6 5.6.2 6.9-1.4.9-1.1.8-2.7-.4-4.6Z"/></svg>
+          Brush
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="water" aria-checked="false" title="Clean water (W)">
+          <svg viewBox="0 0 20 20"><path d="M10 2.8c2.6 3.4 4.8 6.2 4.8 8.9a4.8 4.8 0 0 1-9.6 0c0-2.7 2.2-5.5 4.8-8.9Z"/><path d="M7.9 12.4a2.2 2.2 0 0 0 1.8 2"/></svg>
+          Water
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="lift" aria-checked="false" title="Lift with a thirsty brush or tissue (L)">
+          <svg viewBox="0 0 20 20"><path d="M4 6.5c2-1.6 4-1.6 6 0s4 1.6 6 0"/><path d="M4 10c2-1.6 4-1.6 6 0s4 1.6 6 0"/><path d="M4 13.5c2-1.6 4-1.6 6 0s4 1.6 6 0"/></svg>
+          Lift
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="spatter" aria-checked="false" title="Spatter droplets (F)">
+          <svg viewBox="0 0 20 20"><circle cx="6" cy="7" r="1.6"/><circle cx="12.5" cy="5.2" r="0.9"/><circle cx="14" cy="11.5" r="2"/><circle cx="7.8" cy="13.8" r="1.1"/><circle cx="10.2" cy="9.4" r="0.6"/></svg>
+          Spatter
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="salt" aria-checked="false" title="Sprinkle salt into a wet wash (S)">
+          <svg viewBox="0 0 20 20"><path d="m6 5 1.6-1 1 1.6-1.6 1Z"/><path d="m12 4.6 1.2.4-.4 1.2-1.2-.4Z"/><path d="m9.5 9 1.8.2-.2 1.8-1.8-.2Z"/><path d="m4.8 12 1.2-.6.6 1.2-1.2.6Z"/><path d="m13.6 12.8 1.6.8-.8 1.6-1.6-.8Z"/><path d="m8.4 15 1-.2.2 1-1 .2Z"/></svg>
+          Salt
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="pencil" aria-checked="false" title="Pencil (B)" hidden>
+          <svg viewBox="0 0 20 20"><path d="M13.8 2.8 17.2 6.2 7 16.4 2.8 17.2 3.6 13Z"/><path d="M11.8 4.8l3.4 3.4"/><path d="M3.6 13l3.4 3.4"/></svg>
+          Pencil
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="stump" aria-checked="false" title="Blending stump: spreads graphite into the tooth (W)" hidden>
+          <svg viewBox="0 0 20 20"><path d="M15.5 3.5 17 5 8 14l-3.6 1.6L6 12Z"/><path d="M6 12c-1.6-.4-3 .4-3.5 1.8"/></svg>
+          Stump
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="eraser" aria-checked="false" title="Eraser: lifts graphite — vinyl or kneaded, under Pencil (L)" hidden>
+          <svg viewBox="0 0 20 20"><path d="M11 3.5 16.5 9l-7 7H6L3.5 13.5Z"/><path d="M8 6.5 13.5 12"/><path d="M9.5 16H17"/></svg>
+          Eraser
+        </button>
+        <button class="tool" type="button" role="radio" data-tool="seal" aria-checked="false" title="Press a cinnabar seal (S)" hidden>
+          <svg viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12" rx="1.5"/><path d="M7.5 7v6M10.5 7v3.5M10.5 12.5h2.5M12.5 7v3"/></svg>
+          Seal
+        </button>
+      </div>
+    </section>
+
+    <section class="section pencil-only" aria-labelledby="h-pencil">
+      <h2 id="h-pencil">Pencil</h2>
+      <div class="segmented seven" role="radiogroup" aria-labelledby="h-pencil" id="gradeSeg">
+        <button type="button" role="radio" data-grade="4H" aria-checked="false" title="Hard: pale, crisp, never very dark">4H</button>
+        <button type="button" role="radio" data-grade="2H" aria-checked="false">2H</button>
+        <button type="button" role="radio" data-grade="HB" aria-checked="true" title="Middle: the writing pencil">HB</button>
+        <button type="button" role="radio" data-grade="2B" aria-checked="false">2B</button>
+        <button type="button" role="radio" data-grade="4B" aria-checked="false">4B</button>
+        <button type="button" role="radio" data-grade="6B" aria-checked="false">6B</button>
+        <button type="button" role="radio" data-grade="8B" aria-checked="false" title="Soft: dark, grainy, wears fast">8B</button>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="pPressure">Pressure</label><output id="pPressureOut" for="pPressure">Medium · 55%</output></div>
+        <input type="range" id="pPressure" min="5" max="100" step="1" value="55" title="For mouse and touch; a pen uses its own pressure">
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="sharp">Point</label><output id="sharpOut" for="sharp">Sharp · 0.6 mm</output></div>
+        <input type="range" id="sharp" min="10" max="120" step="1" value="30">
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="side">Lead</label><output id="sideOut" for="side">The point</output></div>
+        <input type="range" id="side" min="0" max="100" step="1" value="0" title="Tilt the pencil over to shade with the side of the lead">
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="eraserSize">Eraser</label><output id="eraserSizeOut" for="eraserSize">Vinyl · 4.0 mm</output></div>
+        <div class="segmented two" role="radiogroup" aria-label="Eraser" id="eraserSeg">
+          <button type="button" role="radio" data-eraser="vinyl" aria-checked="true" title="A plastic block: lifts graphite cleanly with a crisp edge; press to reach into the tooth">Vinyl</button>
+          <button type="button" role="radio" data-eraser="kneaded" aria-checked="false" title="Putty: lifts a little at a time, soft-edged, for lightening">Kneaded</button>
+        </div>
+        <input type="range" id="eraserSize" min="10" max="160" step="1" value="40" title="How wide the eraser bears on the paper">
+      </div>
+    </section>
+
+    <section class="section wet-only" aria-labelledby="h-brush">
+      <h2 id="h-brush">Brush</h2>
+      <div class="segmented six" role="radiogroup" aria-labelledby="h-brush" id="brushSeg">
+        <button type="button" role="radio" data-brush="round" aria-checked="true" title="Round sable: holds a point, swells with pressure">Round</button>
+        <button type="button" role="radio" data-brush="flat" aria-checked="false" title="Flat synthetic: wide across its edge, thin along it (R rotates)">Flat</button>
+        <button type="button" role="radio" data-brush="mop" aria-checked="false" title="Squirrel mop: soft, holds a lot of water, for washes">Mop</button>
+        <button type="button" role="radio" data-brush="rigger" aria-checked="false" title="Rigger: long thin hair for lines and branches">Rigger</button>
+        <button type="button" role="radio" data-brush="fude" aria-checked="false" title="Fude: soft goat hair with a very fine point, for sumi-e">Fude</button>
+        <button type="button" role="radio" data-brush="filbert" aria-checked="false" title="Filbert: a flat with a rounded end, for opaque paint">Filbert</button>
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="size">Size</label><output id="sizeOut" for="size">No. 10 round · 7.1 mm</output></div>
+        <input type="range" id="size" min="0" max="9" step="1" value="4">
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="pressure">Pressure</label><output id="pressureOut" for="pressure">Medium · 55%</output></div>
+        <input type="range" id="pressure" min="5" max="100" step="1" value="55" title="For mouse and touch; a pen uses its own pressure and tilt">
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="water">Water</label><output id="waterOut" for="water">Wet · 60%</output></div>
+        <input type="range" id="water" min="0" max="100" step="1" value="60">
+      </div>
+      <div class="field">
+        <div class="field-top"><label for="load">Pigment</label><output id="loadOut" for="load">Milk · 50%</output></div>
+        <input type="range" id="load" min="0" max="100" step="1" value="50">
+      </div>
+      <div class="field">
+        <div class="field-top"><span>Water in the brush</span><output id="resOut">Full</output></div>
+        <div class="load" aria-hidden="true"><span id="resBar"></span></div>
+      </div>
+      <div class="on-brush">
+        <span class="on-brush-dot" id="brushDot"></span>
+        <span><b>On the brush</b> <span id="brushPaint">clean</span></span>
+      </div>
+      <label class="check"><input type="checkbox" id="reload" checked> Dip the brush again before every stroke</label>
+      <label class="check" id="tipDipRow" hidden><input type="checkbox" id="tipDip"> Touch the tip in dark ink (three-tone load)</label>
+      <label class="check"><input type="checkbox" id="showBrush" checked> Show the bristles</label>
+    </section>
+
+    <section class="section" aria-labelledby="h-paper">
+      <h2 id="h-paper">Paper</h2>
+      <div class="segmented" role="radiogroup" aria-labelledby="h-paper" id="paperSeg">
+        <button type="button" role="radio" data-paper="hot" aria-checked="false">Hot press</button>
+        <button type="button" role="radio" data-paper="cold" aria-checked="true">Cold press</button>
+        <button type="button" role="radio" data-paper="rough" aria-checked="false">Rough</button>
+      </div>
+      <div class="paper-row wet-only">
+        <div class="tilt" id="tilt" role="slider" tabindex="0" aria-label="Board tilt. Drag toward the direction water should run; arrow keys nudge, 0 levels it." aria-valuetext="Flat"><div class="tilt-knob" id="tiltKnob"></div></div>
+        <div class="paper-controls">
+          <div class="tilt-read"><b id="tiltText">Board flat</b><span>Drag to tilt · double-click to level</span></div>
+          <button class="btn" type="button" id="dryer" aria-pressed="false" title="Hold, or hold D">
+            <svg viewBox="0 0 20 20"><path d="M3 8.5h8.5a3 3 0 0 0 0-6H6a3 3 0 0 0-3 3v3Z"/><path d="M7 8.5 6 16h3l1-7.5"/><path d="M15 4h2.5M15 6.5h2.5M14.5 9h2"/></svg>
+            Hold to dry
+          </button>
+        </div>
+      </div>
+      <div class="field wet-only">
+        <div class="field-top"><label for="humidity">Studio humidity</label><output id="humOut" for="humidity">55% RH</output></div>
+        <input type="range" id="humidity" min="20" max="85" step="1" value="55">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="actions">
+        <button class="btn" type="button" id="undo" disabled title="Undo (⌘Z / Ctrl+Z)">
+          <svg viewBox="0 0 20 20"><path d="M7 5 3.5 8.5 7 12"/><path d="M4 8.5h7.5a4.5 4.5 0 0 1 0 9H9"/></svg>
+          Undo
+        </button>
+        <button class="btn" type="button" id="newSheet" title="Start a fresh sheet (undoable)">
+          <svg viewBox="0 0 20 20"><path d="M5 2.5h7l3.5 3.5v11.5H5Z"/><path d="M12 2.5V6h3.5"/></svg>
+          New sheet
+        </button>
+        <button class="btn" type="button" id="demo" title="Watch a landscape being painted">
+          <svg viewBox="0 0 20 20"><path d="M6 4.5v11l9-5.5Z"/></svg>
+          Demo
+        </button>
+      </div>
+      <p class="keys"><kbd>1</kbd>–<kbd>8</kbd> pigments · <kbd>B</kbd> <kbd>W</kbd> <kbd>L</kbd> <kbd>F</kbd> <kbd>S</kbd> tools · <kbd>[</kbd> <kbd>]</kbd> size · <kbd>R</kbd> turn a flat · hold <kbd>D</kbd> to dry · <kbd>⌘Z</kbd> undo</p>
+    </section>
+  </aside>
+</div>
+
+<script src="js/pigments.js"></script>
+<script src="js/shaders.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/brush.js"></script>
+<script src="js/pencilview.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

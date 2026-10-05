@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="I had Claude build a pencil simulator and then draw the same heron in it five times, in less than a day. Here&#x27;s what changed each time.">
+<title>Claude learns to draw</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; }
+  img, video { max-width: 100%; }
+  [hidden] { display: none !important; }
+  /* A sketchbook page: one reading column on the simulator's own paper, drawings set wider than the text, data in a quiet mono under each one. */
+  :root {
+    --paper: #f8f7f3;      /* the simulator's paper, rgb(248,247,243) */
+    --graphite: #2a2b30;   /* text, the colour of a soft lead */
+    --lead: #66686f;       /* captions and secondary text */
+    --rule: #dddbd3;       /* frames and dividers */
+    --indigo: #34446b;     /* the palette's indigo pencil, for links and labels */
+    --display: "Young Serif", Georgia, "Times New Roman", serif;
+    --body: "Literata", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #18191c; --graphite: #e9e7e0; --lead: #a3a5ac; --rule: #2e3036; --indigo: #a9b7dc;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #18191c; --graphite: #e9e7e0; --lead: #a3a5ac; --rule: #2e3036; --indigo: #a9b7dc;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--graphite);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    padding-inline: 16px;
+    padding-block: 3.5rem 5rem;
+  }
+  main { display: flex; flex-direction: column; gap: 3.25rem; }
+  .col { width: 100%; max-width: 38rem; margin-inline: auto; display: flex; flex-direction: column; gap: 1.1rem; }
+  .wide { width: 100%; max-width: 60rem; margin-inline: auto; }
+
+  h1, h2 { font-family: var(--display); font-weight: 400; line-height: 1.12; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.6rem, 3.6vw, 2.1rem); }
+  h3 { font-family: var(--display); font-weight: 400; font-size: 1.3rem; margin: 0; }
+  p { margin: 0; }
+  .dek { font-size: 1.2rem; color: var(--lead); max-width: 34rem; }
+  a { color: var(--indigo); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; border-radius: 2px; }
+
+  .label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--indigo); }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.55rem; min-width: 0; }
+  figure img, figure video { display: block; width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 2px; background: #f8f7f3; }
+  figcaption { font-family: var(--mono); font-size: 0.78rem; line-height: 1.5; color: var(--lead); font-variant-numeric: tabular-nums; }
+  figcaption b { font-weight: 500; color: var(--graphite); }
+
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  @media (max-width: 640px) { .pair { grid-template-columns: 1fr; } }
+
+  .heron { display: flex; flex-direction: column; gap: 1rem; }
+  .heron .col { gap: 0.7rem; }
+  .err { font-family: var(--mono); font-size: 0.85rem; color: var(--lead); font-variant-numeric: tabular-nums; }
+  .err strong { font-weight: 500; color: var(--graphite); }
+
+  hr { border: 0; border-top: 1px solid var(--rule); width: 100%; max-width: 38rem; margin: 0 auto; }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+
+<main>
+  <header class="col">
+    <span class="label">Pencil sim</span>
+    <h1>Claude learns to draw</h1>
+    <p class="label"><a href="../">Next: Claude learns to paint →</a></p>
+    <p class="dek">I had Claude build a pencil simulator and then draw the same heron in it five times, in less than a day. Here's what changed each time.</p>
+  </header>
+
+  <div class="wide pair">
+    <figure>
+      <img src="img/pencil-1.jpg" width="1280" height="960" alt="Pencil heron 1: even, plotted-looking hatching.">
+      <figcaption><b>Heron 1</b> · error 6.34</figcaption>
+    </figure>
+    <figure>
+      <img src="img/pencil-5.jpg" width="1280" height="960" alt="Pencil heron 5: a detailed graphite drawing of a heron standing in water beside reeds.">
+      <figcaption><b>Heron 5</b> · error 2.66</figcaption>
+    </figure>
+  </div>
+
+  <section class="col">
+    <h2>The setup</h2>
+    <p>Claude built the sim. Graphite catches on the paper's texture and the eraser can lift it back off, so marks behave roughly like a real pencil.</p>
+    <p>OpenAI's image model makes a reference picture, which is basically Claude's mind's eye, the thing it's trying to draw. Claude draws in batches and checkpoints as it goes, scoring each checkpoint against the reference. That score is the error. Lower is closer, and a blank page is about 9.2.</p>
+    <p>If a batch makes things worse it rolls back. Anything it rolls back stays around as a lookahead it can come back to.</p>
+  </section>
+  <figure class="wide">
+    <img src="img/pencil-target.jpg" width="1280" height="960" alt="The reference: a detailed graphite heron standing in shallow water with reeds.">
+    <figcaption><b>The reference.</b> All five get scored against this one.</figcaption>
+  </figure>
+
+  <section class="col">
+    <h2>Five herons</h2>
+  </section>
+
+  <article class="heron">
+    <figure class="wide">
+      <img src="img/pencil-1.jpg" width="1280" height="960" loading="lazy" alt="Pencil heron 1: even, plotted-looking hatching.">
+    </figure>
+    <div class="col">
+      <h3>Heron 1</h3>
+      <p>First try used a set of strokes Claude wrote in code. Every line got plotted as an exact curve and traced at a constant speed, so it looks like a machine drew it.</p>
+      <p class="err"><strong>error 6.34</strong> · 1,590 actions kept · 57 checkpoints, 44 rolled back</p>
+    </div>
+  </article>
+
+  <article class="heron">
+    <figure class="wide">
+      <img src="img/pencil-2.jpg" width="1280" height="960" loading="lazy" alt="Pencil heron 2: looser lines over a light rough sketch.">
+    </figure>
+    <div class="col">
+      <h3>Heron 2</h3>
+      <p>This time it roughed in the outlines first and could zoom in on a region to compare it to the reference. The pencil still moved kind of like a CNC machine, so a simulated hand took over moving it along the paths, speeding up and slowing down like a real hand.</p>
+      <p class="err"><strong>error 6.16</strong> · 1,878 actions kept · 9 checkpoints, none rolled back</p>
+    </div>
+  </article>
+
+  <article class="heron">
+    <figure class="wide">
+      <img src="img/pencil-3.jpg" width="1280" height="960" loading="lazy" alt="Pencil heron 3: drawn entirely with gestures, darker wing and reeds.">
+    </figure>
+    <div class="col">
+      <h3>Heron 3</h3>
+      <p>Turns out it was still planning the paths and the hand was just following them, so that got turned off. Now every mark is a gesture. Claude decides where the hand starts and how it gets pushed, and the line goes wherever that takes it. This was the first big drop in error.</p>
+      <p class="err"><strong>error 5.23</strong> · 1,498 actions kept · 39 checkpoints, 14 rolled back</p>
+    </div>
+  </article>
+
+  <article class="heron">
+    <figure class="wide">
+      <img src="img/pencil-4.jpg" width="1280" height="960" loading="lazy" alt="Pencil heron 4: heron 3 refined, with fuller tone in the wing, reeds and water.">
+    </figure>
+    <div class="col">
+      <h3>Heron 4</h3>
+      <p>Heron 4 kept going on heron 3. It zoomed way in on one region at a time. It pressed harder wherever it was too light and erased wherever it was too dark. That's the biggest drop between any two herons.</p>
+      <p class="err"><strong>error 3.37</strong> · 1,852 more actions kept · 58 more checkpoints, 24 rolled back</p>
+    </div>
+  </article>
+
+  <article class="heron">
+    <figure class="wide">
+      <img src="img/pencil-5.jpg" width="1280" height="960" loading="lazy" alt="Pencil heron 5: fine strokes following the feathers, a white-fronted neck, wide reed blades and rippled water.">
+    </figure>
+    <div class="col">
+      <h3>Heron 5</h3>
+      <p>Then it started over on a blank page with all of that from the first stroke. Claude wrote a little tool that figures out which way the detail runs in the reference, like the feathers and the reed blades, and lays strokes along it.</p>
+      <p>It builds the tone up in three light passes and presses as hard as the reference asks, so the white of the neck stays bare paper. It also ran the sim at twice the resolution so the pencil point could be finer. Smudging with a blending stump made it worse both times it tried, so that's not in there.</p>
+      <p class="err"><strong>error 2.66</strong> · 11,964 actions kept · 30 checkpoints, 7 rolled back</p>
+    </div>
+  </article>
+
+  <section class="col">
+    <h2>The video</h2>
+    <p>All five back to back, with music.</p>
+  </section>
+  <figure class="wide">
+    <video controls playsinline preload="metadata" poster="img/pencil-5.jpg" width="640" height="566" src="media/claude-learns-to-draw.mp4"></video>
+    <figcaption><b>Claude learns to draw</b> · 3:52</figcaption>
+  </figure>
+
+  <hr>
+
+  <section class="col">
+    <p>Heron 5's eye is still muddy and the reed reflections are missing the zigzags.</p>
+  </section>
+</main>
+</body>
+</html>

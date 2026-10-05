@@ -1,0 +1,11480 @@
+{
+ "id": "heron-half",
+ "created": "2026-09-30T16:57:26.906Z",
+ "medium": "ink",
+ "paper": "xuanHalf",
+ "orient": "landscape",
+ "res": 1024,
+ "seed": 1790472335,
+ "humidity": 55,
+ "every": 6,
+ "subject": "a single grey heron standing among a few reeds in morning mist",
+ "displayWidth": 1536,
+ "maxResident": 12,
+ "reference": "reference.png",
+ "target": "target.png",
+ "head": "cp-0036",
+ "next": 37,
+ "code": "2dab54b24b8a",
+ "checkpoints": {
+  "cp-0000": {
+   "parent": null,
+   "actions": [],
+   "created": "2026-09-30T16:57:26.909Z",
+   "clock": 0,
+   "wet": false,
+   "note": "blank sheet",
+   "dry": "paintings/heron-half/blank.png",
+   "render": "paintings/heron-half/blank.png",
+   "score": {
+    "error": 8.17,
+    "error_coarse": 8.16,
+    "too_dark": 0,
+    "too_light": 5.69,
+    "colour": 0,
+    "ssim": 0.793,
+    "matched": 0.767,
+    "whites_lost": 0,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.3,
+      "dL": 25.2,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 21.4,
+      "dL": 21.2,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 95.2
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 12.25
+   },
+   "eval": null
+  },
+  "cp-0001": {
+   "parent": "cp-0000",
+   "actions": [
+    {
+     "type": "wash",
+     "label": "pre-wet left mist",
+     "tool": "water",
+     "poly": [
+      [
+       -0.03,
+       0.59
+      ],
+      [
+       0.08,
+       0.565
+      ],
+      [
+       0.2,
+       0.585
+      ],
+      [
+       0.215,
+       0.7
+      ],
+      [
+       0.1,
+       0.735
+      ],
+      [
+       -0.03,
+       0.72
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "water": 0.7,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "left mist",
+     "tool": "brush",
+     "poly": [
+      [
+       0.01,
+       0.62
+      ],
+      [
+       0.1,
+       0.6
+      ],
+      [
+       0.17,
+       0.61
+      ],
+      [
+       0.17,
+       0.68
+      ],
+      [
+       0.09,
+       0.7
+      ],
+      [
+       0.01,
+       0.68
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.03,
+     "water": 0.6,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "pre-wet right mist",
+     "tool": "water",
+     "poly": [
+      [
+       0.44,
+       0.66
+      ],
+      [
+       0.55,
+       0.61
+      ],
+      [
+       0.68,
+       0.59
+      ],
+      [
+       0.8,
+       0.54
+      ],
+      [
+       0.92,
+       0.49
+      ],
+      [
+       1.03,
+       0.49
+      ],
+      [
+       1.03,
+       0.75
+      ],
+      [
+       0.8,
+       0.77
+      ],
+      [
+       0.6,
+       0.78
+      ],
+      [
+       0.44,
+       0.75
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "water": 0.7,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "right mist",
+     "tool": "brush",
+     "poly": [
+      [
+       0.47,
+       0.665
+      ],
+      [
+       0.56,
+       0.63
+      ],
+      [
+       0.7,
+       0.615
+      ],
+      [
+       0.82,
+       0.57
+      ],
+      [
+       0.95,
+       0.53
+      ],
+      [
+       1.02,
+       0.54
+      ],
+      [
+       1.02,
+       0.7
+      ],
+      [
+       0.8,
+       0.72
+      ],
+      [
+       0.6,
+       0.735
+      ],
+      [
+       0.48,
+       0.72
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.035,
+     "water": 0.6,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "far-right misty reeds",
+     "tool": "brush",
+     "poly": [
+      [
+       0.84,
+       0.56
+      ],
+      [
+       0.9,
+       0.53
+      ],
+      [
+       1.02,
+       0.55
+      ],
+      [
+       1.02,
+       0.66
+      ],
+      [
+       0.92,
+       0.68
+      ],
+      [
+       0.84,
+       0.645
+      ]
+     ],
+     "brush": "fude",
+     "size": 8,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.06,
+     "water": 0.6,
+     "spacing": 0.6
+    },
+    {
+     "type": "wait",
+     "label": "let the mist settle",
+     "s": 3
+    }
+   ],
+   "created": "2026-09-30T16:58:55.582Z",
+   "clock": 10.43,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0001.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0001-dry.png",
+   "preview": {
+    "seconds": 7.8,
+    "dry": true
+   },
+   "note": "mist too dark: far-right mass reads as a hill; whites lost +0.026",
+   "score": {
+    "error": 7.72,
+    "error_coarse": 7.46,
+    "too_dark": 0.18,
+    "too_light": 5.15,
+    "colour": 0,
+    "ssim": 0.788,
+    "matched": 0.79,
+    "whites_lost": 0.026,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 24.8,
+      "dL": 23.5,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 94.7
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 19,
+      "dL": 18.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 92.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.81,
+    "delta": {
+     "score": -0.44,
+     "error": -0.45,
+     "error_coarse": -0.7,
+     "too_dark": 0.18,
+     "too_light": -0.54,
+     "colour": 0,
+     "ssim": -0.005,
+     "whites_lost": 0.026
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0001-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0001-eval.png",
+   "rejected": true
+  },
+  "cp-0002": {
+   "parent": "cp-0000",
+   "actions": [
+    {
+     "type": "wash",
+     "label": "pre-wet left mist",
+     "tool": "water",
+     "poly": [
+      [
+       -0.03,
+       0.59
+      ],
+      [
+       0.08,
+       0.565
+      ],
+      [
+       0.2,
+       0.585
+      ],
+      [
+       0.215,
+       0.7
+      ],
+      [
+       0.1,
+       0.735
+      ],
+      [
+       -0.03,
+       0.72
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "water": 0.7,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "left mist (paler)",
+     "tool": "brush",
+     "poly": [
+      [
+       0.01,
+       0.62
+      ],
+      [
+       0.1,
+       0.6
+      ],
+      [
+       0.17,
+       0.61
+      ],
+      [
+       0.17,
+       0.68
+      ],
+      [
+       0.09,
+       0.7
+      ],
+      [
+       0.01,
+       0.68
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.02,
+     "water": 0.6,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "pre-wet right mist",
+     "tool": "water",
+     "poly": [
+      [
+       0.44,
+       0.66
+      ],
+      [
+       0.55,
+       0.61
+      ],
+      [
+       0.68,
+       0.59
+      ],
+      [
+       0.8,
+       0.54
+      ],
+      [
+       0.92,
+       0.49
+      ],
+      [
+       1.03,
+       0.49
+      ],
+      [
+       1.03,
+       0.75
+      ],
+      [
+       0.8,
+       0.77
+      ],
+      [
+       0.6,
+       0.78
+      ],
+      [
+       0.44,
+       0.75
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "water": 0.7,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "right mist (paler)",
+     "tool": "brush",
+     "poly": [
+      [
+       0.47,
+       0.665
+      ],
+      [
+       0.56,
+       0.63
+      ],
+      [
+       0.7,
+       0.615
+      ],
+      [
+       0.82,
+       0.57
+      ],
+      [
+       0.95,
+       0.53
+      ],
+      [
+       1.02,
+       0.54
+      ],
+      [
+       1.02,
+       0.7
+      ],
+      [
+       0.8,
+       0.72
+      ],
+      [
+       0.6,
+       0.735
+      ],
+      [
+       0.48,
+       0.72
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.025,
+     "water": 0.6,
+     "spacing": 0.6
+    },
+    {
+     "type": "wash",
+     "label": "far-right mist (paler, smaller)",
+     "tool": "brush",
+     "poly": [
+      [
+       0.87,
+       0.55
+      ],
+      [
+       0.93,
+       0.535
+      ],
+      [
+       1.02,
+       0.55
+      ],
+      [
+       1.02,
+       0.64
+      ],
+      [
+       0.93,
+       0.655
+      ],
+      [
+       0.87,
+       0.63
+      ]
+     ],
+     "brush": "fude",
+     "size": 7,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.04,
+     "water": 0.65,
+     "spacing": 0.6
+    },
+    {
+     "type": "wait",
+     "label": "let the mist settle",
+     "s": 3
+    }
+   ],
+   "created": "2026-09-30T16:59:22.827Z",
+   "clock": 10.3,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0002.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0002-dry.png",
+   "preview": {
+    "seconds": 8.2,
+    "dry": true
+   },
+   "note": "still too dark (L81-85 vs 88-91): low loads bottom out; the right wash bled up into a hill",
+   "score": {
+    "error": 7.71,
+    "error_coarse": 7.48,
+    "too_dark": 0.15,
+    "too_light": 5.17,
+    "colour": 0,
+    "ssim": 0.788,
+    "matched": 0.794,
+    "whites_lost": 0.022,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 24.7,
+      "dL": 23.6,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 94.8
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 19.2,
+      "dL": 18.9,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 92.9
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.75,
+    "delta": {
+     "score": -0.5,
+     "error": -0.46,
+     "error_coarse": -0.68,
+     "too_dark": 0.15,
+     "too_light": -0.52,
+     "colour": 0,
+     "ssim": -0.005,
+     "whites_lost": 0.022
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0002-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0002-eval.png",
+   "rejected": true
+  },
+  "cp-0003": {
+   "parent": "cp-0000",
+   "actions": [
+    {
+     "type": "wash",
+     "label": "pre-wet left mist",
+     "tool": "water",
+     "poly": [
+      [
+       -0.03,
+       0.59
+      ],
+      [
+       0.08,
+       0.565
+      ],
+      [
+       0.2,
+       0.585
+      ],
+      [
+       0.215,
+       0.7
+      ],
+      [
+       0.1,
+       0.735
+      ],
+      [
+       -0.03,
+       0.72
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "water": 0.8,
+     "spacing": 0.55
+    },
+    {
+     "type": "wash",
+     "label": "left mist: light, fast, sparse",
+     "tool": "brush",
+     "poly": [
+      [
+       0.01,
+       0.615
+      ],
+      [
+       0.1,
+       0.595
+      ],
+      [
+       0.18,
+       0.61
+      ],
+      [
+       0.18,
+       0.69
+      ],
+      [
+       0.09,
+       0.71
+      ],
+      [
+       0.01,
+       0.69
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.02,
+     "water": 0.6,
+     "pressure": 0.45,
+     "speed": 400,
+     "spacing": 0.8
+    },
+    {
+     "type": "wash",
+     "label": "pre-wet right mist",
+     "tool": "water",
+     "poly": [
+      [
+       0.44,
+       0.665
+      ],
+      [
+       0.55,
+       0.625
+      ],
+      [
+       0.68,
+       0.605
+      ],
+      [
+       0.8,
+       0.575
+      ],
+      [
+       0.92,
+       0.545
+      ],
+      [
+       1.03,
+       0.545
+      ],
+      [
+       1.03,
+       0.75
+      ],
+      [
+       0.8,
+       0.77
+      ],
+      [
+       0.6,
+       0.78
+      ],
+      [
+       0.44,
+       0.75
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "water": 0.8,
+     "spacing": 0.55
+    },
+    {
+     "type": "wash",
+     "label": "right mist: light, fast, sparse",
+     "tool": "brush",
+     "poly": [
+      [
+       0.47,
+       0.675
+      ],
+      [
+       0.56,
+       0.645
+      ],
+      [
+       0.7,
+       0.63
+      ],
+      [
+       0.82,
+       0.605
+      ],
+      [
+       0.95,
+       0.575
+      ],
+      [
+       1.02,
+       0.58
+      ],
+      [
+       1.02,
+       0.7
+      ],
+      [
+       0.8,
+       0.72
+      ],
+      [
+       0.6,
+       0.735
+      ],
+      [
+       0.48,
+       0.72
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.02,
+     "water": 0.6,
+     "pressure": 0.45,
+     "speed": 400,
+     "spacing": 0.8
+    },
+    {
+     "type": "wash",
+     "label": "denser mist behind the reeds",
+     "tool": "brush",
+     "poly": [
+      [
+       0.86,
+       0.575
+      ],
+      [
+       0.93,
+       0.565
+      ],
+      [
+       1.02,
+       0.575
+      ],
+      [
+       1.02,
+       0.645
+      ],
+      [
+       0.93,
+       0.655
+      ],
+      [
+       0.86,
+       0.635
+      ]
+     ],
+     "brush": "fude",
+     "size": 8,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.02,
+     "water": 0.6,
+     "pressure": 0.55,
+     "speed": 300,
+     "spacing": 0.65
+    },
+    {
+     "type": "wait",
+     "label": "let the mist settle",
+     "s": 3
+    }
+   ],
+   "created": "2026-09-30T17:00:44.530Z",
+   "clock": 8.67,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0003.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0003-dry.png",
+   "preview": {
+    "seconds": 7.1,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 7.84,
+    "error_coarse": 7.77,
+    "too_dark": 0,
+    "too_light": 5.42,
+    "colour": 0,
+    "ssim": 0.79,
+    "matched": 0.79,
+    "whites_lost": 0.001,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.6,
+      "dL": 20.4,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 94.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.72,
+    "delta": {
+     "score": -0.53,
+     "error": -0.33,
+     "error_coarse": -0.39,
+     "too_dark": 0,
+     "too_light": -0.27,
+     "colour": 0,
+     "ssim": -0.003,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0003-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0003-eval.png"
+  },
+  "cp-0004": {
+   "parent": "cp-0003",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.1,
+       0.7,
+       0.2
+      ],
+      [
+       0.14,
+       0.698,
+       0.42
+      ],
+      [
+       0.2,
+       0.7,
+       0.4
+      ],
+      [
+       0.27,
+       0.702,
+       0.35
+      ],
+      [
+       0.3,
+       0.7,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.22,
+       0.742,
+       0.2
+      ],
+      [
+       0.262,
+       0.74,
+       0.42
+      ],
+      [
+       0.325,
+       0.742,
+       0.4
+      ],
+      [
+       0.39849999999999997,
+       0.744,
+       0.35
+      ],
+      [
+       0.43,
+       0.742,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.07,
+       0.79,
+       0.2
+      ],
+      [
+       0.096,
+       0.788,
+       0.42
+      ],
+      [
+       0.135,
+       0.79,
+       0.4
+      ],
+      [
+       0.18050000000000002,
+       0.792,
+       0.35
+      ],
+      [
+       0.2,
+       0.79,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.22,
+       0.786,
+       0.2
+      ],
+      [
+       0.232,
+       0.784,
+       0.42
+      ],
+      [
+       0.25,
+       0.786,
+       0.4
+      ],
+      [
+       0.271,
+       0.788,
+       0.35
+      ],
+      [
+       0.28,
+       0.786,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.18,
+       0.81,
+       0.2
+      ],
+      [
+       0.196,
+       0.808,
+       0.42
+      ],
+      [
+       0.22,
+       0.81,
+       0.4
+      ],
+      [
+       0.248,
+       0.812,
+       0.35
+      ],
+      [
+       0.26,
+       0.81,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.37,
+       0.83,
+       0.2
+      ],
+      [
+       0.384,
+       0.828,
+       0.42
+      ],
+      [
+       0.405,
+       0.83,
+       0.4
+      ],
+      [
+       0.4295,
+       0.832,
+       0.35
+      ],
+      [
+       0.44,
+       0.83,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    }
+   ],
+   "created": "2026-09-30T17:01:08.585Z",
+   "clock": 9.32,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0004.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0004-dry.png",
+   "preview": {
+    "seconds": 7.2,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 7.81,
+    "error_coarse": 7.73,
+    "too_dark": 0,
+    "too_light": 5.4,
+    "colour": 0,
+    "ssim": 0.791,
+    "matched": 0.792,
+    "whites_lost": 0.001,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.6,
+      "dL": 20.4,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 94.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.68,
+    "delta": {
+     "score": -0.04,
+     "error": -0.03,
+     "error_coarse": -0.04,
+     "too_dark": 0,
+     "too_light": -0.02,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0004-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0004-eval.png"
+  },
+  "cp-0005": {
+   "parent": "cp-0004",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.26,
+       0.862,
+       0.2
+      ],
+      [
+       0.304,
+       0.86,
+       0.42
+      ],
+      [
+       0.37,
+       0.862,
+       0.4
+      ],
+      [
+       0.447,
+       0.864,
+       0.35
+      ],
+      [
+       0.48,
+       0.862,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.2,
+       0.905,
+       0.2
+      ],
+      [
+       0.21400000000000002,
+       0.903,
+       0.42
+      ],
+      [
+       0.23500000000000001,
+       0.905,
+       0.4
+      ],
+      [
+       0.2595,
+       0.907,
+       0.35
+      ],
+      [
+       0.27,
+       0.905,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.41,
+       0.905,
+       0.2
+      ],
+      [
+       0.44799999999999995,
+       0.903,
+       0.42
+      ],
+      [
+       0.505,
+       0.905,
+       0.4
+      ],
+      [
+       0.5715,
+       0.907,
+       0.35
+      ],
+      [
+       0.6,
+       0.905,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.5,
+       0.82,
+       0.2
+      ],
+      [
+       0.526,
+       0.818,
+       0.42
+      ],
+      [
+       0.565,
+       0.82,
+       0.4
+      ],
+      [
+       0.6105,
+       0.822,
+       0.35
+      ],
+      [
+       0.63,
+       0.82,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.44,
+       0.722,
+       0.2
+      ],
+      [
+       0.476,
+       0.72,
+       0.42
+      ],
+      [
+       0.53,
+       0.722,
+       0.4
+      ],
+      [
+       0.593,
+       0.724,
+       0.35
+      ],
+      [
+       0.62,
+       0.722,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "water dash",
+     "pts": [
+      [
+       0.56,
+       0.785,
+       0.2
+      ],
+      [
+       0.5960000000000001,
+       0.783,
+       0.42
+      ],
+      [
+       0.65,
+       0.785,
+       0.4
+      ],
+      [
+       0.713,
+       0.787,
+       0.35
+      ],
+      [
+       0.74,
+       0.785,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.05,
+     "water": 0.5,
+     "speed": 380
+    }
+   ],
+   "created": "2026-09-30T17:01:11.121Z",
+   "clock": 10.15,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0005.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0005-dry.png",
+   "preview": {
+    "seconds": 7.1,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 7.74,
+    "error_coarse": 7.65,
+    "too_dark": 0,
+    "too_light": 5.35,
+    "colour": 0,
+    "ssim": 0.793,
+    "matched": 0.797,
+    "whites_lost": 0.001,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.6,
+      "dL": 20.4,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 94.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.57,
+    "delta": {
+     "score": -0.11,
+     "error": -0.07,
+     "error_coarse": -0.08,
+     "too_dark": 0,
+     "too_light": -0.05,
+     "colour": 0,
+     "ssim": 0.002,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0005-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0005-eval.png"
+  },
+  "cp-0006": {
+   "parent": "cp-0005",
+   "actions": [
+    {
+     "type": "set",
+     "brush": "fude",
+     "pigments": {
+      "Pine soot": 1
+     },
+     "water": 0.5,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "pale far reed head",
+     "pts": [
+      [
+       0.877,
+       0.283,
+       0.35
+      ],
+      [
+       0.884,
+       0.31,
+       0.75
+      ],
+      [
+       0.893,
+       0.338,
+       0.7
+      ],
+      [
+       0.9,
+       0.362,
+       0.25
+      ]
+     ],
+     "size": 3,
+     "load": 0.16
+    },
+    {
+     "type": "stroke",
+     "label": "pale far reed stalk",
+     "pts": [
+      [
+       0.9,
+       0.36,
+       0.3
+      ],
+      [
+       0.912,
+       0.45,
+       0.35
+      ],
+      [
+       0.927,
+       0.56,
+       0.35
+      ],
+      [
+       0.938,
+       0.68,
+       0.3
+      ],
+      [
+       0.942,
+       0.74,
+       0.15
+      ]
+     ],
+     "size": 1,
+     "load": 0.2
+    },
+    {
+     "type": "dab",
+     "label": "pale reed tuft",
+     "at": [
+      0.858,
+      0.338
+     ],
+     "angle": 8,
+     "length": 24,
+     "press": 0.6,
+     "size": 3,
+     "load": 0.14,
+     "speed": 420
+    },
+    {
+     "type": "stroke",
+     "label": "thin pale stalk",
+     "pts": [
+      [
+       0.893,
+       0.372,
+       0.25
+      ],
+      [
+       0.891,
+       0.5,
+       0.32
+      ],
+      [
+       0.889,
+       0.62,
+       0.3
+      ],
+      [
+       0.888,
+       0.7,
+       0.12
+      ]
+     ],
+     "size": 0,
+     "load": 0.22
+    },
+    {
+     "type": "dab",
+     "label": "pale leaf",
+     "at": [
+      0.936,
+      0.52
+     ],
+     "angle": -58,
+     "length": 42,
+     "press": 0.6,
+     "size": 3,
+     "load": 0.14,
+     "speed": 520
+    }
+   ],
+   "created": "2026-09-30T17:01:43.231Z",
+   "clock": 11.03,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0006.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0006-dry.png",
+   "preview": {
+    "seconds": 7,
+    "dry": true
+   },
+   "note": "reed heads came out as round blobs, stalks vanished (tip barely touching)",
+   "score": {
+    "error": 7.74,
+    "error_coarse": 7.6,
+    "too_dark": 0.03,
+    "too_light": 5.33,
+    "colour": 0,
+    "ssim": 0.79,
+    "matched": 0.797,
+    "whites_lost": 0.005,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.6,
+      "dL": 20.4,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 94.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.6,
+    "delta": {
+     "score": 0.03,
+     "error": 0,
+     "error_coarse": -0.05,
+     "too_dark": 0.03,
+     "too_light": -0.02,
+     "colour": 0,
+     "ssim": -0.003,
+     "whites_lost": 0.004
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0006-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0006-eval.png",
+   "rejected": true
+  },
+  "cp-0007": {
+   "parent": "cp-0006",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "pale reed head",
+     "pts": [
+      [
+       0.799,
+       0.383,
+       0.3
+      ],
+      [
+       0.807,
+       0.405,
+       0.65
+      ],
+      [
+       0.815,
+       0.43,
+       0.6
+      ],
+      [
+       0.822,
+       0.452,
+       0.2
+      ]
+     ],
+     "size": 2,
+     "load": 0.14
+    },
+    {
+     "type": "stroke",
+     "label": "pale stalk behind",
+     "pts": [
+      [
+       0.779,
+       1.02,
+       0.4
+      ],
+      [
+       0.777,
+       0.9,
+       0.35
+      ],
+      [
+       0.774,
+       0.8,
+       0.3
+      ],
+      [
+       0.772,
+       0.73,
+       0.1
+      ]
+     ],
+     "size": 2,
+     "load": 0.16
+    },
+    {
+     "type": "stroke",
+     "label": "pale stalk behind",
+     "pts": [
+      [
+       0.806,
+       1.02,
+       0.4
+      ],
+      [
+       0.803,
+       0.9,
+       0.35
+      ],
+      [
+       0.8,
+       0.8,
+       0.25
+      ],
+      [
+       0.798,
+       0.76,
+       0.1
+      ]
+     ],
+     "size": 2,
+     "load": 0.16
+    }
+   ],
+   "created": "2026-09-30T17:01:50.108Z",
+   "clock": 11.6,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0007.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0007-dry.png",
+   "preview": {
+    "seconds": 6.9,
+    "dry": true
+   },
+   "note": "same batch: blobs",
+   "score": {
+    "error": 7.72,
+    "error_coarse": 7.57,
+    "too_dark": 0.03,
+    "too_light": 5.31,
+    "colour": 0,
+    "ssim": 0.789,
+    "matched": 0.797,
+    "whites_lost": 0.006,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.6,
+      "dL": 20.4,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 94.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.56,
+    "delta": {
+     "score": -0.04,
+     "error": -0.02,
+     "error_coarse": -0.03,
+     "too_dark": 0,
+     "too_light": -0.02,
+     "colour": 0,
+     "ssim": -0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0007-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0007-eval.png",
+   "rejected": true
+  },
+  "cp-0008": {
+   "parent": "cp-0005",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "pale far reed head",
+     "pts": [
+      [
+       0.874,
+       0.272,
+       0.3
+      ],
+      [
+       0.882,
+       0.3,
+       0.6
+      ],
+      [
+       0.892,
+       0.332,
+       0.58
+      ],
+      [
+       0.9,
+       0.362,
+       0.15
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.18,
+     "water": 0.4,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "pale far reed stalk",
+     "pts": [
+      [
+       0.9,
+       0.358,
+       0.4
+      ],
+      [
+       0.912,
+       0.45,
+       0.45
+      ],
+      [
+       0.926,
+       0.56,
+       0.45
+      ],
+      [
+       0.937,
+       0.67,
+       0.4
+      ],
+      [
+       0.942,
+       0.74,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.25,
+     "water": 0.4,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "pale reed tuft",
+     "pts": [
+      [
+       0.848,
+       0.334,
+       0.2
+      ],
+      [
+       0.862,
+       0.336,
+       0.55
+      ],
+      [
+       0.884,
+       0.342,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.18,
+     "water": 0.4,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "thin pale stalk",
+     "pts": [
+      [
+       0.893,
+       0.372,
+       0.45
+      ],
+      [
+       0.891,
+       0.5,
+       0.5
+      ],
+      [
+       0.889,
+       0.62,
+       0.5
+      ],
+      [
+       0.888,
+       0.7,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.25,
+     "water": 0.4,
+     "speed": 300
+    },
+    {
+     "type": "dab",
+     "label": "pale leaf",
+     "at": [
+      0.934,
+      0.53
+     ],
+     "angle": -58,
+     "length": 48,
+     "press": 0.55,
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.16,
+     "water": 0.4,
+     "speed": 560
+    },
+    {
+     "type": "stroke",
+     "label": "pale reed head",
+     "pts": [
+      [
+       0.797,
+       0.378,
+       0.3
+      ],
+      [
+       0.806,
+       0.404,
+       0.58
+      ],
+      [
+       0.815,
+       0.43,
+       0.55
+      ],
+      [
+       0.823,
+       0.456,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.16,
+     "water": 0.4,
+     "speed": 300
+    }
+   ],
+   "created": "2026-09-30T17:03:00.204Z",
+   "clock": 10.98,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0008.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0008-dry.png",
+   "preview": {
+    "seconds": 7,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 7.72,
+    "error_coarse": 7.55,
+    "too_dark": 0.03,
+    "too_light": 5.31,
+    "colour": 0,
+    "ssim": 0.787,
+    "matched": 0.798,
+    "whites_lost": 0.006,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.6,
+      "dL": 20.4,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 94.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.55,
+    "delta": {
+     "score": -0.02,
+     "error": -0.02,
+     "error_coarse": -0.1,
+     "too_dark": 0.03,
+     "too_light": -0.04,
+     "colour": 0,
+     "ssim": -0.006,
+     "whites_lost": 0.005
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0008-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0008-eval.png"
+  },
+  "cp-0009": {
+   "parent": "cp-0008",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "pale stalk behind",
+     "pts": [
+      [
+       0.779,
+       1.02,
+       0.5
+      ],
+      [
+       0.777,
+       0.9,
+       0.5
+      ],
+      [
+       0.774,
+       0.8,
+       0.45
+      ],
+      [
+       0.772,
+       0.72,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.25,
+     "water": 0.4,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "pale stalk behind",
+     "pts": [
+      [
+       0.806,
+       1.02,
+       0.5
+      ],
+      [
+       0.803,
+       0.9,
+       0.5
+      ],
+      [
+       0.8,
+       0.8,
+       0.45
+      ],
+      [
+       0.798,
+       0.75,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.25,
+     "water": 0.4,
+     "speed": 300
+    },
+    {
+     "type": "dab",
+     "label": "pale leaf right",
+     "at": [
+      0.955,
+      0.51
+     ],
+     "angle": -70,
+     "length": 36,
+     "press": 0.5,
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.14,
+     "water": 0.4,
+     "speed": 560
+    }
+   ],
+   "created": "2026-09-30T17:03:03.439Z",
+   "clock": 11.5,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0009.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0009-dry.png",
+   "preview": {
+    "seconds": 7,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 7.66,
+    "error_coarse": 7.43,
+    "too_dark": 0.04,
+    "too_light": 5.24,
+    "colour": 0,
+    "ssim": 0.784,
+    "matched": 0.799,
+    "whites_lost": 0.008,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 19.3,
+      "dL": 19.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     }
+    ],
+    "score": 11.46,
+    "delta": {
+     "score": -0.09,
+     "error": -0.06,
+     "error_coarse": -0.12,
+     "too_dark": 0.01,
+     "too_light": -0.07,
+     "colour": 0,
+     "ssim": -0.003,
+     "whites_lost": 0.002
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0009-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0009-eval.png"
+  },
+  "cp-0010": {
+   "parent": "cp-0009",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "heron neck",
+     "pts": [
+      [
+       0.392,
+       0.172,
+       0.45
+      ],
+      [
+       0.391,
+       0.2,
+       0.62
+      ],
+      [
+       0.395,
+       0.225,
+       0.6
+      ],
+      [
+       0.41,
+       0.248,
+       0.62
+      ],
+      [
+       0.428,
+       0.272,
+       0.66
+      ],
+      [
+       0.435,
+       0.305,
+       0.68
+      ],
+      [
+       0.432,
+       0.345,
+       0.55
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.45,
+     "speed": 170
+    },
+    {
+     "type": "stroke",
+     "label": "breast",
+     "pts": [
+      [
+       0.428,
+       0.3,
+       0.5
+      ],
+      [
+       0.43,
+       0.34,
+       0.75
+      ],
+      [
+       0.428,
+       0.38,
+       0.72
+      ],
+      [
+       0.424,
+       0.42,
+       0.4
+      ]
+     ],
+     "brush": "fude",
+     "size": 6,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.45,
+     "speed": 180
+    },
+    {
+     "type": "stroke",
+     "label": "neck plume",
+     "pts": [
+      [
+       0.422,
+       0.37,
+       0.4
+      ],
+      [
+       0.42,
+       0.43,
+       0.5
+      ],
+      [
+       0.416,
+       0.5,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.3,
+     "speed": 420
+    },
+    {
+     "type": "stroke",
+     "label": "neck plume",
+     "pts": [
+      [
+       0.44,
+       0.37,
+       0.4
+      ],
+      [
+       0.44,
+       0.44,
+       0.45
+      ],
+      [
+       0.436,
+       0.52,
+       0.15
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.3,
+     "speed": 440
+    },
+    {
+     "type": "stroke",
+     "label": "neck plume",
+     "pts": [
+      [
+       0.405,
+       0.4,
+       0.35
+      ],
+      [
+       0.402,
+       0.45,
+       0.4
+      ],
+      [
+       0.398,
+       0.5,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.3,
+     "speed": 440
+    },
+    {
+     "type": "stroke",
+     "label": "head grey",
+     "pts": [
+      [
+       0.378,
+       0.168,
+       0.4
+      ],
+      [
+       0.39,
+       0.172,
+       0.6
+      ],
+      [
+       0.405,
+       0.176,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.45,
+     "speed": 200
+    }
+   ],
+   "created": "2026-09-30T17:03:43.471Z",
+   "clock": 12.22,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0010.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0010-dry.png",
+   "preview": {
+    "seconds": 6.8,
+    "dry": true
+   },
+   "note": "neck twice too thick and fills the pale throat; plumes came out as dots",
+   "score": {
+    "error": 7.45,
+    "error_coarse": 7.1,
+    "too_dark": 0.1,
+    "too_light": 4.97,
+    "colour": 0,
+    "ssim": 0.786,
+    "matched": 0.802,
+    "whites_lost": 0.013,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 17.8,
+      "dL": 14,
+      "kind": "too light",
+      "target_L": 79.5,
+      "render_L": 93.5
+     }
+    ],
+    "score": 11.2,
+    "delta": {
+     "score": -0.26,
+     "error": -0.21,
+     "error_coarse": -0.33,
+     "too_dark": 0.06,
+     "too_light": -0.27,
+     "colour": 0,
+     "ssim": 0.002,
+     "whites_lost": 0.005
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0010-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0010-eval.png",
+   "rejected": true
+  },
+  "cp-0011": {
+   "parent": "cp-0009",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "heron neck (thinner)",
+     "pts": [
+      [
+       0.395,
+       0.176,
+       0.4
+      ],
+      [
+       0.393,
+       0.205,
+       0.52
+      ],
+      [
+       0.4,
+       0.232,
+       0.5
+      ],
+      [
+       0.418,
+       0.256,
+       0.52
+      ],
+      [
+       0.434,
+       0.285,
+       0.56
+      ],
+      [
+       0.44,
+       0.318,
+       0.58
+      ],
+      [
+       0.437,
+       0.35,
+       0.45
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 160
+    },
+    {
+     "type": "stroke",
+     "label": "breast",
+     "pts": [
+      [
+       0.432,
+       0.325,
+       0.45
+      ],
+      [
+       0.43,
+       0.36,
+       0.62
+      ],
+      [
+       0.426,
+       0.4,
+       0.55
+      ],
+      [
+       0.422,
+       0.43,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.45,
+     "speed": 180
+    },
+    {
+     "type": "stroke",
+     "label": "neck plume",
+     "pts": [
+      [
+       0.424,
+       0.38,
+       0.5
+      ],
+      [
+       0.421,
+       0.44,
+       0.6
+      ],
+      [
+       0.417,
+       0.5,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.3,
+     "speed": 420
+    },
+    {
+     "type": "stroke",
+     "label": "neck plume",
+     "pts": [
+      [
+       0.443,
+       0.37,
+       0.5
+      ],
+      [
+       0.442,
+       0.44,
+       0.55
+      ],
+      [
+       0.437,
+       0.52,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.3,
+     "speed": 440
+    },
+    {
+     "type": "stroke",
+     "label": "neck plume",
+     "pts": [
+      [
+       0.407,
+       0.41,
+       0.45
+      ],
+      [
+       0.404,
+       0.46,
+       0.5
+      ],
+      [
+       0.4,
+       0.51,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.3,
+     "speed": 440
+    },
+    {
+     "type": "stroke",
+     "label": "head grey",
+     "pts": [
+      [
+       0.38,
+       0.17,
+       0.35
+      ],
+      [
+       0.39,
+       0.173,
+       0.5
+      ],
+      [
+       0.402,
+       0.178,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.2,
+     "water": 0.45,
+     "speed": 200
+    }
+   ],
+   "created": "2026-09-30T17:04:31.555Z",
+   "clock": 12.2,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0011.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0011-dry.png",
+   "preview": {
+    "seconds": 6.8,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 7.46,
+    "error_coarse": 7.21,
+    "too_dark": 0.05,
+    "too_light": 5.05,
+    "colour": 0,
+    "ssim": 0.787,
+    "matched": 0.802,
+    "whites_lost": 0.009,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 45.4,
+      "dL": 45,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 96.7
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.2,
+      "dL": 25,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 96.3
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 25.1,
+      "dL": 24.9,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 96.4
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 16.8,
+      "dL": 16.6,
+      "kind": "too light",
+      "target_L": 79.5,
+      "render_L": 96.1
+     }
+    ],
+    "score": 11.16,
+    "delta": {
+     "score": -0.3,
+     "error": -0.2,
+     "error_coarse": -0.22,
+     "too_dark": 0.01,
+     "too_light": -0.19,
+     "colour": 0,
+     "ssim": 0.003,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0011-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0011-eval.png"
+  },
+  "cp-0012": {
+   "parent": "cp-0011",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "back contour feathers",
+     "pts": [
+      [
+       0.365,
+       0.285,
+       0.4
+      ],
+      [
+       0.33,
+       0.295,
+       0.6
+      ],
+      [
+       0.29,
+       0.325,
+       0.65
+      ],
+      [
+       0.255,
+       0.38,
+       0.65
+      ],
+      [
+       0.23,
+       0.44,
+       0.6
+      ],
+      [
+       0.212,
+       0.51,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 6,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.15,
+     "water": 0.4,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "body mass",
+     "pts": [
+      [
+       0.372,
+       0.31,
+       0.5
+      ],
+      [
+       0.355,
+       0.36,
+       0.85
+      ],
+      [
+       0.335,
+       0.42,
+       0.9
+      ],
+      [
+       0.31,
+       0.49,
+       0.85
+      ],
+      [
+       0.285,
+       0.56,
+       0.7
+      ],
+      [
+       0.27,
+       0.6,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 9,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.25,
+     "water": 0.45,
+     "speed": 220
+    },
+    {
+     "type": "stroke",
+     "label": "inner body",
+     "pts": [
+      [
+       0.392,
+       0.345,
+       0.45
+      ],
+      [
+       0.382,
+       0.4,
+       0.75
+      ],
+      [
+       0.37,
+       0.46,
+       0.75
+      ],
+      [
+       0.355,
+       0.52,
+       0.5
+      ],
+      [
+       0.345,
+       0.55,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 7,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.24,
+     "water": 0.45,
+     "speed": 220
+    },
+    {
+     "type": "stroke",
+     "label": "left body",
+     "pts": [
+      [
+       0.315,
+       0.335,
+       0.45
+      ],
+      [
+       0.285,
+       0.39,
+       0.75
+      ],
+      [
+       0.26,
+       0.45,
+       0.8
+      ],
+      [
+       0.24,
+       0.52,
+       0.75
+      ],
+      [
+       0.226,
+       0.58,
+       0.4
+      ]
+     ],
+     "brush": "fude",
+     "size": 7,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 230
+    },
+    {
+     "type": "stroke",
+     "label": "loose back feathers",
+     "pts": [
+      [
+       0.3,
+       0.31,
+       0.45
+      ],
+      [
+       0.265,
+       0.35,
+       0.6
+      ],
+      [
+       0.235,
+       0.4,
+       0.6
+      ],
+      [
+       0.205,
+       0.46,
+       0.35
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.18,
+     "water": 0.3,
+     "speed": 450
+    },
+    {
+     "type": "stroke",
+     "label": "loose back feathers",
+     "pts": [
+      [
+       0.265,
+       0.36,
+       0.45
+      ],
+      [
+       0.235,
+       0.41,
+       0.6
+      ],
+      [
+       0.21,
+       0.47,
+       0.55
+      ],
+      [
+       0.19,
+       0.53,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.18,
+     "water": 0.3,
+     "speed": 450
+    }
+   ],
+   "created": "2026-09-30T17:05:06.445Z",
+   "clock": 13.53,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0012.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0012-dry.png",
+   "preview": {
+    "seconds": 6.7,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 6.37,
+    "error_coarse": 5.87,
+    "too_dark": 0.16,
+    "too_light": 3.85,
+    "colour": 0,
+    "ssim": 0.791,
+    "matched": 0.809,
+    "whites_lost": 0.016,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 23.1,
+      "dL": 23,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 94.2
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 18.8,
+      "dL": 18.6,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 90.1
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.3,
+      "dL": 12,
+      "kind": "too light",
+      "target_L": 51.7,
+      "render_L": 63.8
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14,
+      "dL": 8.4,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 86
+     }
+    ],
+    "score": 9.62,
+    "delta": {
+     "score": -1.54,
+     "error": -1.09,
+     "error_coarse": -1.34,
+     "too_dark": 0.11,
+     "too_light": -1.2,
+     "colour": 0,
+     "ssim": 0.004,
+     "whites_lost": 0.007
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0012-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0012-eval.png"
+  },
+  "cp-0013": {
+   "parent": "cp-0012",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "shoulder crescent",
+     "pts": [
+      [
+       0.298,
+       0.338,
+       0.4
+      ],
+      [
+       0.315,
+       0.31,
+       0.75
+      ],
+      [
+       0.34,
+       0.291,
+       0.85
+      ],
+      [
+       0.365,
+       0.285,
+       0.85
+      ],
+      [
+       0.385,
+       0.3,
+       0.7
+      ],
+      [
+       0.395,
+       0.326,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 6,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.6,
+     "water": 0.4,
+     "speed": 200
+    },
+    {
+     "type": "stroke",
+     "label": "wing edge",
+     "pts": [
+      [
+       0.37,
+       0.34,
+       0.45
+      ],
+      [
+       0.375,
+       0.38,
+       0.7
+      ],
+      [
+       0.379,
+       0.42,
+       0.65
+      ],
+      [
+       0.376,
+       0.46,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.4,
+     "speed": 200
+    },
+    {
+     "type": "stroke",
+     "label": "lower wing",
+     "pts": [
+      [
+       0.372,
+       0.47,
+       0.45
+      ],
+      [
+       0.35,
+       0.49,
+       0.8
+      ],
+      [
+       0.325,
+       0.51,
+       0.8
+      ],
+      [
+       0.3,
+       0.535,
+       0.7
+      ],
+      [
+       0.282,
+       0.56,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 6,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.4,
+     "speed": 220
+    },
+    {
+     "type": "stroke",
+     "label": "dark back feathers",
+     "pts": [
+      [
+       0.262,
+       0.41,
+       0.45
+      ],
+      [
+       0.245,
+       0.47,
+       0.8
+      ],
+      [
+       0.232,
+       0.53,
+       0.9
+      ],
+      [
+       0.222,
+       0.59,
+       0.9
+      ],
+      [
+       0.216,
+       0.645,
+       0.4
+      ]
+     ],
+     "brush": "fude",
+     "size": 7,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.6,
+     "water": 0.4,
+     "speed": 210
+    },
+    {
+     "type": "stroke",
+     "label": "back streak",
+     "pts": [
+      [
+       0.238,
+       0.42,
+       0.4
+      ],
+      [
+       0.215,
+       0.48,
+       0.6
+      ],
+      [
+       0.2,
+       0.54,
+       0.55
+      ],
+      [
+       0.19,
+       0.59,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "tail feather",
+     "pts": [
+      [
+       0.262,
+       0.5,
+       0.4
+      ],
+      [
+       0.254,
+       0.56,
+       0.65
+      ],
+      [
+       0.248,
+       0.61,
+       0.55
+      ],
+      [
+       0.245,
+       0.645,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.4,
+     "speed": 250
+    }
+   ],
+   "created": "2026-09-30T17:05:48.751Z",
+   "clock": 14.58,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0013.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0013-dry.png",
+   "preview": {
+    "seconds": 6.7,
+    "dry": true
+   },
+   "note": "darks painted into the still-wet body bled into one dark triangle: too_dark +0.91",
+   "score": {
+    "error": 6.49,
+    "error_coarse": 5.71,
+    "too_dark": 1.07,
+    "too_light": 3.03,
+    "colour": 0,
+    "ssim": 0.782,
+    "matched": 0.805,
+    "whites_lost": 0.023,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 34.5,
+      "dL": -25.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 53.9
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 22,
+      "dL": -7.3,
+      "kind": "too dark",
+      "target_L": 51.7,
+      "render_L": 44.5
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14.5,
+      "dL": 7.3,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.9
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     }
+    ],
+    "score": 11.49,
+    "delta": {
+     "score": 1.87,
+     "error": 0.12,
+     "error_coarse": -0.16,
+     "too_dark": 0.91,
+     "too_light": -0.82,
+     "colour": 0,
+     "ssim": -0.009,
+     "whites_lost": 0.007
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0013-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0013-eval.png",
+   "rejected": true
+  },
+  "cp-0014": {
+   "parent": "cp-0013",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "mid-body dark",
+     "pts": [
+      [
+       0.292,
+       0.44,
+       0.35
+      ],
+      [
+       0.278,
+       0.49,
+       0.6
+      ],
+      [
+       0.265,
+       0.55,
+       0.55
+      ],
+      [
+       0.258,
+       0.59,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.42,
+     "water": 0.4,
+     "speed": 250
+    }
+   ],
+   "created": "2026-09-30T17:05:50.471Z",
+   "clock": 14.73,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0014.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0014-dry.png",
+   "preview": {
+    "seconds": 6.5,
+    "dry": true
+   },
+   "note": "same wet body",
+   "score": {
+    "error": 6.44,
+    "error_coarse": 5.66,
+    "too_dark": 1.08,
+    "too_light": 2.97,
+    "colour": 0,
+    "ssim": 0.782,
+    "matched": 0.806,
+    "whites_lost": 0.023,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 34.5,
+      "dL": -25.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 53.9
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 19.7,
+      "dL": -10,
+      "kind": "too dark",
+      "target_L": 51.7,
+      "render_L": 41.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14.5,
+      "dL": 7.3,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.9
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     }
+    ],
+    "score": 11.43,
+    "delta": {
+     "score": -0.06,
+     "error": -0.05,
+     "error_coarse": -0.05,
+     "too_dark": 0.01,
+     "too_light": -0.06,
+     "colour": 0,
+     "ssim": 0,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0014-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0014-eval.png",
+   "rejected": true
+  },
+  "cp-0015": {
+   "parent": "cp-0012",
+   "actions": [
+    {
+     "type": "dry",
+     "label": "dry the body first"
+    },
+    {
+     "type": "stroke",
+     "label": "shoulder crescent",
+     "pts": [
+      [
+       0.298,
+       0.338,
+       0.4
+      ],
+      [
+       0.315,
+       0.31,
+       0.75
+      ],
+      [
+       0.34,
+       0.291,
+       0.85
+      ],
+      [
+       0.365,
+       0.285,
+       0.85
+      ],
+      [
+       0.385,
+       0.3,
+       0.7
+      ],
+      [
+       0.395,
+       0.326,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.6,
+     "water": 0.35,
+     "speed": 200
+    },
+    {
+     "type": "stroke",
+     "label": "wing edge",
+     "pts": [
+      [
+       0.37,
+       0.34,
+       0.45
+      ],
+      [
+       0.375,
+       0.38,
+       0.7
+      ],
+      [
+       0.379,
+       0.42,
+       0.65
+      ],
+      [
+       0.376,
+       0.46,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 200
+    },
+    {
+     "type": "stroke",
+     "label": "lower wing",
+     "pts": [
+      [
+       0.372,
+       0.47,
+       0.45
+      ],
+      [
+       0.35,
+       0.49,
+       0.8
+      ],
+      [
+       0.325,
+       0.51,
+       0.8
+      ],
+      [
+       0.3,
+       0.535,
+       0.7
+      ],
+      [
+       0.282,
+       0.56,
+       0.3
+      ]
+     ],
+     "brush": "fude",
+     "size": 6,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 220
+    },
+    {
+     "type": "stroke",
+     "label": "dark back feathers",
+     "pts": [
+      [
+       0.262,
+       0.41,
+       0.45
+      ],
+      [
+       0.245,
+       0.47,
+       0.8
+      ],
+      [
+       0.232,
+       0.53,
+       0.9
+      ],
+      [
+       0.222,
+       0.59,
+       0.9
+      ],
+      [
+       0.216,
+       0.645,
+       0.4
+      ]
+     ],
+     "brush": "fude",
+     "size": 7,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.6,
+     "water": 0.35,
+     "speed": 210
+    },
+    {
+     "type": "stroke",
+     "label": "back streak",
+     "pts": [
+      [
+       0.238,
+       0.42,
+       0.4
+      ],
+      [
+       0.215,
+       0.48,
+       0.6
+      ],
+      [
+       0.2,
+       0.54,
+       0.55
+      ],
+      [
+       0.19,
+       0.59,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 380
+    }
+   ],
+   "created": "2026-09-30T17:06:12.334Z",
+   "clock": 21.15,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0015.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0015-dry.png",
+   "preview": {
+    "seconds": 2.9,
+    "dry": true
+   },
+   "note": "dry paper this time, but the darks are twice as wide as the target and merge into a wedge",
+   "score": {
+    "error": 6.55,
+    "error_coarse": 5.8,
+    "too_dark": 1.1,
+    "too_light": 3.07,
+    "colour": 0,
+    "ssim": 0.784,
+    "matched": 0.806,
+    "whites_lost": 0.021,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 31,
+      "dL": -22.8,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 56.7
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 25.8,
+      "dL": -10.9,
+      "kind": "too dark",
+      "target_L": 51.7,
+      "render_L": 40.9
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14.5,
+      "dL": 7,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.7
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 14.1,
+      "dL": 12.4,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 83.9
+     }
+    ],
+    "score": 11.65,
+    "delta": {
+     "score": 2.03,
+     "error": 0.18,
+     "error_coarse": -0.07,
+     "too_dark": 0.94,
+     "too_light": -0.78,
+     "colour": 0,
+     "ssim": -0.007,
+     "whites_lost": 0.005
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0015-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0015-eval.png",
+   "rejected": true
+  },
+  "cp-0016": {
+   "parent": "cp-0015",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "tail feather",
+     "pts": [
+      [
+       0.262,
+       0.5,
+       0.4
+      ],
+      [
+       0.254,
+       0.56,
+       0.65
+      ],
+      [
+       0.248,
+       0.61,
+       0.55
+      ],
+      [
+       0.245,
+       0.645,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 250
+    },
+    {
+     "type": "stroke",
+     "label": "mid-body dark",
+     "pts": [
+      [
+       0.292,
+       0.44,
+       0.35
+      ],
+      [
+       0.278,
+       0.49,
+       0.6
+      ],
+      [
+       0.265,
+       0.55,
+       0.55
+      ],
+      [
+       0.258,
+       0.59,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 5,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.42,
+     "water": 0.35,
+     "speed": 250
+    }
+   ],
+   "created": "2026-09-30T17:06:14.127Z",
+   "clock": 21.45,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0016.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0016-dry.png",
+   "preview": {
+    "seconds": 2.8,
+    "dry": true
+   },
+   "note": "same",
+   "score": {
+    "error": 6.45,
+    "error_coarse": 5.71,
+    "too_dark": 1.11,
+    "too_light": 2.95,
+    "colour": 0,
+    "ssim": 0.785,
+    "matched": 0.809,
+    "whites_lost": 0.021,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 31,
+      "dL": -22.9,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 56.6
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 23.4,
+      "dL": -14.2,
+      "kind": "too dark",
+      "target_L": 51.7,
+      "render_L": 37.6
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14.5,
+      "dL": 7,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.7
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     }
+    ],
+    "score": 11.53,
+    "delta": {
+     "score": -0.12,
+     "error": -0.1,
+     "error_coarse": -0.09,
+     "too_dark": 0.01,
+     "too_light": -0.12,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0016-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0016-eval.png",
+   "rejected": true
+  },
+  "cp-0017": {
+   "parent": "cp-0012",
+   "actions": [
+    {
+     "type": "dry",
+     "label": "dry the body first"
+    },
+    {
+     "type": "stroke",
+     "label": "shoulder crescent",
+     "pts": [
+      [
+       0.292,
+       0.345,
+       0.3
+      ],
+      [
+       0.31,
+       0.318,
+       0.7
+      ],
+      [
+       0.335,
+       0.297,
+       0.8
+      ],
+      [
+       0.362,
+       0.288,
+       0.8
+      ],
+      [
+       0.385,
+       0.302,
+       0.65
+      ],
+      [
+       0.4,
+       0.33,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "wing edge",
+     "pts": [
+      [
+       0.368,
+       0.335,
+       0.3
+      ],
+      [
+       0.374,
+       0.37,
+       0.65
+      ],
+      [
+       0.379,
+       0.41,
+       0.6
+      ],
+      [
+       0.377,
+       0.445,
+       0.4
+      ],
+      [
+       0.372,
+       0.47,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 230
+    },
+    {
+     "type": "stroke",
+     "label": "lower wing",
+     "pts": [
+      [
+       0.378,
+       0.465,
+       0.3
+      ],
+      [
+       0.352,
+       0.487,
+       0.7
+      ],
+      [
+       0.325,
+       0.51,
+       0.7
+      ],
+      [
+       0.3,
+       0.535,
+       0.55
+      ],
+      [
+       0.28,
+       0.562,
+       0.3
+      ],
+      [
+       0.27,
+       0.575,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.48,
+     "water": 0.35,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "dark back feathers",
+     "pts": [
+      [
+       0.264,
+       0.4,
+       0.3
+      ],
+      [
+       0.246,
+       0.47,
+       0.65
+      ],
+      [
+       0.233,
+       0.54,
+       0.8
+      ],
+      [
+       0.223,
+       0.6,
+       0.8
+      ],
+      [
+       0.217,
+       0.645,
+       0.45
+      ],
+      [
+       0.214,
+       0.67,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 4,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.58,
+     "water": 0.35,
+     "speed": 230
+    },
+    {
+     "type": "stroke",
+     "label": "back streak",
+     "pts": [
+      [
+       0.24,
+       0.42,
+       0.35
+      ],
+      [
+       0.216,
+       0.485,
+       0.55
+      ],
+      [
+       0.2,
+       0.545,
+       0.5
+      ],
+      [
+       0.19,
+       0.59,
+       0.25
+      ],
+      [
+       0.186,
+       0.61,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.3,
+     "speed": 380
+    }
+   ],
+   "created": "2026-09-30T17:07:31.516Z",
+   "clock": 21.17,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0017.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0017-dry.png",
+   "preview": {
+    "seconds": 2.4,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 6.22,
+    "error_coarse": 5.54,
+    "too_dark": 0.48,
+    "too_light": 3.37,
+    "colour": 0,
+    "ssim": 0.787,
+    "matched": 0.808,
+    "whites_lost": 0.016,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 19.1,
+      "dL": 1.9,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 53.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 17.8,
+      "dL": -6.4,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 73.1
+     },
+     {
+      "cell": "r3c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 16.6,
+      "dL": 16.1,
+      "kind": "too light",
+      "target_L": 71.5,
+      "render_L": 87.7
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14,
+      "dL": 8.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 85.7
+     }
+    ],
+    "score": 9.95,
+    "delta": {
+     "score": 0.33,
+     "error": -0.15,
+     "error_coarse": -0.33,
+     "too_dark": 0.32,
+     "too_light": -0.48,
+     "colour": 0,
+     "ssim": -0.004,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0017-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0017-eval.png"
+  },
+  "cp-0018": {
+   "parent": "cp-0017",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "tail feather",
+     "pts": [
+      [
+       0.264,
+       0.505,
+       0.3
+      ],
+      [
+       0.256,
+       0.56,
+       0.6
+      ],
+      [
+       0.25,
+       0.61,
+       0.55
+      ],
+      [
+       0.246,
+       0.645,
+       0.3
+      ],
+      [
+       0.244,
+       0.665,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.52,
+     "water": 0.35,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "mid-body dark",
+     "pts": [
+      [
+       0.293,
+       0.435,
+       0.3
+      ],
+      [
+       0.279,
+       0.49,
+       0.5
+      ],
+      [
+       0.267,
+       0.55,
+       0.45
+      ],
+      [
+       0.26,
+       0.59,
+       0.25
+      ],
+      [
+       0.257,
+       0.61,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.36,
+     "water": 0.35,
+     "speed": 260
+    }
+   ],
+   "created": "2026-09-30T17:07:32.940Z",
+   "clock": 21.48,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0018.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0018-dry.png",
+   "preview": {
+    "seconds": 2.3,
+    "dry": true
+   },
+   "note": "third try at the darks: best of three (crescent still a little low and thick) — continuing",
+   "score": {
+    "error": 6.1,
+    "error_coarse": 5.41,
+    "too_dark": 0.49,
+    "too_light": 3.25,
+    "colour": 0,
+    "ssim": 0.789,
+    "matched": 0.81,
+    "whites_lost": 0.016,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 17.8,
+      "dL": -6.4,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 73.1
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.6,
+      "dL": 0.5,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.2
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14,
+      "dL": 8.1,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 85.7
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     }
+    ],
+    "score": 9.79,
+    "delta": {
+     "score": -0.16,
+     "error": -0.12,
+     "error_coarse": -0.13,
+     "too_dark": 0.01,
+     "too_light": -0.12,
+     "colour": 0,
+     "ssim": 0.002,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0018-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0018-eval.png"
+  },
+  "cp-0019": {
+   "parent": "cp-0018",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "black cap",
+     "pts": [
+      [
+       0.362,
+       0.16,
+       0.3
+      ],
+      [
+       0.375,
+       0.148,
+       0.7
+      ],
+      [
+       0.395,
+       0.138,
+       0.8
+      ],
+      [
+       0.42,
+       0.136,
+       0.8
+      ],
+      [
+       0.442,
+       0.143,
+       0.55
+      ],
+      [
+       0.458,
+       0.152,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.58,
+     "water": 0.35,
+     "speed": 230
+    },
+    {
+     "type": "stroke",
+     "label": "beak",
+     "pts": [
+      [
+       0.438,
+       0.152,
+       0.35
+      ],
+      [
+       0.46,
+       0.16,
+       0.7
+      ],
+      [
+       0.49,
+       0.172,
+       0.6
+      ],
+      [
+       0.52,
+       0.19,
+       0.45
+      ],
+      [
+       0.548,
+       0.208,
+       0.25
+      ],
+      [
+       0.566,
+       0.222,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 320
+    },
+    {
+     "type": "stroke",
+     "label": "lower beak",
+     "pts": [
+      [
+       0.44,
+       0.166,
+       0.3
+      ],
+      [
+       0.47,
+       0.176,
+       0.55
+      ],
+      [
+       0.505,
+       0.192,
+       0.45
+      ],
+      [
+       0.54,
+       0.212,
+       0.15
+      ],
+      [
+       0.556,
+       0.222,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    },
+    {
+     "type": "stroke",
+     "label": "crest plume",
+     "pts": [
+      [
+       0.372,
+       0.156,
+       0.4
+      ],
+      [
+       0.35,
+       0.168,
+       0.6
+      ],
+      [
+       0.325,
+       0.186,
+       0.55
+      ],
+      [
+       0.303,
+       0.207,
+       0.35
+      ],
+      [
+       0.288,
+       0.226,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 360
+    },
+    {
+     "type": "stroke",
+     "label": "crest plume",
+     "pts": [
+      [
+       0.368,
+       0.162,
+       0.35
+      ],
+      [
+       0.35,
+       0.172,
+       0.5
+      ],
+      [
+       0.33,
+       0.186,
+       0.3
+      ],
+      [
+       0.318,
+       0.195,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 360
+    },
+    {
+     "type": "stroke",
+     "label": "face",
+     "pts": [
+      [
+       0.372,
+       0.162,
+       0.3
+      ],
+      [
+       0.382,
+       0.166,
+       0.55
+      ],
+      [
+       0.392,
+       0.17,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 200
+    }
+   ],
+   "created": "2026-09-30T17:08:09.597Z",
+   "clock": 22.08,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0019.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0019-dry.png",
+   "preview": {
+    "seconds": 2.4,
+    "dry": true
+   },
+   "note": "cap pressed to a fat blob (belly splays ~3x at pressure 0.8), beak broke off short",
+   "score": {
+    "error": 6.16,
+    "error_coarse": 5.31,
+    "too_dark": 0.68,
+    "too_light": 3.11,
+    "colour": 0,
+    "ssim": 0.785,
+    "matched": 0.806,
+    "whites_lost": 0.022,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18.2,
+      "dL": -7.9,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 71.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.6,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.2
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 10.17,
+    "delta": {
+     "score": 0.38,
+     "error": 0.06,
+     "error_coarse": -0.1,
+     "too_dark": 0.19,
+     "too_light": -0.14,
+     "colour": 0,
+     "ssim": -0.004,
+     "whites_lost": 0.006
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0019-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0019-eval.png",
+   "rejected": true
+  },
+  "cp-0020": {
+   "parent": "cp-0018",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "black cap (lighter hand)",
+     "pts": [
+      [
+       0.364,
+       0.158,
+       0.3
+      ],
+      [
+       0.378,
+       0.147,
+       0.5
+      ],
+      [
+       0.398,
+       0.139,
+       0.55
+      ],
+      [
+       0.42,
+       0.137,
+       0.55
+      ],
+      [
+       0.442,
+       0.143,
+       0.42
+      ],
+      [
+       0.458,
+       0.152,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.58,
+     "water": 0.35,
+     "speed": 230
+    },
+    {
+     "type": "stroke",
+     "label": "beak",
+     "pts": [
+      [
+       0.438,
+       0.153,
+       0.38
+      ],
+      [
+       0.462,
+       0.161,
+       0.5
+      ],
+      [
+       0.492,
+       0.174,
+       0.48
+      ],
+      [
+       0.522,
+       0.191,
+       0.42
+      ],
+      [
+       0.548,
+       0.207,
+       0.36
+      ],
+      [
+       0.562,
+       0.217,
+       0.25
+      ],
+      [
+       0.572,
+       0.225,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "lower beak",
+     "pts": [
+      [
+       0.442,
+       0.167,
+       0.35
+      ],
+      [
+       0.472,
+       0.178,
+       0.42
+      ],
+      [
+       0.505,
+       0.194,
+       0.4
+      ],
+      [
+       0.535,
+       0.21,
+       0.32
+      ],
+      [
+       0.555,
+       0.221,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "crest plume",
+     "pts": [
+      [
+       0.372,
+       0.157,
+       0.4
+      ],
+      [
+       0.35,
+       0.169,
+       0.5
+      ],
+      [
+       0.325,
+       0.186,
+       0.48
+      ],
+      [
+       0.303,
+       0.206,
+       0.38
+      ],
+      [
+       0.29,
+       0.222,
+       0.25
+      ],
+      [
+       0.28,
+       0.232,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 340
+    },
+    {
+     "type": "stroke",
+     "label": "crest plume",
+     "pts": [
+      [
+       0.368,
+       0.162,
+       0.35
+      ],
+      [
+       0.35,
+       0.173,
+       0.42
+      ],
+      [
+       0.33,
+       0.187,
+       0.35
+      ],
+      [
+       0.318,
+       0.196,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 340
+    },
+    {
+     "type": "stroke",
+     "label": "face",
+     "pts": [
+      [
+       0.374,
+       0.163,
+       0.3
+      ],
+      [
+       0.383,
+       0.166,
+       0.42
+      ],
+      [
+       0.392,
+       0.17,
+       0.2
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 200
+    }
+   ],
+   "created": "2026-09-30T17:08:46.720Z",
+   "clock": 22.1,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0020.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0020-dry.png",
+   "preview": {
+    "seconds": 2.4,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 6.06,
+    "error_coarse": 5.26,
+    "too_dark": 0.56,
+    "too_light": 3.13,
+    "colour": 0,
+    "ssim": 0.788,
+    "matched": 0.808,
+    "whites_lost": 0.02,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18.1,
+      "dL": -7.5,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.6,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.2
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.81,
+    "delta": {
+     "score": 0.02,
+     "error": -0.04,
+     "error_coarse": -0.15,
+     "too_dark": 0.07,
+     "too_light": -0.12,
+     "colour": 0,
+     "ssim": -0.001,
+     "whites_lost": 0.004
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0020-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0020-eval.png"
+  },
+  "cp-0021": {
+   "parent": "cp-0020",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "beak base",
+     "pts": [
+      [
+       0.43,
+       0.149,
+       0.35
+      ],
+      [
+       0.446,
+       0.154,
+       0.45
+      ],
+      [
+       0.462,
+       0.161,
+       0.4
+      ],
+      [
+       0.47,
+       0.165,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 220
+    },
+    {
+     "type": "stroke",
+     "label": "leg",
+     "pts": [
+      [
+       0.311,
+       0.555,
+       0.4
+      ],
+      [
+       0.31,
+       0.59,
+       0.5
+      ],
+      [
+       0.308,
+       0.625,
+       0.5
+      ],
+      [
+       0.311,
+       0.66,
+       0.45
+      ],
+      [
+       0.314,
+       0.7,
+       0.45
+      ],
+      [
+       0.316,
+       0.745,
+       0.35
+      ],
+      [
+       0.317,
+       0.76,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.45,
+     "water": 0.35,
+     "speed": 200
+    },
+    {
+     "type": "dab",
+     "label": "knee",
+     "at": [
+      0.307,
+      0.605
+     ],
+     "angle": 90,
+     "length": 14,
+     "press": 0.5,
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 250
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.296,
+       0.768,
+       0.3
+      ],
+      [
+       0.314,
+       0.77,
+       0.45
+      ],
+      [
+       0.332,
+       0.768,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.4,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.29,
+       0.786,
+       0.3
+      ],
+      [
+       0.314,
+       0.788,
+       0.45
+      ],
+      [
+       0.338,
+       0.786,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.4,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.294,
+       0.803,
+       0.3
+      ],
+      [
+       0.314,
+       0.805,
+       0.45
+      ],
+      [
+       0.334,
+       0.803,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.4,
+     "speed": 260
+    }
+   ],
+   "created": "2026-09-30T17:09:16.727Z",
+   "clock": 22.65,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0021.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0021-dry.png",
+   "preview": {
+    "seconds": 2.4,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 6.02,
+    "error_coarse": 5.22,
+    "too_dark": 0.56,
+    "too_light": 3.09,
+    "colour": 0,
+    "ssim": 0.791,
+    "matched": 0.809,
+    "whites_lost": 0.02,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18.1,
+      "dL": -7.5,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.2
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.75,
+    "delta": {
+     "score": -0.06,
+     "error": -0.04,
+     "error_coarse": -0.04,
+     "too_dark": 0,
+     "too_light": -0.04,
+     "colour": 0,
+     "ssim": 0.003,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0021-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0021-eval.png"
+  },
+  "cp-0022": {
+   "parent": "cp-0021",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.298,
+       0.82,
+       0.3
+      ],
+      [
+       0.314,
+       0.822,
+       0.45
+      ],
+      [
+       0.33,
+       0.82,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.4,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.268,
+       0.845,
+       0.3
+      ],
+      [
+       0.309,
+       0.847,
+       0.45
+      ],
+      [
+       0.35,
+       0.845,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.12,
+     "water": 0.45,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.275,
+       0.866,
+       0.3
+      ],
+      [
+       0.31,
+       0.868,
+       0.45
+      ],
+      [
+       0.345,
+       0.866,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.12,
+     "water": 0.45,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.28,
+       0.887,
+       0.3
+      ],
+      [
+       0.31000000000000005,
+       0.889,
+       0.45
+      ],
+      [
+       0.34,
+       0.887,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.12,
+     "water": 0.45,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.285,
+       0.907,
+       0.3
+      ],
+      [
+       0.31,
+       0.909,
+       0.45
+      ],
+      [
+       0.335,
+       0.907,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.12,
+     "water": 0.45,
+     "speed": 300
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.29,
+       0.928,
+       0.3
+      ],
+      [
+       0.31,
+       0.93,
+       0.45
+      ],
+      [
+       0.33,
+       0.928,
+       0.12
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.12,
+     "water": 0.45,
+     "speed": 300
+    }
+   ],
+   "created": "2026-09-30T17:09:18.171Z",
+   "clock": 23.07,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0022.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0022-dry.png",
+   "preview": {
+    "seconds": 2.2,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 6.01,
+    "error_coarse": 5.21,
+    "too_dark": 0.56,
+    "too_light": 3.09,
+    "colour": 0,
+    "ssim": 0.79,
+    "matched": 0.809,
+    "whites_lost": 0.02,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18.1,
+      "dL": -7.5,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.73,
+    "delta": {
+     "score": -0.02,
+     "error": -0.01,
+     "error_coarse": -0.01,
+     "too_dark": 0,
+     "too_light": 0,
+     "colour": 0,
+     "ssim": -0.001,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0022-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0022-eval.png"
+  },
+  "cp-0023": {
+   "parent": "cp-0022",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "leg, second pass",
+     "pts": [
+      [
+       0.311,
+       0.56,
+       0.45
+      ],
+      [
+       0.31,
+       0.595,
+       0.55
+      ],
+      [
+       0.309,
+       0.63,
+       0.55
+      ],
+      [
+       0.312,
+       0.67,
+       0.5
+      ],
+      [
+       0.315,
+       0.71,
+       0.5
+      ],
+      [
+       0.317,
+       0.75,
+       0.45
+      ],
+      [
+       0.318,
+       0.775,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 190
+    },
+    {
+     "type": "dab",
+     "label": "knee",
+     "at": [
+      0.307,
+      0.6
+     ],
+     "angle": 90,
+     "length": 16,
+     "press": 0.7,
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 220
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.294,
+       0.772,
+       0.45
+      ],
+      [
+       0.314,
+       0.774,
+       0.6
+      ],
+      [
+       0.334,
+       0.772,
+       0.35
+      ],
+      [
+       0.342,
+       0.772,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.288,
+       0.79,
+       0.45
+      ],
+      [
+       0.314,
+       0.792,
+       0.6
+      ],
+      [
+       0.34,
+       0.79,
+       0.35
+      ],
+      [
+       0.34800000000000003,
+       0.79,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.292,
+       0.806,
+       0.45
+      ],
+      [
+       0.314,
+       0.808,
+       0.6
+      ],
+      [
+       0.336,
+       0.806,
+       0.35
+      ],
+      [
+       0.34400000000000003,
+       0.806,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.296,
+       0.822,
+       0.45
+      ],
+      [
+       0.314,
+       0.824,
+       0.6
+      ],
+      [
+       0.332,
+       0.822,
+       0.35
+      ],
+      [
+       0.34,
+       0.822,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    }
+   ],
+   "created": "2026-09-30T17:09:50.842Z",
+   "clock": 23.7,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0023.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0023-dry.png",
+   "preview": {
+    "seconds": 2.3,
+    "dry": true
+   },
+   "note": "knee dab thickened the top of the leg into a carrot",
+   "score": {
+    "error": 5.98,
+    "error_coarse": 5.08,
+    "too_dark": 0.6,
+    "too_light": 3.01,
+    "colour": 0,
+    "ssim": 0.791,
+    "matched": 0.81,
+    "whites_lost": 0.021,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.72,
+    "delta": {
+     "score": -0.01,
+     "error": -0.03,
+     "error_coarse": -0.13,
+     "too_dark": 0.04,
+     "too_light": -0.08,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0023-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0023-eval.png",
+   "rejected": true
+  },
+  "cp-0024": {
+   "parent": "cp-0023",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.265,
+       0.846,
+       0.45
+      ],
+      [
+       0.3085,
+       0.848,
+       0.6
+      ],
+      [
+       0.352,
+       0.846,
+       0.4
+      ],
+      [
+       0.362,
+       0.846,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.272,
+       0.866,
+       0.45
+      ],
+      [
+       0.31,
+       0.868,
+       0.6
+      ],
+      [
+       0.348,
+       0.866,
+       0.4
+      ],
+      [
+       0.358,
+       0.866,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.278,
+       0.886,
+       0.45
+      ],
+      [
+       0.31000000000000005,
+       0.888,
+       0.6
+      ],
+      [
+       0.342,
+       0.886,
+       0.4
+      ],
+      [
+       0.35200000000000004,
+       0.886,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.284,
+       0.906,
+       0.45
+      ],
+      [
+       0.31,
+       0.908,
+       0.6
+      ],
+      [
+       0.336,
+       0.906,
+       0.4
+      ],
+      [
+       0.34600000000000003,
+       0.906,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.29,
+       0.926,
+       0.45
+      ],
+      [
+       0.311,
+       0.928,
+       0.6
+      ],
+      [
+       0.332,
+       0.926,
+       0.4
+      ],
+      [
+       0.342,
+       0.926,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.296,
+       0.946,
+       0.45
+      ],
+      [
+       0.311,
+       0.948,
+       0.6
+      ],
+      [
+       0.326,
+       0.946,
+       0.4
+      ],
+      [
+       0.336,
+       0.946,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    }
+   ],
+   "created": "2026-09-30T17:09:55.220Z",
+   "clock": 24.2,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0024.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0024-dry.png",
+   "preview": {
+    "seconds": 2.6,
+    "dry": true
+   },
+   "note": "built on the carrot leg",
+   "score": {
+    "error": 5.94,
+    "error_coarse": 5.03,
+    "too_dark": 0.61,
+    "too_light": 2.96,
+    "colour": 0,
+    "ssim": 0.792,
+    "matched": 0.812,
+    "whites_lost": 0.022,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.68,
+    "delta": {
+     "score": -0.04,
+     "error": -0.04,
+     "error_coarse": -0.05,
+     "too_dark": 0.01,
+     "too_light": -0.05,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0024-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0024-eval.png",
+   "rejected": true
+  },
+  "cp-0025": {
+   "parent": "cp-0022",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "leg, second pass (knee in the stroke)",
+     "pts": [
+      [
+       0.311,
+       0.565,
+       0.4
+      ],
+      [
+       0.31,
+       0.59,
+       0.45
+      ],
+      [
+       0.308,
+       0.608,
+       0.6
+      ],
+      [
+       0.308,
+       0.622,
+       0.6
+      ],
+      [
+       0.311,
+       0.645,
+       0.45
+      ],
+      [
+       0.314,
+       0.7,
+       0.45
+      ],
+      [
+       0.317,
+       0.75,
+       0.4
+      ],
+      [
+       0.318,
+       0.775,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 190
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.294,
+       0.772,
+       0.45
+      ],
+      [
+       0.314,
+       0.774,
+       0.6
+      ],
+      [
+       0.334,
+       0.772,
+       0.35
+      ],
+      [
+       0.342,
+       0.772,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.288,
+       0.79,
+       0.45
+      ],
+      [
+       0.314,
+       0.792,
+       0.6
+      ],
+      [
+       0.34,
+       0.79,
+       0.35
+      ],
+      [
+       0.34800000000000003,
+       0.79,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.292,
+       0.806,
+       0.45
+      ],
+      [
+       0.314,
+       0.808,
+       0.6
+      ],
+      [
+       0.336,
+       0.806,
+       0.35
+      ],
+      [
+       0.34400000000000003,
+       0.806,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.296,
+       0.822,
+       0.45
+      ],
+      [
+       0.314,
+       0.824,
+       0.6
+      ],
+      [
+       0.332,
+       0.822,
+       0.35
+      ],
+      [
+       0.34,
+       0.822,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.265,
+       0.846,
+       0.45
+      ],
+      [
+       0.3085,
+       0.848,
+       0.6
+      ],
+      [
+       0.352,
+       0.846,
+       0.4
+      ],
+      [
+       0.362,
+       0.846,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    }
+   ],
+   "created": "2026-09-30T17:10:25.507Z",
+   "clock": 23.73,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0025.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0025-dry.png",
+   "preview": {
+    "seconds": 2.5,
+    "dry": true
+   },
+   "note": "carrot again: the brush splays where it lands at the top of the second pass",
+   "score": {
+    "error": 5.98,
+    "error_coarse": 5.08,
+    "too_dark": 0.6,
+    "too_light": 3.01,
+    "colour": 0,
+    "ssim": 0.791,
+    "matched": 0.811,
+    "whites_lost": 0.021,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.72,
+    "delta": {
+     "score": -0.01,
+     "error": -0.03,
+     "error_coarse": -0.13,
+     "too_dark": 0.04,
+     "too_light": -0.08,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0025-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0025-eval.png",
+   "rejected": true
+  },
+  "cp-0026": {
+   "parent": "cp-0025",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.272,
+       0.866,
+       0.45
+      ],
+      [
+       0.31,
+       0.868,
+       0.6
+      ],
+      [
+       0.348,
+       0.866,
+       0.4
+      ],
+      [
+       0.358,
+       0.866,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.278,
+       0.886,
+       0.45
+      ],
+      [
+       0.31000000000000005,
+       0.888,
+       0.6
+      ],
+      [
+       0.342,
+       0.886,
+       0.4
+      ],
+      [
+       0.35200000000000004,
+       0.886,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.284,
+       0.906,
+       0.45
+      ],
+      [
+       0.31,
+       0.908,
+       0.6
+      ],
+      [
+       0.336,
+       0.906,
+       0.4
+      ],
+      [
+       0.34600000000000003,
+       0.906,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.29,
+       0.926,
+       0.45
+      ],
+      [
+       0.311,
+       0.928,
+       0.6
+      ],
+      [
+       0.332,
+       0.926,
+       0.4
+      ],
+      [
+       0.342,
+       0.926,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.296,
+       0.946,
+       0.45
+      ],
+      [
+       0.311,
+       0.948,
+       0.6
+      ],
+      [
+       0.326,
+       0.946,
+       0.4
+      ],
+      [
+       0.336,
+       0.946,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    }
+   ],
+   "created": "2026-09-30T17:10:26.932Z",
+   "clock": 24.12,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0026.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0026-dry.png",
+   "preview": {
+    "seconds": 2.4,
+    "dry": true
+   },
+   "note": "built on it",
+   "score": {
+    "error": 5.95,
+    "error_coarse": 5.04,
+    "too_dark": 0.61,
+    "too_light": 2.97,
+    "colour": 0,
+    "ssim": 0.792,
+    "matched": 0.812,
+    "whites_lost": 0.022,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.69,
+    "delta": {
+     "score": -0.03,
+     "error": -0.03,
+     "error_coarse": -0.04,
+     "too_dark": 0.01,
+     "too_light": -0.04,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0026-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0026-eval.png",
+   "rejected": true
+  },
+  "cp-0027": {
+   "parent": "cp-0022",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "lower leg, soft landing below the thigh",
+     "pts": [
+      [
+       0.309,
+       0.598,
+       0.15
+      ],
+      [
+       0.308,
+       0.612,
+       0.5
+      ],
+      [
+       0.309,
+       0.626,
+       0.55
+      ],
+      [
+       0.311,
+       0.648,
+       0.42
+      ],
+      [
+       0.314,
+       0.7,
+       0.42
+      ],
+      [
+       0.317,
+       0.75,
+       0.38
+      ],
+      [
+       0.318,
+       0.775,
+       0.05
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.28,
+     "speed": 190,
+     "settle": 20
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.294,
+       0.772,
+       0.45
+      ],
+      [
+       0.314,
+       0.774,
+       0.6
+      ],
+      [
+       0.334,
+       0.772,
+       0.35
+      ],
+      [
+       0.342,
+       0.772,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.288,
+       0.79,
+       0.45
+      ],
+      [
+       0.314,
+       0.792,
+       0.6
+      ],
+      [
+       0.34,
+       0.79,
+       0.35
+      ],
+      [
+       0.34800000000000003,
+       0.79,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.292,
+       0.806,
+       0.45
+      ],
+      [
+       0.314,
+       0.808,
+       0.6
+      ],
+      [
+       0.336,
+       0.806,
+       0.35
+      ],
+      [
+       0.34400000000000003,
+       0.806,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "leg reflection",
+     "pts": [
+      [
+       0.296,
+       0.822,
+       0.45
+      ],
+      [
+       0.314,
+       0.824,
+       0.6
+      ],
+      [
+       0.332,
+       0.822,
+       0.35
+      ],
+      [
+       0.34,
+       0.822,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.35,
+     "water": 0.4,
+     "speed": 240
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.265,
+       0.846,
+       0.45
+      ],
+      [
+       0.3085,
+       0.848,
+       0.6
+      ],
+      [
+       0.352,
+       0.846,
+       0.4
+      ],
+      [
+       0.362,
+       0.846,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    }
+   ],
+   "created": "2026-09-30T17:11:06.683Z",
+   "clock": 23.68,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0027.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0027-dry.png",
+   "preview": {
+    "seconds": 2.3,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 5.97,
+    "error_coarse": 5.1,
+    "too_dark": 0.59,
+    "too_light": 3.02,
+    "colour": 0,
+    "ssim": 0.791,
+    "matched": 0.81,
+    "whites_lost": 0.021,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.5,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.7,
+    "delta": {
+     "score": -0.03,
+     "error": -0.04,
+     "error_coarse": -0.11,
+     "too_dark": 0.03,
+     "too_light": -0.07,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0027-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0027-eval.png"
+  },
+  "cp-0028": {
+   "parent": "cp-0027",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.272,
+       0.866,
+       0.45
+      ],
+      [
+       0.31,
+       0.868,
+       0.6
+      ],
+      [
+       0.348,
+       0.866,
+       0.4
+      ],
+      [
+       0.358,
+       0.866,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.278,
+       0.886,
+       0.45
+      ],
+      [
+       0.31000000000000005,
+       0.888,
+       0.6
+      ],
+      [
+       0.342,
+       0.886,
+       0.4
+      ],
+      [
+       0.35200000000000004,
+       0.886,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.284,
+       0.906,
+       0.45
+      ],
+      [
+       0.31,
+       0.908,
+       0.6
+      ],
+      [
+       0.336,
+       0.906,
+       0.4
+      ],
+      [
+       0.34600000000000003,
+       0.906,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.29,
+       0.926,
+       0.45
+      ],
+      [
+       0.311,
+       0.928,
+       0.6
+      ],
+      [
+       0.332,
+       0.926,
+       0.4
+      ],
+      [
+       0.342,
+       0.926,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    },
+    {
+     "type": "stroke",
+     "label": "heron reflection",
+     "pts": [
+      [
+       0.296,
+       0.946,
+       0.45
+      ],
+      [
+       0.311,
+       0.948,
+       0.6
+      ],
+      [
+       0.326,
+       0.946,
+       0.4
+      ],
+      [
+       0.336,
+       0.946,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.22,
+     "water": 0.45,
+     "speed": 280
+    }
+   ],
+   "created": "2026-09-30T17:11:08.238Z",
+   "clock": 24.07,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0028.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0028-dry.png",
+   "preview": {
+    "seconds": 2.5,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 5.94,
+    "error_coarse": 5.06,
+    "too_dark": 0.59,
+    "too_light": 2.98,
+    "colour": 0,
+    "ssim": 0.792,
+    "matched": 0.811,
+    "whites_lost": 0.022,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 20.1,
+      "dL": 19.7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.7
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 18.1,
+      "dL": 17.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 95
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 13.9,
+      "dL": 13.8,
+      "kind": "too light",
+      "target_L": 80.3,
+      "render_L": 94.1
+     },
+     {
+      "cell": "r5c7",
+      "x": [
+       0.875,
+       1
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13,
+      "dL": 12.8,
+      "kind": "too light",
+      "target_L": 81.5,
+      "render_L": 94.2
+     }
+    ],
+    "score": 9.65,
+    "delta": {
+     "score": -0.05,
+     "error": -0.03,
+     "error_coarse": -0.04,
+     "too_dark": 0,
+     "too_light": -0.04,
+     "colour": 0,
+     "ssim": 0.001,
+     "whites_lost": 0.001
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0028-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0028-eval.png"
+  },
+  "cp-0029": {
+   "parent": "cp-0028",
+   "actions": [
+    {
+     "type": "dry",
+     "label": "dry before the near reeds"
+    },
+    {
+     "type": "stroke",
+     "label": "main reed stalk",
+     "pts": [
+      [
+       0.907,
+       1.02,
+       0.5
+      ],
+      [
+       0.9,
+       0.85,
+       0.5
+      ],
+      [
+       0.894,
+       0.75,
+       0.48
+      ],
+      [
+       0.884,
+       0.65,
+       0.46
+      ],
+      [
+       0.872,
+       0.55,
+       0.45
+      ],
+      [
+       0.858,
+       0.47,
+       0.42
+      ],
+      [
+       0.845,
+       0.4,
+       0.4
+      ],
+      [
+       0.832,
+       0.335,
+       0.3
+      ],
+      [
+       0.829,
+       0.32,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "reed node",
+     "pts": [
+      [
+       0.846,
+       0.415,
+       0.3
+      ],
+      [
+       0.851,
+       0.44,
+       0.6
+      ],
+      [
+       0.856,
+       0.47,
+       0.25
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 200
+    },
+    {
+     "type": "stroke",
+     "label": "second reed stalk",
+     "pts": [
+      [
+       0.766,
+       1.02,
+       0.5
+      ],
+      [
+       0.758,
+       0.9,
+       0.5
+      ],
+      [
+       0.748,
+       0.8,
+       0.48
+      ],
+      [
+       0.738,
+       0.7,
+       0.45
+      ],
+      [
+       0.726,
+       0.62,
+       0.4
+      ],
+      [
+       0.716,
+       0.58,
+       0.3
+      ],
+      [
+       0.712,
+       0.565,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "thin reed",
+     "pts": [
+      [
+       0.716,
+       0.585,
+       0.45
+      ],
+      [
+       0.705,
+       0.52,
+       0.45
+      ],
+      [
+       0.69,
+       0.45,
+       0.42
+      ],
+      [
+       0.676,
+       0.385,
+       0.3
+      ],
+      [
+       0.671,
+       0.365,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 0,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.4,
+     "water": 0.35,
+     "speed": 260
+    },
+    {
+     "type": "stroke",
+     "label": "cattail head",
+     "pts": [
+      [
+       0.782,
+       0.155,
+       0.3
+      ],
+      [
+       0.79,
+       0.18,
+       0.5
+      ],
+      [
+       0.8,
+       0.215,
+       0.55
+      ],
+      [
+       0.812,
+       0.255,
+       0.55
+      ],
+      [
+       0.822,
+       0.295,
+       0.45
+      ],
+      [
+       0.83,
+       0.33,
+       0.1
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 260
+    }
+   ],
+   "created": "2026-09-30T17:11:47.184Z",
+   "clock": 28.02,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0029.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0029-dry.png",
+   "preview": {
+    "seconds": 2,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 5.7,
+    "error_coarse": 4.65,
+    "too_dark": 0.73,
+    "too_light": 2.61,
+    "colour": 0,
+    "ssim": 0.802,
+    "matched": 0.817,
+    "whites_lost": 0.026,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 19.6,
+      "dL": 19.2,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.2
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 17.9,
+      "dL": 17.6,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 94.7
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 12.6,
+      "dL": 12.1,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 83.4
+     }
+    ],
+    "score": 9.48,
+    "delta": {
+     "score": -0.17,
+     "error": -0.24,
+     "error_coarse": -0.41,
+     "too_dark": 0.14,
+     "too_light": -0.37,
+     "colour": 0,
+     "ssim": 0.01,
+     "whites_lost": 0.004
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0029-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0029-eval.png"
+  },
+  "cp-0030": {
+   "parent": "cp-0029",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "cattail head",
+     "pts": [
+      [
+       0.768,
+       0.232,
+       0.3
+      ],
+      [
+       0.783,
+       0.248,
+       0.55
+      ],
+      [
+       0.8,
+       0.27,
+       0.6
+      ],
+      [
+       0.815,
+       0.295,
+       0.55
+      ],
+      [
+       0.828,
+       0.325,
+       0.2
+      ],
+      [
+       0.832,
+       0.335,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.6,
+     "water": 0.35,
+     "speed": 260
+    }
+   ],
+   "created": "2026-09-30T17:11:48.631Z",
+   "clock": 28.15,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0030.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0030-dry.png",
+   "preview": {
+    "seconds": 2.4,
+    "dry": true
+   },
+   "note": "second cattail head merged with the first into a dark blob, sitting too high (the tip trails behind the stroke)",
+   "score": {
+    "error": 5.79,
+    "error_coarse": 4.72,
+    "too_dark": 0.82,
+    "too_light": 2.6,
+    "colour": 0,
+    "ssim": 0.799,
+    "matched": 0.815,
+    "whites_lost": 0.029,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 19.6,
+      "dL": 19.2,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.2
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 17.9,
+      "dL": 17.6,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 94.7
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r1c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 14.5,
+      "dL": -4.4,
+      "kind": "too dark",
+      "target_L": 84.6,
+      "render_L": 80.3
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     }
+    ],
+    "score": 9.79,
+    "delta": {
+     "score": 0.31,
+     "error": 0.09,
+     "error_coarse": 0.07,
+     "too_dark": 0.09,
+     "too_light": -0.01,
+     "colour": 0,
+     "ssim": -0.003,
+     "whites_lost": 0.003
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0030-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0030-eval.png",
+   "rejected": true
+  },
+  "cp-0031": {
+   "parent": "cp-0029",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "second cattail head (smaller, path shifted down)",
+     "pts": [
+      [
+       0.778,
+       0.268,
+       0.3
+      ],
+      [
+       0.79,
+       0.285,
+       0.5
+      ],
+      [
+       0.805,
+       0.31,
+       0.52
+      ],
+      [
+       0.82,
+       0.34,
+       0.45
+      ],
+      [
+       0.835,
+       0.37,
+       0.2
+      ],
+      [
+       0.842,
+       0.385,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 1,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.6,
+     "water": 0.35,
+     "speed": 260
+    }
+   ],
+   "created": "2026-09-30T17:12:14.564Z",
+   "clock": 28.15,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0031.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0031-dry.png",
+   "preview": {
+    "seconds": 1.9,
+    "dry": true
+   },
+   "note": "smaller second head still lands high and scores worse: leave it out",
+   "score": {
+    "error": 5.78,
+    "error_coarse": 4.67,
+    "too_dark": 0.81,
+    "too_light": 2.6,
+    "colour": 0,
+    "ssim": 0.798,
+    "matched": 0.815,
+    "whites_lost": 0.029,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 19.6,
+      "dL": 19.2,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 93.2
+     },
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 17.9,
+      "dL": 17.6,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 94.7
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r1c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 13.4,
+      "dL": -2.6,
+      "kind": "texture/edges",
+      "target_L": 84.6,
+      "render_L": 82
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     }
+    ],
+    "score": 9.73,
+    "delta": {
+     "score": 0.25,
+     "error": 0.08,
+     "error_coarse": 0.02,
+     "too_dark": 0.08,
+     "too_light": -0.01,
+     "colour": 0,
+     "ssim": -0.004,
+     "whites_lost": 0.003
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0031-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0031-eval.png",
+   "rejected": true
+  },
+  "cp-0032": {
+   "parent": "cp-0029",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "long curving leaf",
+     "pts": [
+      [
+       0.706,
+       0.512,
+       0.3
+      ],
+      [
+       0.675,
+       0.53,
+       0.5
+      ],
+      [
+       0.645,
+       0.565,
+       0.55
+      ],
+      [
+       0.615,
+       0.618,
+       0.5
+      ],
+      [
+       0.59,
+       0.668,
+       0.35
+      ],
+      [
+       0.572,
+       0.7,
+       0.15
+      ],
+      [
+       0.562,
+       0.718,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.28,
+     "water": 0.35,
+     "speed": 420
+    },
+    {
+     "type": "stroke",
+     "label": "dark leaf",
+     "pts": [
+      [
+       0.686,
+       0.526,
+       0.3
+      ],
+      [
+       0.699,
+       0.552,
+       0.55
+      ],
+      [
+       0.713,
+       0.584,
+       0.55
+      ],
+      [
+       0.726,
+       0.618,
+       0.4
+      ],
+      [
+       0.734,
+       0.64,
+       0.15
+      ],
+      [
+       0.738,
+       0.655,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.45,
+     "water": 0.35,
+     "speed": 350
+    },
+    {
+     "type": "stroke",
+     "label": "grey leaf",
+     "pts": [
+      [
+       0.752,
+       0.535,
+       0.3
+      ],
+      [
+       0.759,
+       0.6,
+       0.5
+      ],
+      [
+       0.767,
+       0.66,
+       0.45
+      ],
+      [
+       0.774,
+       0.72,
+       0.3
+      ],
+      [
+       0.778,
+       0.75,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "big dark leaf",
+     "pts": [
+      [
+       0.758,
+       0.81,
+       0.3
+      ],
+      [
+       0.783,
+       0.772,
+       0.55
+      ],
+      [
+       0.813,
+       0.732,
+       0.62
+      ],
+      [
+       0.848,
+       0.692,
+       0.58
+      ],
+      [
+       0.878,
+       0.664,
+       0.4
+      ],
+      [
+       0.9,
+       0.646,
+       0.2
+      ],
+      [
+       0.915,
+       0.635,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 400
+    },
+    {
+     "type": "stroke",
+     "label": "lower dark leaf",
+     "pts": [
+      [
+       0.598,
+       1.01,
+       0.3
+      ],
+      [
+       0.622,
+       0.945,
+       0.55
+      ],
+      [
+       0.652,
+       0.878,
+       0.6
+      ],
+      [
+       0.678,
+       0.836,
+       0.5
+      ],
+      [
+       0.698,
+       0.81,
+       0.3
+      ],
+      [
+       0.71,
+       0.795,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 400
+    },
+    {
+     "type": "stroke",
+     "label": "drooping leaf",
+     "pts": [
+      [
+       0.696,
+       0.81,
+       0.3
+      ],
+      [
+       0.713,
+       0.855,
+       0.5
+      ],
+      [
+       0.728,
+       0.9,
+       0.5
+      ],
+      [
+       0.742,
+       0.945,
+       0.3
+      ],
+      [
+       0.75,
+       0.975,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.4,
+     "water": 0.35,
+     "speed": 380
+    }
+   ],
+   "created": "2026-09-30T17:12:39.218Z",
+   "clock": 28.87,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0032.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0032-dry.png",
+   "preview": {
+    "seconds": 2.2,
+    "dry": true
+   },
+   "note": "leaves land short, toward their bases (hairs trail the stroke); too dark +0.23",
+   "score": {
+    "error": 5.61,
+    "error_coarse": 4.29,
+    "too_dark": 0.96,
+    "too_light": 2.28,
+    "colour": 0,
+    "ssim": 0.801,
+    "matched": 0.816,
+    "whites_lost": 0.031,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 17.3,
+      "dL": 7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 81
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13.8,
+      "dL": 10.8,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 87.8
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 12.6,
+      "dL": 12.1,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 83.4
+     }
+    ],
+    "score": 9.68,
+    "delta": {
+     "score": 0.2,
+     "error": -0.09,
+     "error_coarse": -0.36,
+     "too_dark": 0.23,
+     "too_light": -0.33,
+     "colour": 0,
+     "ssim": -0.001,
+     "whites_lost": 0.005
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0032-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0032-eval.png",
+   "rejected": true
+  },
+  "cp-0033": {
+   "parent": "cp-0032",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "right reed leaf",
+     "pts": [
+      [
+       0.898,
+       0.675,
+       0.2
+      ],
+      [
+       0.908,
+       0.715,
+       0.5
+      ],
+      [
+       0.917,
+       0.755,
+       0.5
+      ],
+      [
+       0.924,
+       0.8,
+       0.35
+      ],
+      [
+       0.93,
+       0.845,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.45,
+     "water": 0.35,
+     "speed": 360
+    },
+    {
+     "type": "stroke",
+     "label": "lower right reed",
+     "pts": [
+      [
+       0.862,
+       1.02,
+       0.45
+      ],
+      [
+       0.866,
+       0.93,
+       0.5
+      ],
+      [
+       0.872,
+       0.85,
+       0.4
+      ],
+      [
+       0.878,
+       0.8,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    },
+    {
+     "type": "stroke",
+     "label": "lower right reed",
+     "pts": [
+      [
+       0.952,
+       1.02,
+       0.45
+      ],
+      [
+       0.948,
+       0.93,
+       0.5
+      ],
+      [
+       0.944,
+       0.86,
+       0.4
+      ],
+      [
+       0.94,
+       0.82,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    },
+    {
+     "type": "stroke",
+     "label": "lower right leaf",
+     "pts": [
+      [
+       0.93,
+       0.83,
+       0.3
+      ],
+      [
+       0.945,
+       0.8,
+       0.45
+      ],
+      [
+       0.962,
+       0.775,
+       0.3
+      ],
+      [
+       0.972,
+       0.76,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "lower left grass",
+     "pts": [
+      [
+       0.612,
+       1.02,
+       0.4
+      ],
+      [
+       0.64,
+       0.96,
+       0.45
+      ],
+      [
+       0.66,
+       0.92,
+       0.3
+      ],
+      [
+       0.668,
+       0.9,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.28,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "lower reed",
+     "pts": [
+      [
+       0.8,
+       1.02,
+       0.45
+      ],
+      [
+       0.81,
+       0.93,
+       0.45
+      ],
+      [
+       0.82,
+       0.86,
+       0.3
+      ],
+      [
+       0.824,
+       0.84,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    }
+   ],
+   "created": "2026-09-30T17:12:40.784Z",
+   "clock": 29.6,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0033.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0033-dry.png",
+   "preview": {
+    "seconds": 2.2,
+    "dry": true
+   },
+   "note": "same batch",
+   "score": {
+    "error": 5.63,
+    "error_coarse": 4.2,
+    "too_dark": 1.03,
+    "too_light": 2.23,
+    "colour": 0,
+    "ssim": 0.795,
+    "matched": 0.815,
+    "whites_lost": 0.034,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 17.2,
+      "dL": 7,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 81
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 14,
+      "dL": 10.3,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 87.4
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 12.6,
+      "dL": 12.1,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 83.4
+     }
+    ],
+    "score": 9.79,
+    "delta": {
+     "score": 0.11,
+     "error": 0.02,
+     "error_coarse": -0.09,
+     "too_dark": 0.07,
+     "too_light": -0.05,
+     "colour": 0,
+     "ssim": -0.006,
+     "whites_lost": 0.003
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0033-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0033-eval.png",
+   "rejected": true
+  },
+  "cp-0034": {
+   "parent": "cp-0029",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "long curving leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.6888,
+       0.5366,
+       0.255
+      ],
+      [
+       0.6578,
+       0.5546,
+       0.425
+      ],
+      [
+       0.6278,
+       0.5896,
+       0.468
+      ],
+      [
+       0.5978,
+       0.6426,
+       0.425
+      ],
+      [
+       0.5728,
+       0.6926,
+       0.297
+      ],
+      [
+       0.5548,
+       0.7246,
+       0.128
+      ],
+      [
+       0.5448,
+       0.7426,
+       0.017
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.28,
+     "water": 0.35,
+     "speed": 420
+    },
+    {
+     "type": "stroke",
+     "label": "dark leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.6972,
+       0.5538,
+       0.3
+      ],
+      [
+       0.7102,
+       0.5798,
+       0.55
+      ],
+      [
+       0.7242,
+       0.6118,
+       0.55
+      ],
+      [
+       0.7372,
+       0.6458,
+       0.4
+      ],
+      [
+       0.7452,
+       0.6678,
+       0.15
+      ],
+      [
+       0.7492,
+       0.6828,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.45,
+     "water": 0.35,
+     "speed": 350
+    },
+    {
+     "type": "stroke",
+     "label": "grey leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.7556,
+       0.5648,
+       0.3
+      ],
+      [
+       0.7626,
+       0.6298,
+       0.5
+      ],
+      [
+       0.7706,
+       0.6898,
+       0.45
+      ],
+      [
+       0.7776,
+       0.7498,
+       0.3
+      ],
+      [
+       0.7816,
+       0.7798,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "big dark leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.778,
+       0.7877,
+       0.255
+      ],
+      [
+       0.803,
+       0.7497,
+       0.468
+      ],
+      [
+       0.833,
+       0.7097,
+       0.527
+      ],
+      [
+       0.868,
+       0.6697,
+       0.493
+      ],
+      [
+       0.898,
+       0.6417,
+       0.34
+      ],
+      [
+       0.92,
+       0.6237,
+       0.17
+      ],
+      [
+       0.935,
+       0.6127,
+       0.017
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.5,
+     "water": 0.35,
+     "speed": 400
+    },
+    {
+     "type": "stroke",
+     "label": "lower dark leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.6119,
+       0.9834,
+       0.255
+      ],
+      [
+       0.6359,
+       0.9184,
+       0.468
+      ],
+      [
+       0.6659,
+       0.8514,
+       0.51
+      ],
+      [
+       0.6919,
+       0.8094,
+       0.425
+      ],
+      [
+       0.7119,
+       0.7834,
+       0.255
+      ],
+      [
+       0.7239,
+       0.7684,
+       0.017
+      ]
+     ],
+     "brush": "fude",
+     "size": 3,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.55,
+     "water": 0.35,
+     "speed": 400
+    },
+    {
+     "type": "stroke",
+     "label": "drooping leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.7053,
+       0.8385,
+       0.3
+      ],
+      [
+       0.7223,
+       0.8835,
+       0.5
+      ],
+      [
+       0.7373,
+       0.9285,
+       0.5
+      ],
+      [
+       0.7513,
+       0.9735,
+       0.3
+      ],
+      [
+       0.7593,
+       1.0035,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.4,
+     "water": 0.35,
+     "speed": 380
+    }
+   ],
+   "created": "2026-09-30T17:13:04.916Z",
+   "clock": 28.87,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0034.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0034-dry.png",
+   "preview": {
+    "seconds": 1.9,
+    "dry": true
+   },
+   "note": "leaves shifted toward their tips land closer: best score so far",
+   "score": {
+    "error": 5.48,
+    "error_coarse": 4.24,
+    "too_dark": 0.82,
+    "too_light": 2.3,
+    "colour": 0,
+    "ssim": 0.805,
+    "matched": 0.819,
+    "whites_lost": 0.028,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 15.3,
+      "dL": 11.2,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 85.1
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13.2,
+      "dL": 10.4,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 87.5
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 12.6,
+      "dL": 12.1,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 83.4
+     }
+    ],
+    "score": 9.24,
+    "delta": {
+     "score": -0.24,
+     "error": -0.22,
+     "error_coarse": -0.41,
+     "too_dark": 0.09,
+     "too_light": -0.31,
+     "colour": 0,
+     "ssim": 0.003,
+     "whites_lost": 0.002
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0034-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0034-eval.png"
+  },
+  "cp-0035": {
+   "parent": "cp-0034",
+   "actions": [
+    {
+     "type": "stroke",
+     "label": "right reed leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.9035,
+       0.7045,
+       0.2
+      ],
+      [
+       0.9135,
+       0.7445,
+       0.5
+      ],
+      [
+       0.9225,
+       0.7845,
+       0.5
+      ],
+      [
+       0.9295,
+       0.8295,
+       0.35
+      ],
+      [
+       0.9355,
+       0.8745,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.45,
+     "water": 0.35,
+     "speed": 360
+    },
+    {
+     "type": "stroke",
+     "label": "lower right reed (shifted toward tip)",
+     "pts": [
+      [
+       0.8642,
+       0.9901,
+       0.45
+      ],
+      [
+       0.8682,
+       0.9001,
+       0.5
+      ],
+      [
+       0.8742,
+       0.8201,
+       0.4
+      ],
+      [
+       0.8802,
+       0.7701,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    },
+    {
+     "type": "stroke",
+     "label": "lower right reed (shifted toward tip)",
+     "pts": [
+      [
+       0.9502,
+       0.9901,
+       0.45
+      ],
+      [
+       0.9462,
+       0.9001,
+       0.5
+      ],
+      [
+       0.9422,
+       0.8301,
+       0.4
+      ],
+      [
+       0.9382,
+       0.7901,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    },
+    {
+     "type": "stroke",
+     "label": "lower right leaf (shifted toward tip)",
+     "pts": [
+      [
+       0.9454,
+       0.8043,
+       0.3
+      ],
+      [
+       0.9604,
+       0.7743,
+       0.45
+      ],
+      [
+       0.9774,
+       0.7493,
+       0.3
+      ],
+      [
+       0.9874,
+       0.7343,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "lower left grass (shifted toward tip)",
+     "pts": [
+      [
+       0.6247,
+       0.9928,
+       0.4
+      ],
+      [
+       0.6527,
+       0.9328,
+       0.45
+      ],
+      [
+       0.6727,
+       0.8928,
+       0.3
+      ],
+      [
+       0.6807,
+       0.8728,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.28,
+     "water": 0.35,
+     "speed": 380
+    },
+    {
+     "type": "stroke",
+     "label": "lower reed (shifted toward tip)",
+     "pts": [
+      [
+       0.804,
+       0.9903,
+       0.45
+      ],
+      [
+       0.814,
+       0.9003,
+       0.45
+      ],
+      [
+       0.824,
+       0.8303,
+       0.3
+      ],
+      [
+       0.828,
+       0.8103,
+       0.02
+      ]
+     ],
+     "brush": "fude",
+     "size": 2,
+     "pigments": {
+      "Pine soot": 1
+     },
+     "load": 0.3,
+     "water": 0.35,
+     "speed": 320
+    }
+   ],
+   "created": "2026-09-30T17:13:06.716Z",
+   "clock": 29.6,
+   "wet": true,
+   "render": "paintings/heron-half/checkpoints/cp-0035.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0035-dry.png",
+   "preview": {
+    "seconds": 1.9,
+    "dry": true
+   },
+   "note": "",
+   "score": {
+    "error": 5.48,
+    "error_coarse": 4.12,
+    "too_dark": 0.88,
+    "too_light": 2.24,
+    "colour": 0,
+    "ssim": 0.8,
+    "matched": 0.819,
+    "whites_lost": 0.031,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 15.3,
+      "dL": 11.1,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 85.1
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13.3,
+      "dL": 9.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 87
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 12.6,
+      "dL": 12.1,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 83.4
+     }
+    ],
+    "score": 9.3,
+    "delta": {
+     "score": 0.06,
+     "error": 0,
+     "error_coarse": -0.12,
+     "too_dark": 0.06,
+     "too_light": -0.06,
+     "colour": 0,
+     "ssim": -0.005,
+     "whites_lost": 0.003
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0035-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0035-eval.png"
+  },
+  "cp-0036": {
+   "parent": "cp-0035",
+   "actions": [
+    {
+     "type": "dry",
+     "dryer": false,
+     "max": 600
+    }
+   ],
+   "created": "2026-09-30T17:13:22.592Z",
+   "clock": 39.03,
+   "wet": false,
+   "render": "paintings/heron-half/checkpoints/cp-0036.png",
+   "dry": "paintings/heron-half/checkpoints/cp-0036.png",
+   "preview": {
+    "seconds": 0,
+    "dry": true
+   },
+   "note": "left to dry",
+   "score": {
+    "error": 5.47,
+    "error_coarse": 4.12,
+    "too_dark": 0.88,
+    "too_light": 2.23,
+    "colour": 0,
+    "ssim": 0.8,
+    "matched": 0.819,
+    "whites_lost": 0.031,
+    "paper_share": 0.705,
+    "worst": [
+     {
+      "cell": "r1c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 18,
+      "dL": -7.6,
+      "kind": "too dark",
+      "target_L": 79.5,
+      "render_L": 72
+     },
+     {
+      "cell": "r2c2",
+      "x": [
+       0.25,
+       0.375
+      ],
+      "y": [
+       0.333,
+       0.5
+      ],
+      "error": 17.5,
+      "dL": 0.4,
+      "kind": "texture/edges",
+      "target_L": 51.7,
+      "render_L": 52.1
+     },
+     {
+      "cell": "r4c6",
+      "x": [
+       0.75,
+       0.875
+      ],
+      "y": [
+       0.667,
+       0.833
+      ],
+      "error": 15.2,
+      "dL": 11.1,
+      "kind": "too light",
+      "target_L": 74,
+      "render_L": 85.1
+     },
+     {
+      "cell": "r5c5",
+      "x": [
+       0.625,
+       0.75
+      ],
+      "y": [
+       0.833,
+       1
+      ],
+      "error": 13.3,
+      "dL": 9.9,
+      "kind": "too light",
+      "target_L": 77.1,
+      "render_L": 87
+     },
+     {
+      "cell": "r1c3",
+      "x": [
+       0.375,
+       0.5
+      ],
+      "y": [
+       0.167,
+       0.333
+      ],
+      "error": 12.9,
+      "dL": 6.9,
+      "kind": "too light",
+      "target_L": 77.6,
+      "render_L": 84.5
+     },
+     {
+      "cell": "r3c1",
+      "x": [
+       0.125,
+       0.25
+      ],
+      "y": [
+       0.5,
+       0.667
+      ],
+      "error": 12.6,
+      "dL": 12.1,
+      "kind": "too light",
+      "target_L": 71.3,
+      "render_L": 83.4
+     }
+    ],
+    "score": 9.29,
+    "delta": {
+     "score": -0.01,
+     "error": -0.01,
+     "error_coarse": 0,
+     "too_dark": 0,
+     "too_light": -0.01,
+     "colour": 0,
+     "ssim": 0,
+     "whites_lost": 0
+    },
+    "eval": "paintings/heron-half/checkpoints/cp-0036-eval.png"
+   },
+   "eval": "paintings/heron-half/checkpoints/cp-0036-eval.png"
+  }
+ },
+ "sheetMM": [
+  304.8,
+  228.6
+ ],
+ "paperRGB": [
+  248,
+  244,
+  232
+ ],
+ "record": {
+  "every": 2,
+  "sparseEvery": 30,
+  "width": 1280,
+  "quality": 0.85,
+  "brush": true
+ },
+ "frameSeq": 1304,
+ "final": {
+  "cp": "cp-0036",
+  "file": "final.png",
+  "actions": 95,
+  "checkpoints": 36,
+  "kept": 18,
+  "rolledBack": 18,
+  "at": "2026-09-30T17:13:24.268Z"
+ }
+}

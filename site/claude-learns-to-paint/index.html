@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude learns to paint</title>
+<meta name="description" content="How Claude went from a watercolor simulator to sumi-e herons, pencil herons and eight gouache robins in four days, step by step, with the paintings and time-lapses.">
+<link rel="canonical" href="https://claude-learns-to-paint.pages.dev/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Claude learns to paint">
+<meta property="og:title" content="Claude learns to paint">
+<meta property="og:description" content="How Claude went from a watercolor simulator to sumi-e herons, pencil herons and eight gouache robins in four days, step by step, with the paintings and time-lapses.">
+<meta property="og:url" content="https://claude-learns-to-paint.pages.dev/">
+<meta property="og:image" content="https://claude-learns-to-paint.pages.dev/img/share.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="900">
+<meta property="og:image:alt" content="Claude's first painting, a loose sumi-e ink heron, next to robin 8, a detailed gouache robin on a budding branch, signed Claude.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude learns to paint">
+<meta name="twitter:description" content="How Claude went from a watercolor simulator to sumi-e herons, pencil herons and eight gouache robins in four days, step by step, with the paintings and time-lapses.">
+<meta name="twitter:image" content="https://claude-learns-to-paint.pages.dev/img/share.jpg">
+<meta name="twitter:image:alt" content="Claude's first painting, a loose sumi-e ink heron, next to robin 8, a detailed gouache robin on a budding branch, signed Claude.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='13' fill='%23b5552b'/%3E%3C/svg%3E">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}*,*::before,*::after{box-sizing:inherit}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* A dated studio log: one reading column with a timestamp gutter, evidence set wider than the text, and each medium owning its pigment. */
+  :root {
+    --paper: #f7f6f2;
+    --ink: #24252b;
+    --lead: #63656d;
+    --rule: #dbd9d1;
+    --panel: #eeece6;
+    --wc: #2b3a8f;        /* French ultramarine, the sim's first pan */
+    --sumi: #ac3d2b;      /* cinnabar, the seal on the ink paintings */
+    --graphite: #4c5262;  /* 6B lead */
+    --robin: #b5552b;     /* the robin's breast */
+    --kept: #3c6b4b;
+    --dropped: #9b3a2f;
+    --display: "Young Serif", Georgia, "Times New Roman", serif;
+    --body: "Literata", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17181b; --ink: #e8e6df; --lead: #a3a5ac; --rule: #2f3137; --panel: #202226;
+      --wc: #9fadff; --sumi: #e5836b; --graphite: #b9c0cf; --robin: #e8915f; --kept: #86c597; --dropped: #e8907f;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17181b; --ink: #e8e6df; --lead: #a3a5ac; --rule: #2f3137; --panel: #202226;
+    --wc: #9fadff; --sumi: #e5836b; --graphite: #b9c0cf; --robin: #e8915f; --kept: #86c597; --dropped: #e8907f;
+    color-scheme: dark;
+  }
+
+  html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 3.5rem); }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--body); font-size: 1.0625rem; line-height: 1.62;
+    padding-inline: 16px; padding-block: 0 5rem;
+  }
+  main { display: flex; flex-direction: column; gap: 3rem; }
+  .col { width: 100%; max-width: 40rem; margin-inline: auto; display: flex; flex-direction: column; gap: 1rem; }
+  .wide { width: 100%; max-width: 64rem; margin-inline: auto; }
+  p { margin: 0; }
+  a { color: var(--wc); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--wc); outline-offset: 2px; border-radius: 2px; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap: balance; line-height: 1.14; }
+  h1 { font-size: clamp(2.6rem, 7vw, 4.6rem); letter-spacing: -0.01em; }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+  h3 { font-size: 1.32rem; }
+  .label { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--lead); }
+  .dek { font-size: 1.2rem; color: var(--lead); }
+  q { font-style: italic; }
+  b, strong { font-weight: 600; }
+
+  /* top bar */
+  .topnav {
+    position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+    margin-inline: -16px; padding-inline: 16px;
+    background: var(--paper); border-bottom: 1px solid var(--rule);
+  }
+  .topnav nav { max-width: 64rem; margin-inline: auto; display: flex; gap: 1.1rem; overflow-x: auto; padding-block: 0.7rem; scrollbar-width: none; }
+  .topnav a { font-family: var(--mono); font-size: 0.78rem; color: var(--ink); text-decoration: none; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.45rem; }
+  .topnav a:hover { text-decoration: underline; }
+  .dot { width: 0.7rem; height: 0.7rem; border-radius: 50%; display: inline-block; flex: none; }
+  .d-wc { background: var(--wc); } .d-sumi { background: var(--sumi); } .d-graphite { background: var(--graphite); } .d-robin { background: var(--robin); } .d-film { background: var(--ink); }
+
+  header.hero { padding-block: 2.4rem 0; }
+  .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; font-family: var(--mono); font-size: 0.82rem; }
+
+  figure { margin: 0; display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; }
+  figure img, figure video { display: block; width: 100%; max-width: 100%; height: auto; border: 1px solid var(--rule); border-radius: 2px; background: var(--panel); }
+  figcaption { font-family: var(--mono); font-size: 0.76rem; line-height: 1.5; color: var(--lead); font-variant-numeric: tabular-nums; }
+  figcaption b { font-weight: 500; color: var(--ink); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+  .quad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+  @media (max-width: 640px) { .pair, .trio { grid-template-columns: 1fr; } .quad { grid-template-columns: 1fr 1fr; } }
+
+  /* era openers */
+  .era { display: flex; flex-direction: column; gap: 1rem; padding-top: 1rem; border-top: 3px solid var(--era); }
+  .era .swatch { width: 2.4rem; height: 0.55rem; background: var(--era); border-radius: 1px; }
+  .era .when { font-family: var(--mono); font-size: 0.8rem; color: var(--lead); }
+  .e-wc { --era: var(--wc); } .e-sumi { --era: var(--sumi); } .e-graphite { --era: var(--graphite); } .e-robin { --era: var(--robin); } .e-film { --era: var(--ink); }
+
+  /* steps */
+  .step { width: 100%; max-width: 50rem; margin-inline: auto; display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 0.6rem 1.4rem; }
+  .step .meta { font-family: var(--mono); font-size: 0.74rem; line-height: 1.45; color: var(--lead); font-variant-numeric: tabular-nums; display: flex; flex-direction: column; gap: 0.3rem; padding-top: 0.25rem; }
+  .step .num { font-size: 1.5rem; font-family: var(--display); color: var(--era); line-height: 1; }
+  .step .body { display: flex; flex-direction: column; gap: 0.7rem; min-width: 0; }
+  .step .row { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 0.8rem; }
+  .step .row > span:first-child { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--era); padding-top: 0.32rem; }
+  .ev { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 0.3rem; font-family: var(--mono); font-size: 0.8rem; line-height: 1.5; font-variant-numeric: tabular-nums; }
+  .ev li { padding-left: 0.9rem; position: relative; }
+  .ev li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 0.4rem; height: 1px; background: var(--lead); }
+  .badge { align-self: flex-start; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid currentColor; border-radius: 999px; padding: 0.05rem 0.55rem; }
+  .kept { color: var(--kept); } .dropped { color: var(--dropped); } .mixed { color: var(--lead); }
+  @media (max-width: 640px) {
+    .step { grid-template-columns: minmax(0, 1fr); }
+    .step .meta { flex-direction: row; align-items: baseline; gap: 0.8rem; flex-wrap: wrap; }
+    .step .row { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+    .step .row > span:first-child { padding-top: 0; }
+  }
+
+
+
+  /* filmstrip */
+  .strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.7rem; }
+  @media (max-width: 900px) { .strip { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .strip { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.5rem; } }
+  .tile { display: flex; flex-direction: column; gap: 0.35rem; text-decoration: none; color: var(--ink); min-width: 0; }
+  .tile img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--rule); border-radius: 2px; display: block; transition: transform 0.15s ease; }
+  .tile:hover img { transform: translateY(-2px); }
+  .tile span { font-family: var(--mono); font-size: 0.72rem; display: inline-flex; align-items: center; gap: 0.35rem; line-height: 1.3; }
+  .tile .dot { width: 0.55rem; height: 0.55rem; }
+  main figure img { cursor: zoom-in; }
+  dialog#lb { width: min(96vw, 110rem); max-height: 94vh; padding: 0.8rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--paper); color: var(--ink); }
+  dialog#lb::backdrop { background: rgba(10, 10, 12, 0.82); }
+  dialog#lb img { display: block; max-width: 100%; max-height: 82vh; margin-inline: auto; cursor: zoom-out; }
+  dialog#lb p { font-family: var(--mono); font-size: 0.78rem; color: var(--lead); margin-top: 0.6rem; }
+  #lb-close { font-family: var(--mono); font-size: 0.75rem; background: none; border: 1px solid var(--rule); color: var(--ink); border-radius: 999px; padding: 0.2rem 0.7rem; margin-bottom: 0.6rem; cursor: pointer; }
+  @media (prefers-reduced-motion: reduce) { .tile img { transition: none; } }
+
+  .tablewrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.86rem; min-width: 34rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.5rem 0.7rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+  th { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--lead); font-weight: 500; }
+  td.n { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  .lessons { margin: 0; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  hr { border: 0; border-top: 1px solid var(--rule); width: 100%; max-width: 40rem; margin: 0 auto; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<div class="topnav">
+  <nav aria-label="Sections">
+    <a href="#pictures">In pictures</a>
+    <a href="#watercolor"><span class="dot d-wc"></span>Watercolor</a>
+    <a href="#ink"><span class="dot d-sumi"></span>Ink</a>
+    <a href="#pencil"><span class="dot d-graphite"></span>Pencil</a>
+    <a href="#gouache"><span class="dot d-robin"></span>Gouache</a>
+    <a href="#film"><span class="dot d-film"></span>Signing it</a>
+    <a href="#carried">What Claude learned</a>
+    <a href="#deadends">Dead ends</a>
+  </nav>
+</div>
+
+<main>
+  <header class="col hero">
+    <span class="label">Watercolor → ink → pencil → gouache · Sep 30 to Oct 3, 2026</span>
+    <h1>Claude learns to paint</h1>
+    <p class="dek">I asked Claude for a watercolor simulator. Four days later it had added ink, pencil and gouache, and taught itself to use them: sumi-e herons, pencil herons, then one robin painted eight times in gouache, an opaque water-based paint. This is every change that mattered, what prompted it, and the evidence it was based on.</p>
+    <div class="links">
+      <a href="herons/">Claude learns to draw (the five herons)</a>
+    </div>
+  </header>
+
+  <div class="wide trio" style="margin-top:-1.4rem">
+    <figure>
+      <img src="img/ink-final-heron-half.jpg" width="1400" height="1050" alt="The first painting Claude made with the sim: a sumi-e heron among reeds, loose and blotchy.">
+      <figcaption><b>Day 1</b> · sumi-e ink · its first painting</figcaption>
+    </figure>
+    <figure>
+      <img src="img/pe-heron-5.jpg" width="1100" height="825" alt="Pencil heron 5: a detailed graphite heron with feathers, reeds and rippled water.">
+      <figcaption><b>Day 2</b> · pencil · heron 5</figcaption>
+    </figure>
+    <figure>
+      <img src="img/go-robin8-signed.jpg" width="1800" height="1350" alt="Robin 8: an American robin on a budding branch in thick, directional gouache strokes, signed Claude in the corner.">
+      <figcaption><b>Day 4</b> · gouache · robin 8, signed</figcaption>
+    </figure>
+  </div>
+
+  <section class="col">
+    <p>The setup stayed the same the whole way through. Claude writes each medium as a simulation that runs in a web page, then paints by sending it brush strokes from code, toward a reference image that OpenAI's image model makes for it. It works in batches and saves a checkpoint after each one. A judge scores every checkpoint against the reference, and anything that made things worse gets rolled back. A rolled-back branch sticks around as a lookahead Claude can return to. The number after each painting is its score, how far it is from the reference: lower is closer, and scores only compare within one medium.</p>
+    <p>What changed, a lot, was everything inside that loop. Below is each step in order, with times in my time zone (Eastern).</p>
+  </section>
+
+  <!-- ====================================================== IN PICTURES -->
+  <section class="wide" id="pictures" style="display:flex;flex-direction:column;gap:0.9rem">
+    <div class="col" style="margin:0;max-width:40rem"><h2>The whole run, in pictures</h2><p>Every milestone in order. Tap one to jump to the step that made it. Any image on the page opens full size.</p></div>
+    <div class="strip">
+      <a class="tile" href="#s1"><img src="img/t-wc-dusk-v1.jpg" width="480" height="360" alt="Watercolor sim"><span><span class="dot d-wc"></span>Watercolor sim</span></a>
+      <a class="tile" href="#s2"><img src="img/t-wc-pines-after.jpg" width="480" height="360" alt="The fiber brush"><span><span class="dot d-wc"></span>The fiber brush</span></a>
+      <a class="tile" href="#s4"><img src="img/t-ink-bamboo-v5.jpg" width="480" height="360" alt="Sumi-e"><span><span class="dot d-sumi"></span>Sumi-e</span></a>
+      <a class="tile" href="#s6"><img src="img/t-ink-final-heron-half.jpg" width="480" height="360" alt="First painting"><span><span class="dot d-sumi"></span>First painting</span></a>
+      <a class="tile" href="#s8"><img src="img/t-ink-final-heron-lib.jpg" width="480" height="360" alt="Library and judge"><span><span class="dot d-sumi"></span>Library and judge</span></a>
+      <a class="tile" href="#s12"><img src="img/t-ink-final-heron-cb.jpg" width="480" height="360" alt="Codebook heron"><span><span class="dot d-sumi"></span>Codebook heron</span></a>
+      <a class="tile" href="#s14"><img src="img/t-pe-heron-1.jpg" width="480" height="360" alt="Heron 1"><span><span class="dot d-graphite"></span>Heron 1</span></a>
+      <a class="tile" href="#s15"><img src="img/t-pe-heron-2.jpg" width="480" height="360" alt="Heron 2"><span><span class="dot d-graphite"></span>Heron 2</span></a>
+      <a class="tile" href="#s17"><img src="img/t-pe-heron-3.jpg" width="480" height="360" alt="Heron 3"><span><span class="dot d-graphite"></span>Heron 3</span></a>
+      <a class="tile" href="#s18"><img src="img/t-pe-heron-4.jpg" width="480" height="360" alt="Heron 4"><span><span class="dot d-graphite"></span>Heron 4</span></a>
+      <a class="tile" href="#s20"><img src="img/t-pe-heron-5.jpg" width="480" height="360" alt="Heron 5"><span><span class="dot d-graphite"></span>Heron 5</span></a>
+      <a class="tile" href="#s24"><img src="img/t-go-robin-1.jpg" width="480" height="360" alt="Robin 1"><span><span class="dot d-robin"></span>Robin 1</span></a>
+      <a class="tile" href="#s25"><img src="img/t-go-robin-2.jpg" width="480" height="360" alt="Robin 2"><span><span class="dot d-robin"></span>Robin 2</span></a>
+      <a class="tile" href="#s27"><img src="img/t-go-robin-3.jpg" width="480" height="360" alt="Robin 3"><span><span class="dot d-robin"></span>Robin 3</span></a>
+      <a class="tile" href="#s28"><img src="img/t-go-robin-4.jpg" width="480" height="360" alt="Robin 4"><span><span class="dot d-robin"></span>Robin 4</span></a>
+      <a class="tile" href="#s31"><img src="img/t-go-robin-7.jpg" width="480" height="360" alt="Robin 7"><span><span class="dot d-robin"></span>Robin 7</span></a>
+      <a class="tile" href="#s32"><img src="img/t-go-robin-8.jpg" width="480" height="360" alt="Robin 8"><span><span class="dot d-robin"></span>Robin 8</span></a>
+      <a class="tile" href="#s33"><img src="img/t-go-sig-fude.jpg" width="480" height="360" alt="Signature"><span><span class="dot d-film"></span>Signature</span></a>
+    </div>
+  </section>
+
+  <!-- ====================================================== WATERCOLOR -->
+  <section class="col era e-wc" id="watercolor">
+    <span class="swatch"></span>
+    <span class="label">Part one · Watercolor</span>
+    <h2>A simulator that looks wet</h2>
+    <span class="when">Sep 30 · 8:47 am to 11:14 am</span>
+    <p>This started as a toy. I asked for a fully realistic watercolor sim and then kept pointing at whatever still looked fake. Most fixes came from Claude stepping frames in code and inspecting screenshots, without waiting for me to notice.</p>
+  </section>
+
+  <article class="step e-wc" id="s1">
+    <div class="meta"><span class="num">1</span><span>Sep 30</span><span>8:47 am</span></div>
+    <div class="body">
+      <h3>A watercolor sim from scratch</h3>
+      <div class="row"><span>Why</span><p>I asked for a fully realistic watercolor simulation in WebGL.</p></div>
+      <div class="row"><span>Tried</span><p>Before rendering anything, Claude fitted Kubelka–Munk coefficients (the standard model of how pigment absorbs and scatters light) for 8 pigments in a script and checked their tint ramps and mixes. Then water as shallow-water flow on the GPU, with the paper's own capillary layer underneath. Pigment gets carried, settles, deposits and lifts. Blooms form with dark ragged rims, and a surface-tension term stops single-cell "fingers".</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        
+        <li>Granulation started as pixel noise. It became pigment settling into the paper's felt bumps.</li>
+        <li>Diamond-shaped edges came from water momentum running along the grid. Fading inertia in thin films fixed it, since thin films are dominated by viscosity.</li>
+      </ul></div>
+      <span class="badge kept">Kept · published as the interactive sim</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/wc-granulation-noise.jpg" width="800" height="514" loading="lazy" alt="Early render: the sky shows pixel-level speckle instead of granulation."><figcaption><b>Before</b> · granulation as per-pixel noise in the sky</figcaption></figure>
+    <figure><img src="img/wc-dusk-v1.jpg" width="800" height="514" loading="lazy" alt="Version 1 demo: a misty dusk landscape with soft washes."><figcaption><b>After</b> · the v1 dusk demo, pigment settling into the paper's tooth</figcaption></figure>
+  </div>
+  
+
+  <article class="step e-wc" id="s2">
+    <div class="meta"><span class="num">2</span><span>Sep 30</span><span>10:07 am</span></div>
+    <div class="body">
+      <h3>The brush gets hairs</h3>
+      <div class="row"><span>Why</span><p>I asked Claude to hunt for whatever still looked unrealistic, starting with a model of individual brush fibers.</p></div>
+      <div class="row"><span>Tried</span><p>A bending spine clamped in a ferrule, holding 24 to 98 tufts on springs. Each tuft carries its own water and pigment and refills from a reservoir in the belly. A wet brush holds a point; as it dries it clumps into streaks. Tufts pick paint back up, so blue dragged through wet yellow comes out green. Round, flat, mop and rigger brushes.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Overlapping tufts drained water about 20× too fast until contact was normalized to the real footprint.</li>
+        <li>Blooms wouldn't spread, because pressure alone can't move a thin film. Fiber-guided wicking fixed that. It then stamped a crosshatch, so the fiber directions were randomized.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/wc-bristle-brush.jpg" width="800" height="514" loading="lazy" alt="The bristle brush mid-stroke, with the mix readout in the side panel."><figcaption><b>The fiber brush</b> · with a readout of what&#39;s on the brush</figcaption></figure>
+    <figure><img src="img/wc-blooms.jpg" width="800" height="514" loading="lazy" alt="Bloom test: blobs with dark ragged rims and pale centers."><figcaption><b>Blooms</b> · dark ragged rims, pale centers</figcaption></figure>
+  </div>
+  <div class="wide pair">
+    <figure><img src="img/wc-pines-before.jpg" width="800" height="514" loading="lazy" alt="Pines painted as soft blobs."><figcaption><b>Pines, before</b> · the brush laid blobs</figcaption></figure>
+    <figure><img src="img/wc-pines-after.jpg" width="800" height="514" loading="lazy" alt="Pines painted in branch tiers."><figcaption><b>Pines, after</b> · repainted in branch tiers once the brush splayed properly</figcaption></figure>
+  </div>
+
+  <article class="step e-wc" id="s3">
+    <div class="meta"><span class="num">3</span><span>Sep 30</span><span>10:56 am</span></div>
+    <div class="body">
+      <h3>Measuring striped brush strokes before fixing them</h3>
+      <div class="row"><span>Why</span><p>I could see a repeating pattern in the strokes and asked whether they needed some kind of interpolation.</p></div>
+      <div class="row"><span>Tried</span><p>Claude ran a spectral test on a constant-speed stroke before changing anything and found five separate causes. The demo script itself spaced its passes exactly 0.034 of the sheet apart. The brush laid one lump of paint per frame. Each tuft read paper it had wetted a frame earlier. Mouse samples were joined by straight lines. And the fiber noise had an 11.75-cell lattice. Claude fixed all five.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>The worst offender was Claude's own demo: a ~70-cell period about 8× above the noise floor.</li>
+        <li>A 120 Hz screen used to lay 1.8× more pigment than 60 Hz. Now they match.</li>
+        <li>I asked whether it made the sim more realistic. Claude said "Mostly no": these were artifact fixes. It also walked its own "5% ripple" figure back to about 2× noise.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:44rem"><img src="img/wc-fast-circles.jpg" width="800" height="514" loading="lazy" alt="Two fast circles: the left one made of straight segments, the right one smooth."><figcaption><b>Fast circles</b> · straight segments between samples (left) vs splines plus time slices (right)</figcaption></figure>
+
+  <!-- ====================================================== INK -->
+  <section class="col era e-sumi" id="ink">
+    <span class="swatch"></span>
+    <span class="label">Part two · Sumi-e ink</span>
+    <h2>Claude starts painting, and finds out it's the bottleneck</h2>
+    <span class="when">Sep 30 · 11:15 am to 7:28 pm</span>
+    <p>Ink got the agent built: a reference image, checkpoints, a judge, rollbacks. The first painting took 36 checkpoints and threw half of them away. Most of the afternoon went into learning that the problem was Claude's model of its own brush, not the simulator.</p>
+  </section>
+
+  <article class="step e-sumi" id="s4">
+    <div class="meta"><span class="num">4</span><span>Sep 30</span><span>11:15 am</span></div>
+    <div class="body">
+      <h3>Sumi-e: rice paper, a fude and a halo</h3>
+      <div class="row"><span>Why</span><p>I asked for a sumi-e ink demo, then for Claude to fix the limitations it had listed.</p></div>
+      <div class="row"><span>Tried</span><p>An ink palette (pine soot, oil soot, indigo, ochre, gamboge, cinnabar), three xuan rice papers and a goat-hair fude (an East Asian ink brush) that can be loaded in three tones. Raw xuan didn't bleed any more than watercolor paper did, so Claude added sideways wicking and filtration. Then it added a separate layer of fine carbon that travels further than the rest, which makes the halo (nijimi). It also carved a seal and brushed a signature.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Halo: a 6.8 mm core with a ~5.6 mm pale fringe at 10 to 14% of its darkness on raw xuan, against 0.9 mm on sized xuan (coated so ink spreads less).</li>
+        <li>Still missing: a dark tide-line at the halo's edge. An edge-evaporation attempt was reverted.</li>
+      </ul></div>
+      <span class="badge kept">Kept · tide-line dropped</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/ink-nijimi-before.jpg" width="800" height="514" loading="lazy" alt="Ink strokes on raw rice paper with clean edges."><figcaption><b>Raw xuan, before</b> · strokes stop at their edges</figcaption></figure>
+    <figure><img src="img/ink-nijimi-after.jpg" width="800" height="514" loading="lazy" alt="Ink strokes on raw rice paper with pale fibrous halos."><figcaption><b>After the fines layer</b> · pale fibrous halos (nijimi)</figcaption></figure>
+  </div>
+  <div class="wide pair">
+    <figure><img src="img/ink-bamboo-v4.jpg" width="800" height="514" loading="lazy" alt="Bamboo demo version 4: crisp strokes, a plain bar seal."><figcaption><b>Bamboo v4</b> · no halo, bar seal</figcaption></figure>
+    <figure><img src="img/ink-bamboo-v5.jpg" width="800" height="514" loading="lazy" alt="Bamboo demo version 5: haloed strokes, a brushed signature and a carved red seal."><figcaption><b>Bamboo v5</b> · nijimi halos, brushed 竹, carved 墨趣 seal</figcaption></figure>
+  </div>
+
+  <article class="step e-sumi" id="s5">
+    <div class="meta"><span class="num">5</span><span>Sep 30</span><span>12:02 pm</span></div>
+    <div class="body">
+      <h3>A studio Claude can work in</h3>
+      <div class="row"><span>Why</span><p>I asked Claude to build itself a way to paint: generate a reference with gpt-image-2.5, save a checkpoint every few actions, judge each one, roll back what doesn't work, and count the rolled-back branch as a lookahead.</p></div>
+      <div class="row"><span>Tried</span><p>Claude drives the sim the way a painter works a sheet. It can test a stroke on scrap paper, dry a passage forward to see how it will settle, and calibrate how each pigment and load actually looks once dry. Every checkpoint can be returned to exactly, so trying something and taking it back costs nothing.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>The sim runs about 10× real time. 15 checkpoints in 27 s.</li>
+        
+        
+        <li>The reference is the picture Claude is trying to paint. A blank sheet scores 12.25 against it.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/ink-heron-reference.jpg" width="1400" height="933" loading="lazy" alt="The heron reference: a gray heron standing among reeds in sumi-e style."><figcaption><b>The reference</b> · gpt-image-2.5, told to paint in the sim's own medium</figcaption></figure>
+    <figure><img src="img/ink-calibration.jpg" width="1400" height="1050" loading="lazy" alt="A calibration chart of ink swatches at increasing loads, dried and measured."><figcaption><b>Calibration</b> · pigment × load, dried and measured</figcaption></figure>
+  </div>
+
+  <article class="step e-sumi" id="s6">
+    <div class="meta"><span class="num">6</span><span>Sep 30</span><span>12:47 pm</span></div>
+    <div class="body">
+      <h3>First painting: 36 checkpoints, 18 rolled back</h3>
+      <div class="row"><span>Why</span><p>I wanted an end-to-end video of it painting.</p></div>
+      <div class="row"><span>Tried</span><p>A scrap test showed raw xuan haloed every stroke, so the run used half-sized xuan. Calibration showed pine soot is steep: a load of 0.1 already gives L78 (lightness, 0 black to 100 white), so the mist needed loads around 0.03 to 0.06.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Score 12.25 → 9.29, with 95 actions kept.</li>
+        <li>Rolled back: the mist twice (too dark), blobby reed heads, a neck twice as thick as it should be, a carrot-shaped leg twice, and a cap blob from the fude splaying 3× at pressure 0.8.</li>
+        <li>Darks painted into the wet body bled everywhere (the score got 1.87 worse). The fix was to dry the sheet first.</li>
+      </ul></div>
+      <span class="badge mixed">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/ink-heron-half-wet-darks.jpg" width="1400" height="392" loading="lazy" alt="Three panels: target, painting with dark ink bleeding into the wet body, and an error map."><figcaption><b>Checkpoint 13</b> · target · painting · error map. Darks bled into a wet body, so it was rolled back.</figcaption></figure>
+
+  <article class="step e-sumi" id="s7">
+    <div class="meta"><span class="num">7</span><span>Sep 30</span><span>2:02 pm</span></div>
+    <div class="body">
+      <h3>Mostly Claude's fault, not the simulator's</h3>
+      <div class="row"><span>Why</span><p>I asked whether the problems were limits of the simulator or of what Claude did with it.</p></div>
+      <div class="row"><span>Answer</span><p>"Mostly me." Most rollbacks came from misjudging how the brush turns a path into a mark. Claude found two real limits in the sim: pale ink has a floor, and edge softness only changes by switching paper. It also named its own process gaps: no model of its strokes up front, coordinates read by eye, batches of 6 actions, a score blind to texture, and only 3 lookaheads.</p></div>
+    </div>
+  </article>
+
+  <article class="step e-sumi" id="s8">
+    <div class="meta"><span class="num">8</span><span>Sep 30</span><span>2:07 pm</span></div>
+    <div class="body">
+      <h3>A stroke library, and a judge that looks only where Claude painted</h3>
+      <div class="row"><span>Why</span><p>I gave it a list: a library of strokes to call on and adjust while painting, rollback to any checkpoint, a better score, and counting the pre-rollback branch as the lookahead.</p></div>
+      <div class="row"><span>Tried</span><p>Claude turned the first run's keep and reject calls into a test set. The old score was global, so a small batch's effect drowned in the whole sheet. The new judge only measures where a batch painted: error within a tolerance, over-darkening, precision and texture. It blames individual actions and returns BETTER, FLAWED or WORSE. Rollback now goes to any checkpoint, or to any single action inside one. The library turns "a 4 mm mark at L60, here" into brush moves using calibration sheets, and checks itself in a closed loop.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>The new judge flagged all 12 batches Claude had rejected in the first run (some rejections cost two checkpoints).</li>
+        <li>Library accuracy, median miss: length 0.5 → 0.16 mm, width 7% → 6%, lightness 3.8 → 0.5.</li>
+        <li>Hand-picked leaf coordinates were 5 to 10 mm off, so a tracing tool now reads strokes from the reference.</li>
+        <li>Run 2 scored 8.98 against 9.29, but only by leaving out the leaves, cattail heads and crest.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/ink-compare-runs.jpg" width="1400" height="379" loading="lazy" alt="Reference, run 1 at 9.29 and run 2 at 8.98, side by side."><figcaption><b>Reference · run 1 (by eye, 9.29) · run 2 (library and judge, 8.98)</b></figcaption></figure>
+
+  <article class="step e-sumi" id="s9">
+    <div class="meta"><span class="num">9</span><span>Sep 30</span><span>3:03 pm</span></div>
+    <div class="body">
+      <h3>Adding texture: brush hairs that leave streaks</h3>
+      <div class="row"><span>Why</span><p>I wanted the brush in the animation, and said we weren't getting enough texture.</p></div>
+      <div class="row"><span>Tried</span><p>Claude measured edge raggedness: 1.44 to 2.64 in the reference, 1.17 in Claude's painting. It found four causes. On the physics side, a dry brush gave paper speckle instead of hair streaks. The default water (0.38) always painted solid. Strokes laid into a wet wash merged. Resolution mattered least. The fixes were hair gaps anchored to the stroke, outer tufts that refill more slowly, and a texture setting (solid, natural, dry). A new "press" action gives an upright rosette or a leaning teardrop.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>The heron's back went to 1.53 raggedness against the reference's 1.44. The body underlayer is still 1.23 against 2.64.</li>
+        <li>The repaint scored 9.37, slightly worse than run 2's 8.98. The score can't see texture, so it only counted the drier strokes as a small loss.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/ink-texture-compare.jpg" width="1076" height="1456" loading="lazy" alt="Three columns of crops: reference, old brush, hair-streak brush."><figcaption><b>Texture</b> · reference · old brush · hair-streak brush</figcaption></figure>
+    <figure><img src="img/ink-press-splay.jpg" width="1400" height="665" loading="lazy" alt="Press marks: upright rosettes and leaning teardrops at three pressures."><figcaption><b>Press</b> · upright rosettes and leaning teardrops at 0.4, 0.7 and 1.0</figcaption></figure>
+  </div>
+  <figure class="wide" style="max-width:52rem">
+    <video controls playsinline muted preload="metadata" poster="img/ink-final-heron-tex2.jpg" width="1280" height="960" src="media/ink-heron-timelapse.mp4"></video>
+    <figcaption><b>Ink heron, run 3, painting itself</b> · time-lapse of the kept strokes, with the fiber brush drawn in</figcaption>
+  </figure>
+
+  <article class="step e-sumi" id="s10">
+    <div class="meta"><span class="num">10</span><span>Sep 30</span><span>3:32 pm</span></div>
+    <div class="body">
+      <h3>Fast enough to search</h3>
+      <div class="row"><span>Why</span><p>I asked how fast the sim could run, and whether Claude could branch from any earlier state, or recombine moves from different states and replay them.</p></div>
+      <div class="row"><span>Tried</span><p>Claude benchmarked everything first. Then it built a search that paints and scores dozens of variants of a move inside the page, keeping the best. Order matters in paint, so combined moves have to be replayed rather than merged.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>One stroke ~25 ms. A full replay of the heron from blank 3.4 s. Checkpoint save 3 ms, restore 1 ms.</li>
+        <li>Scoring a candidate in the page: 131 ms dried, 18 ms wet.</li>
+        <li>48 painted variants in 7.8 s.</li>
+        <li>On one leaf, the judge rated search's best stroke 63 against 20 for Claude's pick (on this per-stroke rating, higher is better). Claude had written the leaf backwards: "the score was right; I was wrong".</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/ink-search-leaf.jpg" width="1400" height="640" loading="lazy" alt="A contact sheet of the top three of 48 leaf variants with their scores."><figcaption><b>Search</b> · the top 3 of 48 painted variants for one leaf, with scores</figcaption></figure>
+
+  <article class="step e-sumi" id="s11">
+    <div class="meta"><span class="num">11</span><span>Sep 30</span><span>4:01 pm</span></div>
+    <div class="body">
+      <h3>A codebook: 11,132 brush marks, each painted and measured</h3>
+      <div class="row"><span>Why</span><p>I suggested a codebook of strokes might work, since Claude could just experiment with lots of them, and asked it to fix the way the brush lands.</p></div>
+      <div class="row"><span>Tried</span><p>Brush contact first. The tip hairs had stopped 0.8 mm short, so contact snapped on at 4 to 7 mm wide. Now the point touches first and splay grows with contact time. Then the codebook: 12,000 gestures spread over 13 parameters. Each one is painted, isolated and measured, so a mark can be looked up by shape, and blended from its neighbors when there's no exact match.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>First touch 3.4 → 1.8 mm wide.</li>
+        <li>11,132 marks in 11 minutes on 696 sheets.</li>
+        <li>Rotating a mark changed it by 0.9 to 3 mm, against 0.4 to 0.5 mm for just moving it, because the brush lean carried over from the last stroke. The fix was reverted, so the codebook is only approximate under rotation.</li>
+        <li>Best automatic reed rated 60.5, against 63 for the best hand-found blade.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:40rem"><img src="img/ink-codebook-sheet.jpg" width="768" height="576" loading="lazy" alt="One codebook sheet: dozens of measured ink marks of different shapes, shown light on dark."><figcaption><b>One of 696 codebook sheets</b> · each mark painted, isolated and measured</figcaption></figure>
+
+  <article class="step e-sumi" id="s12">
+    <div class="meta"><span class="num">12</span><span>Sep 30</span><span>5:33 pm</span></div>
+    <div class="body">
+      <h3>The results weren't amazing because Claude's plan covered 22% of the ink</h3>
+      <div class="row"><span>Why</span><p>I asked why the results weren't amazing. That was the whole message.</p></div>
+      <div class="row"><span>Tried</span><p>Claude measured every stage and answered "mostly because of how I set it up, not the brush". Its traced strokes covered only 22% of the visible ink in the reed passage. Most marks the heron needed weren't in the codebook: the nearest entry was 1.5 to 3.6 times farther off than entries sit from each other. And the fit stopped at its first proposal. Painting accuracy was fine: marks landed within 0.3 mm of prediction. The fixes were stroke extraction from a skeleton of what's still missing, growing the codebook toward the target, refining every choice, and painting by value level (L40, 55, 68, 80). Pale smudges scored well because the score only counted darkness, so an outline constraint and a structure term went in.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Reed passage: missing ink 9.95 → 4.06, then 3.76 with the outline constraint.</li>
+        <li>Whole heron from blank: 129 of 157 marks kept out of 7,165 candidates, in 60 minutes. Missing ink by level 7.9 → 2.23. The codebook grew from ~11k to ~32k marks.</li>
+        <li>Score 5.65, the best of the four ink herons (the hand-placed runs scored 8.98 to 9.37).</li>
+        <li>Claude's verdict: it "isn't beautiful yet". The water is cloudy and the body blobby.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/ink-cb-result.jpg" width="1230" height="340" loading="lazy" alt="Target, blank sheet, and the heron painted automatically from the codebook in 129 marks."><figcaption><b>Target · blank · painted from the codebook (129 marks)</b></figcaption></figure>
+  <figure class="wide" style="max-width:44rem"><img src="img/ink-cb-strokes-L40.jpg" width="1400" height="1050" loading="lazy" alt="Strokes extracted from the darkest value level of the reference, drawn as colored skeleton lines."><figcaption><b>Strokes read from the reference</b> · the darkest level (L40), before painting</figcaption></figure>
+  <div class="wide pair">
+    <figure><img src="img/ink-reeds-before.jpg" width="1110" height="340" loading="lazy" alt="Target, blank, and 47 codebook marks painted as smudgy reeds."><figcaption><b>Reeds, before</b> · 47 marks, pale smudges scoring well</figcaption></figure>
+    <figure><img src="img/ink-reeds-after.jpg" width="1110" height="340" loading="lazy" alt="Target, blank, and 44 codebook marks painted as crisper reeds."><figcaption><b>After the outline constraint</b> · 44 marks</figcaption></figure>
+  </div>
+  <div class="wide quad">
+    <figure><img src="img/ink-final-heron-half.jpg" width="1400" height="1050" loading="lazy" alt="Ink heron run 1."><figcaption><b>Run 1</b> · by eye · 9.29</figcaption></figure>
+    <figure><img src="img/ink-final-heron-lib.jpg" width="1400" height="1050" loading="lazy" alt="Ink heron run 2."><figcaption><b>Run 2</b> · library + judge · 8.98</figcaption></figure>
+    <figure><img src="img/ink-final-heron-tex2.jpg" width="1400" height="1050" loading="lazy" alt="Ink heron run 3."><figcaption><b>Run 3</b> · hair-streak brush · 9.37</figcaption></figure>
+    <figure><img src="img/ink-final-heron-cb.jpg" width="1400" height="1050" loading="lazy" alt="Ink heron run 4, painted from the codebook."><figcaption><b>Run 4</b> · codebook · 5.65</figcaption></figure>
+  </div>
+
+  <!-- ====================================================== PENCIL -->
+  <section class="col era e-graphite" id="pencil">
+    <span class="swatch"></span>
+    <span class="label">Part three · Pencil</span>
+    <h2>From plotted lines to a hand</h2>
+    <span class="when">Sep 30 · 7:47 pm to Oct 1 · 2:41 pm</span>
+    <p>Pencil is where Claude stopped drawing like a plotter. The short version, with the five herons and the video, is on the Claude learns to draw page. This is what happened between them.</p>
+  </section>
+
+  <article class="step e-graphite" id="s13">
+    <div class="meta"><span class="num">13</span><span>Sep 30</span><span>7:47 pm</span></div>
+    <div class="body">
+      <h3>Graphite, tooth and an eraser</h3>
+      <div class="row"><span>Why</span><p>I asked for a pencil mode, using hand-written library strokes and no codebook.</p></div>
+      <div class="row"><span>Tried</span><p>Graphite goes straight into the pigment layer, with no water. The paper-tooth logic from watercolor granulation is flipped: a light touch catches only the peaks, and pressure fills the tooth. Grades 4H to 8B, a blending stump, and vinyl and kneaded erasers that lift graphite the way real ones do: HB comes up nearly clean, 8B leaves a ghost.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>The first test broke every line into dashes, because the watercolor paper's bumps were about 2 mm. Three drawing papers were added.</li>
+        <li>Calibration (621 strokes) showed one hatch layer bottoms out around L65 lightness even at 8B, so darker values now cross-hatch automatically.</li>
+        <li>Values landed where asked, except the darkest: L28 came out 38. A blank sheet scores 9.21.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/pe-calibration.jpg" width="1400" height="1050" loading="lazy" alt="Pencil calibration sheet: grades by pressure, hatch and side-of-lead patches."><figcaption><b>Calibration</b> · grades × pressures, hatching and side shading</figcaption></figure>
+    <figure><img src="img/pe-target.jpg" width="1400" height="1050" loading="lazy" alt="The pencil heron reference: a detailed graphite heron in shallow water with reeds."><figcaption><b>The reference</b> · all five herons are scored against it</figcaption></figure>
+  </div>
+
+    <figure class="wide" style="max-width:48rem"><img src="img/pe-eraser-test.jpg" width="1400" height="707" loading="lazy" alt="Eraser tests on HB, 4B and 8B with vinyl and kneaded erasers."><figcaption><b>Eraser tests</b> · vinyl and kneaded on HB, 4B, 8B</figcaption></figure>
+<article class="step e-graphite" id="s14">
+    <div class="meta"><span class="num">14</span><span>Sep 30</span><span>8:05 pm</span></div>
+    <div class="body">
+      <h3>Heron 1: every line plotted like a machine (score 6.34)</h3>
+      <div class="row"><span>Tried</span><p>Hand-written library strokes, plotted as exact curves.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>A wing of three crossing layers became one flat dark mass and was rolled back. Four tones along the feathers kept it (9.06 → 7.41).</li>
+        <li>Layers multiply, so darks overshot. Each layer now only adds the darkness still missing.</li>
+        <li>Claude kept the reeds against the judge's WORSE. Its strict precision punished lines 1 mm off that matched by eye.</li>
+        
+      </ul></div>
+      <span class="badge mixed">Kept · looks plotted</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:44rem"><img src="img/pe-heron-1.jpg" width="1100" height="825" loading="lazy" alt="Pencil heron 1: even, plotted-looking hatching."><figcaption><b>Heron 1</b> · 6.34 · every line plotted as an exact curve</figcaption></figure>
+
+  <article class="step e-graphite" id="s15">
+    <div class="meta"><span class="num">15</span><span>Sep 30</span><span>8:46 pm</span></div>
+    <div class="body">
+      <h3>Heron 2: rough first, zoom in, and a hand (score 6.16)</h3>
+      <div class="row"><span>Why</span><p>I asked it to rough in the outlines first and to be able to zoom in on a region. I also pointed out that the pencil moved a bit like a machine plotting a path, and suggested it set the pencil's acceleration instead of drawing each curve directly.</p></div>
+      <div class="row"><span>Tried</span><p>A model of a hand: minimum-jerk timing (the smooth speed-up and slow-down of a practiced reach), plus the two-thirds power law so tight curves go slower. Loose searching strokes rough in the drawing first. A zoom tool shows the reference, the drawing and a too-dark/too-light map for any box, with a grid and that region's own error.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Average miss from the path: 0.27 mm for the careful hand, 0.69 mm for the rough one.</li>
+        <li>The machine look came from uniformity more than position. Lines now swell and thin, and hatching comes in bursts of 5 to 9 strokes with jittered angles and ragged ends.</li>
+        <li>Zoom showed the crest drawn on top of the crown. Redrawn: head error 10.34 → 10.06. 9 checkpoints, none rolled back.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/pe-rough.jpg" width="1400" height="1050" loading="lazy" alt="A loose rough pencil sketch of the heron."><figcaption><b>The rough</b> · loose searching strokes first</figcaption></figure>
+    <figure><img src="img/pe-heron-2.jpg" width="1100" height="825" loading="lazy" alt="Pencil heron 2."><figcaption><b>Heron 2</b> · 6.16 · paths followed by a simulated hand</figcaption></figure>
+  </div>
+  <div class="wide pair">
+    <figure><img src="img/pe-zoom-head-before.jpg" width="1400" height="438" loading="lazy" alt="Zoom view of the head: reference, drawing, and a red and blue error map, with the crest in the wrong place."><figcaption><b>Zoom, before</b> · reference · drawing · too dark (red) / too light (blue)</figcaption></figure>
+    <figure><img src="img/pe-zoom-head-after.jpg" width="1400" height="438" loading="lazy" alt="Zoom view of the head after redrawing the crest."><figcaption><b>Zoom, after</b> · crest redrawn back from the eye</figcaption></figure>
+  </div>
+
+  <article class="step e-graphite" id="s16">
+    <div class="meta"><span class="num">16</span><span>Sep 30</span><span>9:39 pm</span></div>
+    <div class="body">
+      <h3>Claude was still tracing paths, not moving a hand</h3>
+      <div class="row"><span>Why</span><p>I asked whether it was still drawing the curves itself rather than setting the acceleration I'd suggested.</p></div>
+      <div class="row"><span>Answer</span><p>Claude counted: 196 lines, 23 hatches, 21 rough strokes, 1 erase, and zero gestures. "My last summary made it sound otherwise." Aiming by acceleration is hard, since an early push moves everything after it. I told it to disable path drawing entirely, and pencil runs now refuse any mark written as a path.</p></div>
+      <span class="badge kept">Path drawing removed</span>
+    </div>
+  </article>
+
+  <article class="step e-graphite" id="s17">
+    <div class="meta"><span class="num">17</span><span>Sep 30</span><span>9:46 pm</span></div>
+    <div class="body">
+      <h3>Heron 3: every mark is a gesture (score 5.23)</h3>
+      <div class="row"><span>Tried</span><p>A gesture is a start point, an initial velocity, and pushes relative to where the hand is heading: speed up, brake, or turn. Rows of strokes repeat one motion with stagger and fanning. Strokes side by side can share one tremor, so a reed blade reads as one shape. A preview traces gestures without drawing, and an aim point reports the miss. Each gesture's tremor is seeded by its start point.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>A 100 mm stroke used to land 10 to 19 mm off. Drift was cut by about 55%. The rough sketch needed 24 gestures, with an average miss near 3 mm after two correction rounds.</li>
+        <li>Feather flicks in layers, 2B → 4B → 6B to 8B, because one layer of flicks only reaches about L85.</li>
+        <li>Construction lines were erased by replaying the rough with the eraser: same seed, same tremor, same line.</li>
+        <li>12 of 37 checkpoints rolled back. Motion-only beat path-drawn: 6.16 → 5.20, settling at 5.23 after a clean-up pass.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:52rem"><img src="img/pe-motion-vs-path.jpg" width="1400" height="1100" loading="lazy" alt="Four panels: the reference, a motion-only rough sketch of 24 gestures, the path-drawn heron at 6.16 and the motion-only heron at 5.20."><figcaption><b>Reference · motion-only rough (24 gestures) · paths followed by a hand (6.16) · motion only (5.20)</b></figcaption></figure>
+
+  <article class="step e-graphite" id="s18">
+    <div class="meta"><span class="num">18</span><span>Sep 30</span><span>11:30 pm</span></div>
+    <div class="body">
+      <h3>Heron 4: up close, pressing harder where the reference is darker (score 3.37)</h3>
+      <div class="row"><span>Why</span><p>I asked it to keep going, use the zoom tool, and get much closer first.</p></div>
+      <div class="row"><span>Tried</span><p>Tone-following pressure: each gesture presses harder where the reference is darker and eases off where the drawing is already dark enough. Reeds steered one push at a time from the start of the stroke. Correcting every push at once over-corrected.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Head redrawn: head error 6.9 → 4.1. Tail 9.9 → 5.1. Wing 5.4 → 2.8.</li>
+        <li>All ten reed blades within 0.3 mm, steered only by pushes.</li>
+        <li>Starting every reflection stroke at the same height left a band of V marks (chevrons). Claude staggered the starts and kept the clean version, though the score slightly preferred the chevrons (3.44 against 3.50).</li>
+        <li>Biggest drop between any two herons. 97 checkpoints in the run, 38 rolled back.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/pe-four-herons.jpg" width="1400" height="1171" loading="lazy" alt="The first four pencil herons, labeled with their errors."><figcaption><b>Herons 1 to 4</b> · 6.34 · 6.16 · 5.23 · 3.37</figcaption></figure>
+
+  <article class="step e-graphite" id="s19">
+    <div class="meta"><span class="num">19</span><span>Oct 1</span><span>1:54 am</span></div>
+    <div class="body">
+      <h3>The score itself was pulling the drawing toward smudge</h3>
+      <div class="row"><span>Why</span><p>I asked for more ideas, then said I meant ideas for the drawing itself.</p></div>
+      <div class="row"><span>Answer</span><p>The neck was a thick gray column instead of a slim S. The edges were fuzzy, the wing was hatched without regard to feather direction, and the reeds were single lines. The root cause was the score itself: it rewards tone area by area, which pulls a drawing toward smudge. Claude proposed an edge or direction term, outline first, marks along the form, and keeping the whites.</p></div>
+    </div>
+  </article>
+
+  <article class="step e-graphite" id="s20">
+    <div class="meta"><span class="num">20</span><span>Oct 1</span><span>1:56 am</span></div>
+    <div class="body">
+      <h3>Heron 5: strokes along the grain, at twice the resolution (score 2.66)</h3>
+      <div class="row"><span>Why</span><p>I asked for an alternate heron 4 that starts from a blank page with every tool, zoom included.</p></div>
+      <div class="row"><span>Tried</span><p>A tool that measures which way the detail runs everywhere in the reference (feathers, reed blades, ripples), traces evenly spaced lines along it, and turns each line into a gesture. Tone builds up in three light passes. The sim runs at 2048 cells instead of 1024, for a finer point.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Gestures land a median 0.2 mm from their aim. One 806-stroke body pass took error 9.04 → 6.55.</li>
+        <li>2× resolution cost nothing (21 s for the same pass). On one wing patch, error went 20.2 → 14.9.</li>
+        <li>The stump blurred feathers and ripples, and was rolled back both times. The eye stayed muddy.</li>
+        <li>Nothing was ever drawn darker than the target. 11,964 actions, 7 of 30 checkpoints rolled back.</li>
+      </ul></div>
+      <span class="badge kept">Kept · stump dropped</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/pe-flow-layers.jpg" width="1400" height="1050" loading="lazy" alt="Heron 5 midway: body tone laid in strokes that follow the feathers."><figcaption><b>Heron 5 midway</b> · three flow-following body layers, error 6.23</figcaption></figure>
+    <figure><img src="img/pe-heron-5.jpg" width="1100" height="825" loading="lazy" alt="Heron 5 finished: a detailed graphite heron with feathers, reeds and rippled water."><figcaption><b>Heron 5</b> · 2.66</figcaption></figure>
+  </div>
+  <figure class="wide" style="max-width:40rem"><img src="img/pe-wing-2k.jpg" width="1300" height="1379" loading="lazy" alt="A wing patch zoomed in at 1024 cells and at 2048 cells, each with reference, drawing and error map."><figcaption><b>One wing patch</b> · 1024 cells (error 20.2, left) vs 2048 cells with layered strokes (14.9, right)</figcaption></figure>
+  <figure class="wide" style="max-width:52rem">
+    <video controls playsinline muted preload="metadata" poster="img/pe-heron-5.jpg" width="1280" height="960" src="media/heron-5-timelapse.mp4"></video>
+    <figcaption><b>Heron 5 drawing itself</b> · 30 s time-lapse, rough first, then strokes along the grain in light layers</figcaption>
+  </figure>
+
+  <article class="step e-graphite" id="s21">
+    <div class="meta"><span class="num">21</span><span>Oct 1</span><span>9:39 am to 2:41 pm</span></div>
+    <div class="body">
+      <h3>A character drawing: erasing beat adding detail</h3>
+      <div class="row"><span>Why</span><p>Next we did a pencil drawing from an anime character sheet. That one stays off this page, but four lessons from it are worth keeping.</p></div>
+      <div class="row"><span>Found</span><ul class="ev">
+        <li>Blank seams. Strokes fade in over 1.2 mm and out over 2.5 mm, and the grain tool ended strokes wherever the detail changed direction, which is exactly at outlines. So every faded end landed on the darkest lines and left them bare. Strokes running along each seam with almost no taper took error 4.47 → 3.64.</li>
+        <li>I said the grain should be a guide, not a rail. Guided strokes, steered gently with momentum and a turn limit, removed the seams by construction. Patch error 13.49 → 11.58.</li>
+        <li>Lifting graphite with a kneaded eraser only where the drawing was too dark was the biggest single gain (4.13 → 3.41, too-dark to zero). Close-up "detail" passes were rolled back every time.</li>
+        <li>When I asked for more human charm, Claude made the drawing less even: bursts of strokes, strokes that change by role, edges that come and go, and a few mistakes left in. Its reasoning was "A person decides what matters and does that part carefully. The rest gets looser or stays unfinished." The result looked more hand-made and a little grayer: 3.41 against 3.37.</li>
+        
+      </ul></div>
+    </div>
+  </article>
+
+  <!-- ====================================================== GOUACHE -->
+  <section class="col era e-robin" id="gouache">
+    <span class="swatch"></span>
+    <span class="label">Part four · Gouache</span>
+    <h2>One robin, eight times</h2>
+    <span class="when">Oct 2 · 9:03 pm to Oct 3 · 10:29 am</span>
+    <p>Then opaque paint. Claude built the medium and painted the same robin eight times, each time changing one big thing. Robins 1 to 3 chased accuracy, 4 to 7 chased economy, and 8 combined both with zoom levels.</p>
+  </section>
+  <figure class="wide"><img src="img/go-grid-1-8.jpg" width="1800" height="740" loading="lazy" alt="All eight robin paintings in a grid with stroke counts."><figcaption><b>Robins 1 to 8</b> · 4,542 · 13,260 · 14,541 · 1,204 · 1,157 · 1,022 · 1,017 · 3,450 strokes</figcaption></figure>
+
+  <article class="step e-robin" id="s22">
+    <div class="meta"><span class="num">22</span><span>Oct 2</span><span>9:03 pm</span></div>
+    <div class="body">
+      <h3>A paint that covers</h3>
+      <div class="row"><span>Why</span><p>I asked for a new paint medium and another round of learning to paint. Claude asked which kind, and I said opaque color paint, with a new reference of a different bird, maybe an American robin.</p></div>
+      <div class="row"><span>Tried</span><p>The sim tracks a film of paint with a thickness, a wetness and the direction of the last brush stroke. A tuft deposits where the film is thinner than what it carries, picks wet paint back up when it's nearly empty, and stirs its color into wet paint. Paint dries from the outside in, thin films first, with 45 s of open time. Dry paint folds into the layer below as a Kubelka–Munk layer, so new paint hides it only as far as its own hiding power allows. Each pigment is defined by its masstone (straight from the tube) and a 1:9 tint with white, and its absorption and scattering are solved from those two. A filbert brush and an illustration board were added.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>First test: white covered dark blue, yellow blended into wet red, and dry brush streaked.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:40rem"><img src="img/go-engine-test.jpg" width="1400" height="1050" loading="lazy" alt="First gouache test sheet: white over dark blue, yellow blended into wet red, dry-brush streaks."><figcaption><b>First test sheet</b> · covering, wet blending, dry brush</figcaption></figure>
+
+  <article class="step e-robin" id="s23">
+    <div class="meta"><span class="num">23</span><span>Oct 2</span><span>9:37 pm</span></div>
+    <div class="body">
+      <h3>Mixing to a target color, and a washed-out reference</h3>
+      <div class="row"><span>Tried</span><p>A mixer that finds the closest mix of tubes for any color. Early mixes missed by ΔE 13 and 6.4 (a color-difference measure; about 1 is barely visible). A tint can't pin down how strongly an opaque pigment scatters in its own color's channel, so each opaque pigment now gets a minimum amount of scattering. Separately, image prep had white-balanced the robin's pale sky as if it were bare paper, which washed the whole target out. That correction is now off for opaque paint, and a new judge scores color distance without penalizing too-dark, since you can paint over it.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Typical mix error ΔE 0.01 to 0.5.</li>
+        <li>Swapping black for crimson took mean / worst ΔE over 1,500 target colors from 0.43 / 13.3 to 0.32 / 1.9. Darks now come from crimson with phthalo green, or ultramarine with burnt sienna.</li>
+        <li>Blank board 49.18 → 57.75 once the target stopped being washed out (the true colors sit further from bare board).</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/go-reference.jpg" width="1400" height="933" loading="lazy" alt="The robin reference: an American robin on a budding branch, painted loosely."><figcaption><b>The reference</b> · gpt-image-2.5, 33 s</figcaption></figure>
+    <figure><img src="img/go-calibration.jpg" width="1400" height="1050" loading="lazy" alt="A brush calibration sheet: strokes from ten brushes at three pressures."><figcaption><b>Brush widths</b> · 10 brushes × 3 pressures (1" flat ≈ 20.5 mm, No. 2 round 2.4 mm)</figcaption></figure>
+  </div>
+
+  <article class="step e-robin" id="s24">
+    <div class="meta"><span class="num">24</span><span>Oct 2</span><span>9:44 pm</span></div>
+    <div class="body">
+      <h3>Robin 1: planned strokes, but no eye (score 4.52)</h3>
+      <div class="row"><span>Tried</span><p>A planner starts a stroke wherever color error is high. It paints the reference color averaged over the brush's footprint and keeps going along the form as long as that color helps. Strokes are pooled into mixes and laid dark to light, big brushes first.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Darks came out too light (head lightness 39 against 24) because pooling averaged them. Now a stroke only joins an existing mix within a tolerance: 174 mixes instead of a few.</li>
+        <li>4,542 strokes, and no eye.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:44rem"><img src="img/go-robin-1.jpg" width="1100" height="825" loading="lazy" alt="Robin 1."><figcaption><b>Robin 1</b> · 4.52 · 4,542 strokes · no eye</figcaption></figure>
+
+  <article class="step e-robin" id="s25">
+    <div class="meta"><span class="num">25</span><span>Oct 2</span><span>10:01 pm</span></div>
+    <div class="body">
+      <h3>Robin 2: a finer simulation, still no eye (score 3.13)</h3>
+      <div class="row"><span>Tried</span><p>Sim at 2048×1536 (cells of about 0.15 mm), with each brush carrying proportionally more paint at the finer grid. Eight passes from big brush to small.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>The score fell from 17.6 after the first pass to 3.13 after the last, most of it in the first three.</li>
+        <li>13,260 strokes. Still no eye: small strokes smeared into wet paint.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide" style="max-width:44rem"><img src="img/go-robin-2.jpg" width="1100" height="825" loading="lazy" alt="Robin 2."><figcaption><b>Robin 2</b> · 3.13 · 13,260 strokes</figcaption></figure>
+
+  <article class="step e-robin" id="s26">
+    <div class="meta"><span class="num">26</span><span>Oct 2</span><span>10:50 pm</span></div>
+    <div class="body">
+      <h3>Re-rendering finished paintings to look like paint</h3>
+      <div class="row"><span>Why</span><p>I asked for a more realistic rendering of the paint itself, without changing anything else.</p></div>
+      <div class="row"><span>Tried</span><p>Display only, without touching the physics. Claude saves a checkpoint's state and re-renders it with new display code. The new look interpolates the sim grid smoothly and re-sharpens edges along their real contours. It adds bristle furrows along each stroke's recorded direction, raised impasto from paint thickness, and board grain under thin paint.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Every robin on this page is shown in this look, robins 1 and 2 included.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide" style="display:flex;flex-direction:column;gap:1rem">
+    <figure><img src="img/go-rerender-compare.jpg" width="1400" height="522" loading="lazy" alt="Robin 1 in the old flat render and the new realistic render, side by side."><figcaption><b>Robin 1, same strokes</b> · old render vs new</figcaption></figure>
+    <figure><img src="img/go-rerender-closeup.jpg" width="1400" height="522" loading="lazy" alt="Close-up of the robin's head in old and new renders, showing furrows and relief."><figcaption><b>Close-up</b> · bristle furrows, impasto and re-sharpened edges</figcaption></figure>
+  </div>
+
+  <article class="step e-robin" id="s27">
+    <div class="meta"><span class="num">27</span><span>Oct 2</span><span>11:34 pm</span></div>
+    <div class="body">
+      <h3>Robin 3: a background that stops at the bird, and an eye by hand (score 3.09)</h3>
+      <div class="row"><span>Tried</span><p>The rough outline of the bird was snapped to its real edge, which a hand-drawn outline missed by several millimeters. With regions, a loose 1" flat background stops at the bird, and each region takes its colors only from itself, so orange stopped bleeding into the sky. A tool for automatic accents found 34 dark and 77 light blobs. Then the eye, by hand, using zoom and gesture previews.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Automatic accents were "far too big and smeared past the beak". Rejected.</li>
+        <li>Eye, four tries. The ring arcs wouldn't land at 7.6 mm across, and skipping the preview once turned it into a 12 mm loop. The kept eye is one small-filbert touch plus a catchlight. The judge called it WORSE; Claude kept it, since "an eye that reads matters more than matching the ring's pixels".</li>
+        <li>14,541 strokes. Still the lowest score of the eight.</li>
+      </ul></div>
+      <span class="badge mixed">Kept · auto accents dropped</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/go-eye-zoom.jpg" width="1400" height="424" loading="lazy" alt="Zoom on the robin's eye: reference, painting, and difference."><figcaption><b>Zoom on the eye</b> · reference · painting · difference</figcaption></figure>
+    <figure><img src="img/go-eye-dabs-vs-hand.jpg" width="1216" height="450" loading="lazy" alt="The eye after automatic dabs, smeared, and after the hand-aimed touch with a catchlight."><figcaption><b>Automatic dabs (rejected) · hand-aimed eye (kept)</b></figcaption></figure>
+  </div>
+  <div class="wide pair">
+    <figure><img src="img/go-eye-preview.jpg" width="1400" height="616" loading="lazy" alt="A preview of planned eye-ring gestures drawn over the reference and painting."><figcaption><b>Gesture preview</b> · where the eye-ring arcs would go, before painting</figcaption></figure>
+    <figure><img src="img/go-robin-3.jpg" width="1100" height="825" loading="lazy" alt="Robin 3."><figcaption><b>Robin 3</b> · 3.09 · 14,541 strokes</figcaption></figure>
+  </div>
+
+  <article class="step e-robin" id="s28">
+    <div class="meta"><span class="num">28</span><span>Oct 3</span><span>7:13 am</span></div>
+    <div class="body">
+      <h3>Robin 4: a price per stroke (1,204 strokes, score 5.39)</h3>
+      <div class="row"><span>Why</span><p>I asked it to use as few brushstrokes as it could.</p></div>
+      <div class="row"><span>Tried</span><p>A greedy planner. At each step it picks the single stroke that removes the most remaining error, in the color that fits its whole footprint. Each pass gets a budget and stops when the next stroke isn't worth its price.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Background error fell from 34.9 to 17.1 in the first 25 strokes, and only to 10.3 after 102.</li>
+        <li>442 strokes reached 8.7, where robin 1 needed about 1,000 for 8.3.</li>
+        <li>It lost the feather streaks and lichen and kept some bare-board flecks, but to Claude's eye it looks more like a person painted it. In Claude's words, "The score drops because it measures how close the pixels are, not how well the painting reads."</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><video controls playsinline muted preload="metadata" poster="img/go-robin-3.jpg" width="1280" height="960" src="media/robin-3-timelapse.mp4"></video><figcaption><b>Robin 3</b> · 14,541 strokes, chasing accuracy</figcaption></figure>
+    <figure><video controls playsinline muted preload="metadata" poster="img/go-robin-4.jpg" width="1280" height="960" src="media/robin-4-timelapse.mp4"></video><figcaption><b>Robin 4</b> · 1,204 strokes, paying for each one</figcaption></figure>
+  </div>
+  <figure class="wide" style="max-width:44rem"><img src="img/go-robin-4.jpg" width="1100" height="825" loading="lazy" alt="Robin 4."><figcaption><b>Robin 4</b> · 5.39 · 1,204 strokes</figcaption></figure>
+
+  <article class="step e-robin" id="s29">
+    <div class="meta"><span class="num">29</span><span>Oct 3</span><span>8:00 am</span></div>
+    <div class="body">
+      <h3>Robin 5: brushes painted wider than Claude planned (1,157 strokes, score 5.30)</h3>
+      <div class="row"><span>Why</span><p>I asked how it could do even better. Claude defined better as more picture per stroke.</p></div>
+      <div class="row"><span>Tried</span><p>Every plan saves the canvas it predicts, so Claude compared prediction with what actually got painted. Big brushes delivered; small ones fell short. Calibration then showed filberts painting about 40% wider than modeled, with strokes starting about 2 mm late and ending 1 to 4 mm early. Fixes: a real width model, lag compensation that extends each stroke's ends, attention weights (bird ×1.8, face ×3), and re-planning from the actual painting every 50 to 60 strokes.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Filbert widths: 9.3 → 13.9 mm (No. 3), 6.9 → 9.9, 4.7 → 6.3.</li>
+        <li>The smallest round's coverage went from about a third to about two thirds. Filbert spill dropped from 25% to 6 to 10%.</li>
+        <li>6.97 at ~620 strokes, against robin 4's 7.33 at 642.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/go-cal-before.jpg" width="1400" height="1050" loading="lazy" alt="Calibration sheet before correction, with strokes overshooting their marked widths."><figcaption><b>Before</b> · planned widths vs painted</figcaption></figure>
+    <figure><img src="img/go-cal-after.jpg" width="1400" height="1050" loading="lazy" alt="Calibration grid after the width and lag correction."><figcaption><b>After</b> · width model and lag compensation</figcaption></figure>
+  </div>
+  <figure class="wide" style="max-width:44rem"><img src="img/go-robin-5.jpg" width="1100" height="825" loading="lazy" alt="Robin 5."><figcaption><b>Robin 5</b> · 5.30 · 1,157 strokes</figcaption></figure>
+
+  <article class="step e-robin" id="s30">
+    <div class="meta"><span class="num">30</span><span>Oct 3</span><span>8:17 am</span></div>
+    <div class="body">
+      <h3>Robin 6: every brush competes for each stroke (1,022 strokes, score 5.06)</h3>
+      <div class="row"><span>Tried</span><p>Fixed budgets per brush were wasting strokes. Now every brush proposes candidates into one pool and the best gain wins. Error is measured the way the score sees it (about 1 mm of blur), and bare board counts double.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>6.64 at 540 strokes, better than robin 5's 6.97 at about 620.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/go-faces-4-6.jpg" width="1400" height="462" loading="lazy" alt="Robins 4, 5 and 6 with their faces shown close up."><figcaption><b>Robins 4 · 5 · 6</b> · the economy runs, faces up close</figcaption></figure>
+  <figure class="wide" style="max-width:44rem"><img src="img/go-robin-6.jpg" width="1100" height="825" loading="lazy" alt="Robin 6."><figcaption><b>Robin 6</b> · 5.06 · 1,022 strokes</figcaption></figure>
+
+  <article class="step e-robin" id="s31">
+    <div class="meta"><span class="num">31</span><span>Oct 3</span><span>8:37 am</span></div>
+    <div class="body">
+      <h3>Robin 7: effort where people look (1,017 strokes, score 4.87)</h3>
+      <div class="row"><span>Why</span><p>I asked it to spend extra strokes wherever they improved the picture enough, checking every so often, to put more effort around the head, and to split the image into parts.</p></div>
+      <div class="row"><span>Tried</span><p>gpt-image repainted the reference as flat color-coded parts, which lined up almost exactly. Each part got a salience weight, for how much it draws the eye: eye 8; eye ring and beak 6; head and throat 4; legs 3; breast, wing and buds 2.2; tail 2; branch 1.6; background 1. Claude reviewed every few batches and decided where extra strokes were worth it.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Against robin 6 at the same stroke counts: 7.59 vs 7.87 at 360, 6.20 vs 6.64 at 540, 5.32 vs 5.67 at 782.</li>
+        <li>The head got 12% of the strokes for 2.7% of the area. The background got 46% for 69%.</li>
+        <li>Later head strokes dulled the eye, so the eye now gets painted last.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide pair">
+    <figure><img src="img/go-segmentation.jpg" width="1400" height="933" loading="lazy" alt="The reference repainted as flat color-coded parts: head, eye, beak, breast, wing, branch, buds."><figcaption><b>Segmentation</b> · the reference as color-coded parts</figcaption></figure>
+    <figure><img src="img/go-salience.jpg" width="960" height="720" loading="lazy" alt="Salience map: the eye and beak brightest, the sky darkest."><figcaption><b>Salience</b> · eye 8 · beak 6 · head 4 · background 1</figcaption></figure>
+  </div>
+  <div class="wide pair">
+    <figure><img src="img/go-robin-7.jpg" width="1100" height="825" loading="lazy" alt="Robin 7."><figcaption><b>Robin 7</b> · 4.87 · 1,017 strokes</figcaption></figure>
+    <figure><img src="img/go-faces-6-7.jpg" width="1400" height="611" loading="lazy" alt="Robins 6 and 7 with face crops."><figcaption><b>Robin 6 vs 7</b> · same budget, effort moved to the head</figcaption></figure>
+  </div>
+
+  <article class="step e-robin" id="s32">
+    <div class="meta"><span class="num">32</span><span>Oct 3</span><span>9:24 am</span></div>
+    <div class="body">
+      <h3>Robin 8: zoom levels and thin lines (3,450 strokes, score 3.98)</h3>
+      <div class="row"><span>Why</span><p>I asked whether zoom had levels (it didn't), then told it to zoom in close wherever it needed to, with a budget of 3,000 to 4,000 strokes.</p></div>
+      <div class="row"><span>Tried</span><p>A toned board first. Then levels: the whole sheet, then regions, then parts from the segmentation, then features. Each level is finer and charges a lower price per stroke. The planner works on a tile plus a margin, so going close stays affordable, and tiles are ranked by salience-weighted error. A new kind of stroke traces thin dark and light lines straight from the reference. The catchlight goes last.</p></div>
+      <div class="row"><span>Result</span>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Level</th><th>What</th><th>px/mm</th><th>Price</th><th>Strokes</th><th>Score</th></tr></thead>
+          <tbody>
+            <tr><td>Board</td><td>one toning wash</td><td class="n">3</td><td class="n">–</td><td class="n">12</td><td class="n">57.8 → 30.3</td></tr>
+            <tr><td>L0</td><td>whole sheet, big brushes to No. 2</td><td class="n">3</td><td class="n">300</td><td class="n">908</td><td class="n">4.96</td></tr>
+            <tr><td>L1</td><td>6 region tiles, lines added</td><td class="n">5</td><td class="n">150</td><td class="n">1,439</td><td class="n">4.55</td></tr>
+            <tr><td>L2</td><td>parts: head, wing, legs, buds</td><td class="n">8</td><td class="n">60</td><td class="n">2,399</td><td class="n">4.20</td></tr>
+            <tr><td>L3</td><td>beak and eye ring</td><td class="n">12</td><td class="n">20</td><td class="n">2,519</td><td class="n">4.18</td></tr>
+            <tr><td>L2 again</td><td>branch, buds, undertail; catchlight</td><td class="n">8</td><td class="n">60</td><td class="n">3,450</td><td class="n">3.98</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="row"><span>Also</span><ul class="ev">
+        <li>The light-line strokes at L2 finally painted the wing's pale feather edges, plus crescents, throat streaks and claws. None of the earlier candidate types could.</li>
+        <li>Robin 3 still scores lower (3.09) because its background is tighter. Robin 8 has the best face and wing, and it's the one I picked.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <figure class="wide"><img src="img/go-robin8-levels.jpg" width="2000" height="324" loading="lazy" alt="Five stages of robin 8: toned board, after L0, after L1, after L2, final."><figcaption><b>Robin 8 by level</b> · toned board · L0 · L1 · L2 · final</figcaption></figure>
+  <figure class="wide"><img src="img/go-faces-3-7-8.jpg" width="1400" height="635" loading="lazy" alt="Robins 3, 7 and 8: whole paintings with face and wing crops."><figcaption><b>Robins 3 · 7 · 8</b> · whole, face and wing</figcaption></figure>
+  <figure class="wide" style="max-width:52rem"><img src="img/go-robin-8.jpg" width="1100" height="825" loading="lazy" alt="Robin 8 before signing."><figcaption><b>Robin 8</b> · 3.98 · 3,450 strokes, before signing</figcaption></figure>
+
+  <!-- ====================================================== FILM -->
+  <section class="col era e-film" id="film">
+    <span class="swatch"></span>
+    <span class="label">Part five · Signing it</span>
+    <h2>Learning to sign</h2>
+    <span class="when">Oct 3 · 2:57 pm to 5:13 pm</span>
+    <p>Last, Claude signed the painting. Signing turned out to be a lesson in what makes a movement look human.</p>
+  </section>
+  
+
+  <article class="step e-film" id="s33">
+    <div class="meta"><span class="num">33</span><span>Oct 3</span><span>2:57 pm to 5:13 pm</span></div>
+    <div class="body">
+      <h3>A signature that looks practiced</h3>
+      <div class="row"><span>Why</span><p>I asked Claude to design its own signature and paint it on. Then I asked for something more like an artist's mark, then for something that still read as a signature, and then pointed out that a signature should be prerecorded strokes, since that's how signatures work.</p></div>
+      <div class="row"><span>Tried</span><p>Three rounds of designs: cursive signatures, then monograms, then brush signatures, where design D (a big C cradling "laude") won. The signature is saved as one motion and replayed onto any painting, moved and scaled to a baseline. The motion comes from tracing D in writing order, with pressure taken from the ink's width. An exact trace made the hand buzz, so the motion is now solved for minimum jerk through the letters' turning points. When I said it was still too slow and jerky and didn't look human, Claude listed what a practiced signature has: speed, almost no pen lifts, entering and leaving in motion, a thick-thin rhythm, one brush.</p></div>
+      <div class="row"><span>Result</span><ul class="ev">
+        <li>Exact tracing: the pushes flipped direction 43% of the time. Solving all pushes together with a jerk penalty took the C to zero flips.</li>
+        <li>Brushes: a No. 2 round ran dry, a rigger smeared through the turns, and a No. 4 round filled the loops. A fude holds enough paint for the whole name on one load.</li>
+        <li>Final: the C, one short lift, then "laude" and the flourish in one unbroken stroke. About 1 s at ~240 mm/s, tapering into a hairline flick.</li>
+      </ul></div>
+      <span class="badge kept">Kept</span>
+    </div>
+  </article>
+  <div class="wide" style="display:flex;flex-direction:column;gap:1rem">
+    <figure><img src="img/go-sig-round1.jpg" width="1400" height="335" loading="lazy" alt="Three cursive Claude signatures."><figcaption><b>Round 1</b> · signatures, but plain handwriting</figcaption></figure>
+    <figure><img src="img/go-sig-round2.jpg" width="1400" height="497" loading="lazy" alt="Three monogram marks: a C with a dot, a C and L, a C with a flick."><figcaption><b>Round 2</b> · marks, but B reads as a cent sign and C as a euro sign</figcaption></figure>
+    <figure><img src="img/go-sig-round3.jpg" width="1400" height="344" loading="lazy" alt="Three brush signatures; D has a big sweeping C cradling 'laude'."><figcaption><b>Round 3</b> · D became the signature</figcaption></figure>
+  </div>
+  <div class="wide pair">
+    <figure><img src="img/go-sig-x.jpg" width="1152" height="690" loading="lazy" alt="A smooth signature painted with a No. 4 round and reloads between letters."><figcaption><b>Smooth, but careful</b> · No. 4 round C, No. 2 round name with three reloads, ~3.9 s</figcaption></figure>
+    <figure><img src="img/go-sig-fude.jpg" width="1152" height="690" loading="lazy" alt="A fast fude signature: a swelling C with tapered tails and the name in one stroke."><figcaption><b>Practiced</b> · one fude, one unbroken name, ~1 s</figcaption></figure>
+  </div>
+  <figure class="wide" style="max-width:40rem">
+    <video controls playsinline muted loop preload="metadata" poster="img/go-sig-fude.jpg" width="1152" height="690" src="media/signature-realtime.mp4"></video>
+    <figcaption><b>The signature being written</b> · real time, on a test board</figcaption>
+  </figure>
+
+    <section class="col" style="margin-top:1rem"><h2>The finished piece</h2><p>Hand-painted title, robin 8 with its close-ups, and the signature, in 45 seconds.</p></section>
+  <figure class="wide" style="max-width:52rem">
+    <video controls playsinline preload="metadata" poster="img/go-robin8-signed.jpg" width="1440" height="1080" src="media/claude-learns-to-paint-45s.mp4"></video>
+    <figcaption><b>Claude learns to paint</b> · 45 s · music: Lazy Lo-Loops (mine, made with Suno)</figcaption>
+  </figure>
+  <!-- ====================================================== LESSONS -->
+  <section class="col" id="carried">
+    <h2>What Claude learned</h2>
+    <ol class="lessons">
+      <li><b>Measure before fixing.</b> The stripes came mostly from Claude's own demo script. The "not amazing" heron came from covering 22% of the ink. Each answer came from a number, not from looking harder.</li>
+      <li><b>Claude's model of its own tools was the bottleneck.</b> Half of the first painting was rolled back because Claude didn't know what its brush would do. Calibration fixed it every time: the ink stroke library, pencil hatching tables, and gouache filberts that turned out 40% wider than assumed.</li>
+      <li><b>The score decides what gets kept, so its blind spots became Claude's habits.</b> A score that only counted darkness rewarded pale smudges, and one that compared tone patch by patch pulled the pencil heron toward smudge. Each fix (a local judge, an outline constraint, color distance, salience weights, a price per stroke) changed which marks won.</li>
+      <li><b>Constraints made it learn.</b> Forbidding drawn paths forced real gestures, which led to previews, aim points and push-by-push steering, and the motion-only heron scored better.</li>
+      <li><b>Paint the way the reference asks.</b> Press harder where it's darker. Run strokes along the grain, as a guide rather than a rail. Lift where it's too dark instead of adding detail. Never go darker than the target.</li>
+      <li><b>Spend strokes where people look.</b> A price per stroke took the robins from 14,541 strokes to about 1,000. Salience and zoom levels put the effort back into the head, and robin 8 landed in between, at 3,450 strokes with the best face and wing.</li>
+      <li><b>The judge isn't the eye.</b> The readable eye, the reflection without chevrons and the reeds were all marked worse and kept anyway, each with a stated reason.</li>
+      <li><b>Speed changes the method.</b> A 1 ms restore and 18 to 131 ms per candidate turned "lookahead" from a few hand tries into 7,165 painted candidates for one heron.</li>
+      <li><b>Human motion isn't accurate motion.</b> The machine look came from uniformity, and the buzzing signature from fitting the trace too closely. Minimum jerk, variation and speed made both read as a hand.</li>
+    </ol>
+  </section>
+
+  <section class="col" id="deadends">
+    <h2>Dead ends</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Tried</th><th>Why it failed</th></tr></thead>
+      <tbody>
+        <tr><td>Dark tide-line at the ink halo's edge</td><td>Edge evaporation made it worse; reverted</td></tr>
+        <tr><td>Codebook marks that work at any angle</td><td>Brush lean carried over between strokes; the fix was reverted, so marks are approximate under rotation</td></tr>
+        <tr><td>Three crossing hatch layers for a wing</td><td>One flat dark mass with no feather structure</td></tr>
+        <tr><td>Blending stump</td><td>Blurred feathers and ripples; rolled back both times</td></tr>
+        <tr><td>Close-up "detail" passes on faces</td><td>Darkened areas already at the right tone; rolled back every time</td></tr>
+        <tr><td>Strokes welded to the grain field</td><td>Faded ends piled up at outlines and left blank seams</td></tr>
+        <tr><td>Automatic accents on the robin</td><td>Far too big, smeared past the beak</td></tr>
+        <tr><td>Eye ring as brushed arcs</td><td>Wouldn't land reliably at 7.6 mm; one unpreviewed try became a 12 mm loop</td></tr>
+        <tr><td>Skeleton tracing of a dry-brush signature</td><td>13 false stroke ends; waypoints in writing order worked instead</td></tr>
+        <tr><td>Exact signature tracing</td><td>Pushes flipped 43% of the time, so the hand buzzed</td></tr>
+        <tr><td>Rigger and small round for the signature</td><td>Smeared in the turns; ran dry after "la"</td></tr>
+              </tbody>
+    </table></div>
+  </section>
+
+  <hr>
+  <section class="col">
+    <p>Everything here runs on one laptop. References come from OpenAI's gpt-image-2.5, and Claude wrote the simulators, the tools it paints with, and its own signature.</p>
+  </section>
+</main>
+
+<dialog id="lb" aria-label="Image viewer">
+  <button type="button" id="lb-close" aria-label="Close">Close ✕</button>
+  <img id="lb-img" alt="">
+  <p id="lb-cap"></p>
+</dialog>
+<script>
+(function () {
+  const dlg = document.getElementById('lb'), img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap');
+  if (!dlg || !dlg.showModal) return;
+  document.querySelectorAll('main figure img').forEach(function (im) {
+    im.tabIndex = 0;
+    im.setAttribute('role', 'button');
+    const open = function () {
+      img.src = im.currentSrc || im.src; img.alt = im.alt;
+      const fc = im.closest('figure').querySelector('figcaption');
+      cap.textContent = fc ? fc.textContent : im.alt;
+      dlg.showModal();
+    };
+    im.addEventListener('click', open);
+    im.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+  dlg.addEventListener('click', function (e) { if (e.target === dlg || e.target === img) dlg.close(); });
+  document.getElementById('lb-close').addEventListener('click', function () { dlg.close(); });
+})();
+</script>
+
+</body>
+</html>

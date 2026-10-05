@@ -1,0 +1,41 @@
+{
+ "brushes": [
+  {
+   "brush": "filbert",
+   "size": 1,
+   "pressure": 0.65
+  },
+  {
+   "brush": "round",
+   "size": 2,
+   "pressure": 0.6
+  },
+  {
+   "brush": "round",
+   "size": 0,
+   "pressure": 0.6
+  },
+  {
+   "brush": "round",
+   "size": 0,
+   "pressure": 0.5
+  }
+ ],
+ "px_per_mm": 6,
+ "budget": 60,
+ "min_gain": 40,
+ "threshold": 4,
+ "trace_tol": 9,
+ "mix_tol": 6,
+ "pause_s": 2,
+ "weights": [],
+ "label": "head",
+ "seed": 91,
+ "salience": "salience.png",
+ "box": [
+  0.22,
+  0.03,
+  0.5,
+  0.32
+ ]
+}
